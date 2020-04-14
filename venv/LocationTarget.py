@@ -121,7 +121,7 @@ tab2 = ttk.Frame(tab_control)
 tab3 = ttk.Frame(tab_control)
 tab_control.add(tab1, text='Dataset')
 tab_control.add(tab2, text='Prediction Accuracy')
-tab_control.add(tab3, text='Dummy Values and Prediction')
+tab_control.add(tab3, text='Dummy Values and Target Prediction')
 
 tab_control.pack(expand=1, fill='both')
 
@@ -296,12 +296,12 @@ AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
 # Dummy number Button to start algorithm calculation and display prediction results
 PredictionButton = Button(tab3, text='Click to see Prediction Results', command=finalPrediction, width=25,
                           bg='purple', fg='#fff')
-PredictionButton.grid(row=7, column=0, padx=5, pady=5)
+PredictionButton.grid(row=9, column=0, padx=5, pady=5)
 
 # Button to clear Tab 3 and start over
 ClearTabThreeButton = Button(tab3, text='Clear results and start over', command=clear_display_result, width=25,
                           bg='purple', fg='#fff')
-ClearTabThreeButton.grid(row=9, column=0, padx=5, pady=5)
+ClearTabThreeButton.grid(row=9, column=2, padx=5, pady=5)
 
 # Menu button on tab 1, to start program over
 MenuTabOneButton = Button(tab1, text='Return to Program Main Menu', command=mainMenu, width=25,
