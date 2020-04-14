@@ -24,10 +24,9 @@ print('\n')
 # print(bin)
 
 # https://docs.python.org/3/library/io.html
-f = open("NumAsFloatsDataSet_ExpWithNames_Binary.xlsx", "rb", buffering=0)
-# creating dataframe
-df = pd.DataFrame(f)
-print(df)
+openreadbytes = open("NumAsFloatsDataSet_ExpWithNames_Binary.xlsx", "rb", buffering=0) # opening excel file as bytes for reading (from string)
+dfreadbytes = pd.DataFrame(openreadbytes) # creating dataframe in bytes
+print(dfreadbytes) # printing dataframe in bytes
 print('\n')
 
 # https://stackoverflow.com/questions/7396849/convert-binary-to-ascii-and-vice-versa
