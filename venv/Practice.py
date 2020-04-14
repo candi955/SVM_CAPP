@@ -204,7 +204,7 @@ print(ChinaAscii)
 print('\n\n')
 USABytes = int.from_bytes(b'USA', byteorder=sys.byteorder)  # creating an int from bytes
 print(USABytes)
-USAAscii = int.to_bytes(USABytes, length=*, byteorder=sys.byteorder)
+USAAscii = int.to_bytes(USABytes, length=30, byteorder=sys.byteorder)
 print(USAAscii)
 
 # output is:
