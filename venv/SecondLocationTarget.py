@@ -277,7 +277,7 @@ List1.insert(4, 'Russia')
 List1.insert(5, 'USA')
 List1.pack()
 
-# Dummy Number Input Boxes
+# Dummy Number Input Boxes from Listbox Choice
 dummyOneTextBox = ScrolledText(tab3, height=1, width=50)
 dummyOneTextBoxLabel = tk.Label(dummyOneTextBox,  text="Month (binary)")
 dummyOneTextBoxLabel.pack()
@@ -286,8 +286,11 @@ dummyOneTextBoxLabel.pack()
 dummyOneTextBox.bind("<Tab>", focus_next_widget)
 dummyOneTextBox.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
 
+# Next is the task of ensuring when Listbox entry made, proper float number goes into textbox for Machine Learning
+# process to occur
+# https://www.youtube.com/watch?v=RgYxAu7ekaI
 
-#--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
+#--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 dummyNumberTwo = Listbox(tab3, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=0, columnspan=1, padx=5, pady=5)
