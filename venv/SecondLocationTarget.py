@@ -257,6 +257,8 @@ l3 = Label(tab3, text='Please enter five dummy numbers in the cells below,\n and
                       'see your prediction results:', padx=5, pady=5)
 l3.grid(row=1, column=0)
 
+#--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
+
 # Dummy Number Input Boxes (via Listbox
 dummyNumberOne = Listbox(tab3, height=1, width=50)
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
@@ -275,6 +277,17 @@ List1.insert(4, 'Russia')
 List1.insert(5, 'USA')
 List1.pack()
 
+# Dummy Number Input Boxes
+dummyOneTextBox = ScrolledText(tab3, height=1, width=50)
+dummyOneTextBoxLabel = tk.Label(dummyOneTextBox,  text="Month (binary)")
+dummyOneTextBoxLabel.pack()
+# the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
+# rather than clicking
+dummyOneTextBox.bind("<Tab>", focus_next_widget)
+dummyOneTextBox.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
+
+
+#--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
 dummyNumberTwo = Listbox(tab3, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=0, columnspan=1, padx=5, pady=5)
