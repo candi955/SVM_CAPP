@@ -281,8 +281,7 @@ l3 = Label(tab3, text='Please enter five dummy numbers in the cells below,\n and
 l3.grid(row=1, column=0)
 
 #--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
-
-# Dummy Number Input Boxes (via Listbox
+#Listbox of Dummy Numbers
 dummyOneListBox = Listbox(tab3, height=1, width=50, yscrollcommand=TRUE)
 
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
@@ -302,7 +301,7 @@ List1.insert(4, 'Russia')
 List1.insert(5, 'USA')
 List1.pack()
 
-# Dummy Number Input Boxes from Listbox Choice
+# Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberOne = ScrolledText(tab3, height=2, width=50)
 
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
@@ -310,6 +309,7 @@ dummyNumberOne = ScrolledText(tab3, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
+# Placing choice from listbox into textbox automatically
 if List1.index(1):
     dummyNumberOne.insert('1.0',"418464229443")
 else:
@@ -321,27 +321,38 @@ else:
 # https://www.youtube.com/watch?v=RgYxAu7ekaI
 
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
-
+#Listbox of Dummy Numbers
 dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=TRUE)
 dummyTwoListBox.bind("<Tab>", focus_next_widget)
 dummyTwoListBox.grid(row=3, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
 
 List2 = Listbox(dummyTwoListBox)
 
-# Attempting to pull listbox from dictionary
+# Attempting to pull locationDict dictionary data and place into listbox
 # reference: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
 # https://stackoverflow.com/questions/31046479/resizing-tkinter-listbox-to-width-of-largest-item-using-grid
 for key in locationDict:
     List2.insert(END, '{}: {}'.format(key, locationDict[key]))
     List2.pack(fill=BOTH, expand=TRUE)
 
-# Dummy Number Input Boxes from Listbox Choice
+# Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberTwo = ScrolledText(tab3, height=2, width=50)
 
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=2, columnspan=1, padx=5, pady=5)
+
+# Placing choice from listbox into textbox automatically
+
+#ds = sorted(locationDict.iteritems()
+#for k, v in ds():
+#    setattr(self, k, v)
+#    if List2.index(1):
+#        dummyNumberOne.insert('1.0', v)
+#else:
+#    mbox.showerror("Error", "Please ensure that your entry is accurate.")
+#    clear_display_result()
 
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
