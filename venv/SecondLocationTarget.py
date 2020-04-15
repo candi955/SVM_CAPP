@@ -288,7 +288,8 @@ dummyOneTextBox.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
 if List1.index(1):
     dummyOneTextBox.insert('1.0',"418464229443")
 else:
-    print('hello')
+    mbox.showerror("Error", "Please ensure that your entry is accurate.")
+    clear_display_result()
 
 # Next is the task of ensuring when Listbox entry made, proper float number goes into textbox for Machine Learning
 # process to occur
