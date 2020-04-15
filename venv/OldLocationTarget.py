@@ -107,7 +107,7 @@ knn = KNeighborsClassifier(n_neighbors=1)
 knn.fit(X, y)
 
 
-###################################################################################################################
+#-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
 root = tk.Tk()
 root.title('SVM Prediction: Global attack by location (country)')
 #root.geometry("1000x1000")
@@ -125,14 +125,11 @@ tab_control.add(tab3, text='Dummy Values and Target Prediction')
 
 tab_control.pack(expand=1, fill='both')
 
-###################################################################################################################
-
-
+#---Creating Tkinter functions----------------------------------------------------------------------------------------
 
 # the dataframe method, tab 1
 def writeDataset():
     tab1_display.insert(1.0, pd.DataFrame(df))
-
 
 # the accuracy score method, tab 2
 def writeAccuracy():
@@ -142,6 +139,8 @@ def writeAccuracy():
 def focus_next_widget(event):
     event.widget.tk_focusNext().focus()
     return("break")
+
+#---- Creating functions to run the main prediction program ----------------------------------------------------------
 
 # the dummy number value method, for tab 3 input entries from the user
 def dummyValues():
@@ -244,8 +243,8 @@ def exitProgram():
 
 def flush(self):
     pass
-###################################################################################################################
-# Labels for tabs
+#------------Tkinter Labels for Tabs-----------------------------------------------------------------------------------
+
 l1 = Label(tab1, text='Please click the button below to scroll through the original dataset model.', padx=5, pady=5)
 l1.grid(row=1, column=0)
 l2 = Label(tab2, text='Please click the button below to see the prediction accuracy of the model in decimal ' +
@@ -257,62 +256,31 @@ l3 = Label(tab3, text='Please enter five dummy numbers in the cells below,\n and
                       'see your prediction results:', padx=5, pady=5)
 l3.grid(row=1, column=0)
 
-#--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
 
-# Dummy Number Input Boxes (via Listbox
-dummyNumberOne = Listbox(tab3, height=1, width=50)
+# Dummy Number Input Boxes
+dummyNumberOne = ScrolledText(tab3, height=1)
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=0, columnspan=1, padx=5, pady=5)
 
-# Creating Listbox insert choices into dummyNumberOne Listbox
-# https://www.youtube.com/watch?v=VwjHa5JsZqw
-# https://www.geeksforgeeks.org/python-list-insert/
-List1 = Listbox(dummyNumberOne)
-List1.insert(1, 'Asia')
-List1.insert(2, 'China')
-List1.insert(3, 'Europe')
-List1.insert(4, 'Russia')
-List1.insert(5, 'USA')
-List1.pack()
-
-# Dummy Number Input Boxes from Listbox Choice
-dummyOneTextBox = ScrolledText(tab3, height=2, width=50)
-
-# the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
-# rather than clicking
-dummyOneTextBox.bind("<Tab>", focus_next_widget)
-dummyOneTextBox.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
-
-if List1.index(1):
-    dummyOneTextBox.insert('1.0',"418464229443")
-else:
-    mbox.showerror("Error", "Please ensure that your entry is accurate.")
-    clear_display_result()
-
-# Next is the task of ensuring when Listbox entry made, proper float number goes into textbox for Machine Learning
-# process to occur
-# https://www.youtube.com/watch?v=RgYxAu7ekaI
-
-#--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
-dummyNumberTwo = Listbox(tab3, height=2, width=50)
+dummyNumberTwo = ScrolledText(tab3, height=1)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=0, columnspan=1, padx=5, pady=5)
 
-dummyNumberThree = Listbox(tab3, height=2, width=50)
+dummyNumberThree = ScrolledText(tab3, height=1)
 dummyNumberThree.bind("<Tab>", focus_next_widget)
 dummyNumberThree.grid(row=4, column=0, columnspan=1, padx=5, pady=5)
 
-dummyNumberFour = Listbox(tab3, height=2, width=50)
+dummyNumberFour = ScrolledText(tab3, height=1)
 dummyNumberFour.bind("<Tab>", focus_next_widget)
 dummyNumberFour.grid(row=5, column=0, columnspan=1, padx=5, pady=5)
 
-dummyNumberFive = Listbox(tab3, height=2, width=50)
+dummyNumberFive = ScrolledText(tab3, height=1)
 dummyNumberFive.bind("<Tab>", focus_next_widget)
 dummyNumberFive.grid(row=6, column=0, columnspan=1, padx=5, pady=5)
 
-dummyNumberSix = Listbox(tab3, height=2, width=50)
+dummyNumberSix = ScrolledText(tab3, height=1)
 dummyNumberSix.bind("<Tab>", focus_next_widget)
 dummyNumberSix.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
