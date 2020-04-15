@@ -56,6 +56,26 @@ import xlrd
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+#------------ListBox Country/Region/binary Dictionary--------------------------------------------------------------------------
+# creating a dictionary to associate locations with associated binary
+# reference: https://www.w3schools.com/python/python_dictionaries.asp
+
+locationDict = {"country1":{"name" : "China", "binary": 418464229443},
+                "country2":{"name":"USA","binary" : 4281173},
+                "country3":{"name":"Russia","binary" : 107105536406866},
+
+                "region1":{"name":"Asia","binary" : 1634300737},
+                "region2":{"name":"Europe","binary" : 111533580514629},}
+
+
+pdDict = pd.DataFrame(locationDict)
+pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
+pd.set_option('display.max_columns', 1000)
+pd.set_option('display.width', 1000)
+
+# print('\n\n')
+# print(pdDict)
+
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
 cyberExcel = xlrd.open_workbook('NumAsFloatsDataSet_ExpWithNames_Binary.xlsx')
