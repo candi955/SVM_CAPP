@@ -76,6 +76,7 @@ pd.set_option('display.width', 1000)
 # print('\n\n')
 # print(pdDict)
 
+
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
 cyberExcel = xlrd.open_workbook('NumAsFloatsDataSet_ExpWithNames_Binary.xlsx')
@@ -145,6 +146,7 @@ tab_control.add(tab2, text='Prediction Accuracy')
 tab_control.add(tab3, text='Dummy Values and Target Prediction')
 
 tab_control.pack(expand=1, fill='both')
+
 
 #---Creating Tkinter functions----------------------------------------------------------------------------------------
 
@@ -318,9 +320,18 @@ else:
 
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberTwo = Listbox(tab3, height=2, width=50)
+dummyNumberTwo = Listbox(tab3, height=2, width=100)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=0, columnspan=1, padx=5, pady=5)
+
+List2 = Listbox(dummyNumberTwo)
+
+# Attempting to pull listbox from dictionary
+# reference: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
+# https://stackoverflow.com/questions/31046479/resizing-tkinter-listbox-to-width-of-largest-item-using-grid
+for key in locationDict:
+    List2.insert(END, '{}: {}'.format(key, locationDict[key]))
+    List2.pack()
 
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
