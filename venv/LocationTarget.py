@@ -283,18 +283,18 @@ l3.grid(row=1, column=0)
 #--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
 
 # Dummy Number Input Boxes (via Listbox
-dummyNumberOne = Listbox(tab3, height=1, width=50)
+dummyOneListBox = Listbox(tab3, height=1, width=50, yscrollcommand=TRUE)
 
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
-dummyNumberOne.bind("<Tab>", focus_next_widget)
-dummyNumberOne.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
+dummyOneListBox.bind("<Tab>", focus_next_widget)
+dummyOneListBox.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
 
 
 # Creating Listbox insert choices into dummyNumberOne Listbox
 # https://www.youtube.com/watch?v=VwjHa5JsZqw
 # https://www.geeksforgeeks.org/python-list-insert/
-List1 = Listbox(dummyNumberOne)
+List1 = Listbox(dummyOneListBox)
 List1.insert(1, 'Asia')
 List1.insert(2, 'China')
 List1.insert(3, 'Europe')
@@ -303,15 +303,15 @@ List1.insert(5, 'USA')
 List1.pack()
 
 # Dummy Number Input Boxes from Listbox Choice
-dummyOneTextBox = ScrolledText(tab3, height=2, width=50)
+dummyNumberOne = ScrolledText(tab3, height=2, width=50)
 
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
-dummyOneTextBox.bind("<Tab>", focus_next_widget)
-dummyOneTextBox.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
+dummyNumberOne.bind("<Tab>", focus_next_widget)
+dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
 if List1.index(1):
-    dummyOneTextBox.insert('1.0',"418464229443")
+    dummyNumberOne.insert('1.0',"418464229443")
 else:
     mbox.showerror("Error", "Please ensure that your entry is accurate.")
     clear_display_result()
@@ -322,11 +322,11 @@ else:
 
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberTwo = Listbox(tab3, height=2, width=50)
-dummyNumberTwo.bind("<Tab>", focus_next_widget)
-dummyNumberTwo.grid(row=3, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
+dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=TRUE)
+dummyTwoListBox.bind("<Tab>", focus_next_widget)
+dummyTwoListBox.grid(row=3, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
 
-List2 = Listbox(dummyNumberTwo)
+List2 = Listbox(dummyTwoListBox)
 
 # Attempting to pull listbox from dictionary
 # reference: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
@@ -335,29 +335,37 @@ for key in locationDict:
     List2.insert(END, '{}: {}'.format(key, locationDict[key]))
     List2.pack(fill=BOTH, expand=TRUE)
 
+# Dummy Number Input Boxes from Listbox Choice
+dummyNumberTwo = ScrolledText(tab3, height=2, width=50)
+
+# the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
+# rather than clicking
+dummyNumberTwo.bind("<Tab>", focus_next_widget)
+dummyNumberTwo.grid(row=3, column=2, columnspan=1, padx=5, pady=5)
+
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberThree = Listbox(tab3, height=2, width=50)
-dummyNumberThree.bind("<Tab>", focus_next_widget)
-dummyNumberThree.grid(row=4, column=0, columnspan=1, padx=5, pady=5)
+dummyThreeListBox = Listbox(tab3, height=2, width=50)
+dummyThreeListBox.bind("<Tab>", focus_next_widget)
+dummyThreeListBox.grid(row=4, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 4 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberFour = Listbox(tab3, height=2, width=50)
-dummyNumberFour.bind("<Tab>", focus_next_widget)
-dummyNumberFour.grid(row=5, column=0, columnspan=1, padx=5, pady=5)
+dummyFourListBox = Listbox(tab3, height=2, width=50)
+dummyFourListBox.bind("<Tab>", focus_next_widget)
+dummyFourListBox.grid(row=5, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberFive = Listbox(tab3, height=2, width=50)
-dummyNumberFive.bind("<Tab>", focus_next_widget)
-dummyNumberFive.grid(row=6, column=0, columnspan=1, padx=5, pady=5)
+dummyFiveListBox = Listbox(tab3, height=2, width=50)
+dummyFiveListBox.bind("<Tab>", focus_next_widget)
+dummyFiveListBox.grid(row=6, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberSix = Listbox(tab3, height=2, width=50)
-dummyNumberSix.bind("<Tab>", focus_next_widget)
-dummyNumberSix.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
+dummySixListBox = Listbox(tab3, height=2, width=50)
+dummySixListBox.bind("<Tab>", focus_next_widget)
+dummySixListBox.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
 #-------Tkinter Buttons------------------------------------------------------------------------------------------------
 
