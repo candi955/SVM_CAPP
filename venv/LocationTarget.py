@@ -284,10 +284,12 @@ l3.grid(row=1, column=0)
 
 # Dummy Number Input Boxes (via Listbox
 dummyNumberOne = Listbox(tab3, height=1, width=50)
+
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyNumberOne.bind("<Tab>", focus_next_widget)
-dummyNumberOne.grid(row=2, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberOne.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
+
 
 # Creating Listbox insert choices into dummyNumberOne Listbox
 # https://www.youtube.com/watch?v=VwjHa5JsZqw
@@ -306,7 +308,7 @@ dummyOneTextBox = ScrolledText(tab3, height=2, width=50)
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyOneTextBox.bind("<Tab>", focus_next_widget)
-dummyOneTextBox.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
+dummyOneTextBox.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
 if List1.index(1):
     dummyOneTextBox.insert('1.0',"418464229443")
@@ -320,9 +322,9 @@ else:
 
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberTwo = Listbox(tab3, height=2, width=100)
+dummyNumberTwo = Listbox(tab3, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
-dummyNumberTwo.grid(row=3, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberTwo.grid(row=3, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
 
 List2 = Listbox(dummyNumberTwo)
 
@@ -331,7 +333,7 @@ List2 = Listbox(dummyNumberTwo)
 # https://stackoverflow.com/questions/31046479/resizing-tkinter-listbox-to-width-of-largest-item-using-grid
 for key in locationDict:
     List2.insert(END, '{}: {}'.format(key, locationDict[key]))
-    List2.pack()
+    List2.pack(fill=BOTH, expand=TRUE)
 
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
