@@ -278,13 +278,17 @@ List1.insert(5, 'USA')
 List1.pack()
 
 # Dummy Number Input Boxes from Listbox Choice
-dummyOneTextBox = ScrolledText(tab3, height=1, width=50)
-dummyOneTextBoxLabel = tk.Label(dummyOneTextBox,  text="Month (binary)")
-dummyOneTextBoxLabel.pack()
+dummyOneTextBox = ScrolledText(tab3, height=2, width=50)
+
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyOneTextBox.bind("<Tab>", focus_next_widget)
 dummyOneTextBox.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
+
+if List1.index(1):
+    dummyOneTextBox.insert('1.0',"418464229443")
+else:
+    print('hello')
 
 # Next is the task of ensuring when Listbox entry made, proper float number goes into textbox for Machine Learning
 # process to occur
