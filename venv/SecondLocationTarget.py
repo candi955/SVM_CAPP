@@ -257,13 +257,23 @@ l3 = Label(tab3, text='Please enter five dummy numbers in the cells below,\n and
                       'see your prediction results:', padx=5, pady=5)
 l3.grid(row=1, column=0)
 
-
-# Dummy Number Input Boxes
-dummyNumberOne = Listbox(tab3, height=2, width=50)
+# Dummy Number Input Boxes (via Listbox
+dummyNumberOne = Listbox(tab3, height=1, width=50)
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=0, columnspan=1, padx=5, pady=5)
+
+# Creating Listbox insert choices into dummyNumberOne Listbox
+# https://www.youtube.com/watch?v=VwjHa5JsZqw
+# https://www.geeksforgeeks.org/python-list-insert/
+List1 = Listbox(dummyNumberOne)
+List1.insert(1, 'Asia')
+List1.insert(2, 'China')
+List1.insert(3, 'Europe')
+List1.insert(4, 'Russia')
+List1.insert(5, 'USA')
+List1.pack()
 
 dummyNumberTwo = Listbox(tab3, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
