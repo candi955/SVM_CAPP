@@ -158,6 +158,7 @@ listbox.pack()
 # Creating listbox functions
 # https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
 # https://www.youtube.com/watch?v=XJqUu85sMrA
+# https://note.nkmk.me/en/python-tuple-list-unpack/
 def get_selDummyOne():
     #dummyNumberOne.get(1, 1, dummyOneListBox.curselection())
     clickedItems = List1.curselection()
@@ -168,8 +169,13 @@ def get_selDummyOne():
         #print(newstrsplit)
         #newstr = list(clickedItems)
         #attemptSplitAgain = newstr.split()
-        a, b, c = clickedItems
-        print(clickedItems)
+        t = clickedItems
+        print(t)
+        a = clickedItems[0]
+        print(a)
+        ac = str(a)
+        b = ac.split()
+        print(b)
         #attemptSplitAgain = clickedItems(map(str, input().split(":")))
         #print(attemptSplitAgain)
 
