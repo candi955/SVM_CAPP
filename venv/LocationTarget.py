@@ -163,7 +163,13 @@ def get_selDummyOne():
     clickedItems = List1.curselection()
     for item in clickedItems:
 
-
+        #newstrsplit = clickedItems.split()
+        #print(newstrsplit)
+        #newstr = list(clickedItems)
+        #attemptSplitAgain = newstr.split()
+        attemptSplitAgain = item(map(int, input().split(":")))
+        #print(attemptSplitAgain)
+        print(attemptSplitAgain)
 
         dummyNumberOne.insert(1.0, List1.get(item))
     #for key in List1.curselection():
