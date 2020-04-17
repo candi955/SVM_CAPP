@@ -159,11 +159,26 @@ listbox.pack()
 # https://www.youtube.com/watch?v=XJqUu85sMrA
 # https://note.nkmk.me/en/python-tuple-list-unpack/
 def get_selDummyOne():
+    # below works to click entire key and value and sent to textbox
     #dummyNumberOne.get(1, 1, dummyOneListBox.curselection())
     # https://python-forum.io/Thread-Tuple-no-attribute-error
     clickedItems = List1.curselection()
-    for item in clickedItems:
-        dummyNumberOne.insert(1.0, List1.get(item))
+    #for item in clickedItems:
+        #dummyNumberOne.insert(1.0, List1.get(item))
+    # above works
+
+    # below works to ensure index in listbox pull from same index in list, and sends to textbox
+    for i in List1.curselection():
+        dummyNumberOne.insert(1.9, List1.get(i))
+
+        # from DictionaryTwoPractice.py page, to pull only binary number from key/value list
+        #country1list = locationDict.get("China")
+        #for k, v in country1list.items():
+         #   print("{}".format(v))
+
+    #if List1.curselection().index(1):
+        #for item in clickedItems:
+            #dummyNumberOne.insert(1.0, List1.get(item))
 
         #newstrsplit = clickedItems.split()
         #print(newstrsplit)
