@@ -422,14 +422,13 @@ AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
 
 # Tab 3
 # DummyOneButton
+# http://effbot.org/tkinterbook/listbox.htm
 # reference: https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
-EntryOne = Entry(root)
-ChangeOne = Button(root, text="Change", command=change_opt)
-DummyOneButtonEntry = Entry(root)
+
 DummyOneButtonChange = Button(tab3, text ="Change", command = change_opt, width=20, bg='purple', fg='#fff')
-DummyOneButtonChange.grid(row=2, column=0, padx=15, pady=15)
+DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
 DummyOneButtonSubmit = Button(tab3, text ="Submit", command = get_sel, width=20, bg='purple', fg='#fff')
-DummyOneButtonSubmit.grid(row=2, column=1, padx=15, pady=15)
+DummyOneButtonSubmit.grid(row=2, column=4, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
 PredictionButton = Button(tab3, text='Click to see Prediction Results', command=finalPrediction, width=25,
