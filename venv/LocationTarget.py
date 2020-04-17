@@ -60,12 +60,11 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 # creating a dictionary to associate locations with associated binary
 # reference: https://www.w3schools.com/python/python_dictionaries.asp
 
-locationDict = {"country1":{"name" : "China", "binary": 418464229443},
-                "country2":{"name":"USA","binary" : 4281173},
-                "country3":{"name":"Russia","binary" : 107105536406866},
-
-                "region1":{"name":"Asia","binary" : 1634300737},
-                "region2":{"name":"Europe","binary" : 111533580514629},}
+locationDict = {"China":{"binary": 418464229443},
+                "USA":{"binary" : 4281173},
+                "Russia":{"binary" : 107105536406866},
+                "Asia":{"binary" : 1634300737},
+                "Europe":{"binary" : 111533580514629}}
 
 
 pdDict = pd.DataFrame(locationDict)
@@ -163,22 +162,20 @@ def get_selDummyOne():
     #dummyNumberOne.get(1, 1, dummyOneListBox.curselection())
     # https://python-forum.io/Thread-Tuple-no-attribute-error
     clickedItems = List1.curselection()
-    #for item in clickedItems:
-        #dummyNumberOne.insert(1.0, List1.get(item))
-        #for index, line in enumerate(clickedItems):
-            #(clickedItems) = line[1].split(',')
+    for item in clickedItems:
+        dummyNumberOne.insert(1.0, List1.get(item))
 
         #newstrsplit = clickedItems.split()
         #print(newstrsplit)
         #newstr = list(clickedItems)
         #attemptSplitAgain = newstr.split()
-        t = clickedItems
-        print(t)
-        a = clickedItems[0]
-        print(a)
-        ac = str(a)
-        b = ac.split()
-        print(b)
+        #t = clickedItems
+        #print(t)
+        #a = clickedItems[0]
+        #print(a)
+        #ac = str(a)
+        #b = ac.split()
+        #print(b)
         #attemptSplitAgain = clickedItems(map(str, input().split(":")))
         #print(attemptSplitAgain)
 
