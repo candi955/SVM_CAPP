@@ -149,10 +149,25 @@ tab_control.pack(expand=1, fill='both')
 
 # Attempting to add tkinter listbox with root functions
 # http://effbot.org/tkinterbook/listbox.htm
-listbox = Listbox(root)
+
+listbox = Listbox(root, selectmode=SINGLE)
 listbox.pack()
 
 #---Creating Tkinter functions----------------------------------------------------------------------------------------
+
+# Creating listbox functions
+# https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
+
+def get_sel():
+    sel_list.append(listbox.curselection())
+    root.destroy()
+
+def change_opt():
+    entry = E.get()
+    change = entry.split(" ")
+    print("Change")
+    listbox.insert(int(change[0]),change[1])
+    root.update()
 
 # the dataframe method, tab 1
 def writeDataset():
@@ -291,7 +306,7 @@ dummyOneListBox = Listbox(tab3, height=1, width=50, yscrollcommand=TRUE)
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyOneListBox.bind("<Tab>", focus_next_widget)
-dummyOneListBox.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
+dummyOneListBox.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=1)
 
 
 # Creating Listbox insert choices into dummyNumberOne Listbox
@@ -395,14 +410,26 @@ dummySixListBox.bind("<Tab>", focus_next_widget)
 dummySixListBox.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
 #-------Tkinter Buttons------------------------------------------------------------------------------------------------
-
+#Tab 1
 # Dataset Button
 datasetButton = Button(tab1, text='Dataset', command=writeDataset, width=12, bg='purple', fg='#fff')
 datasetButton.grid(row=3, column=0, padx=15, pady=15)
 
+# Tab 2
 # Accuracy Button
 AccuracyButton = Button(tab2, text='Prediction Accuracy', command=writeAccuracy, width=20, bg='purple', fg='#fff')
 AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
+
+# Tab 3
+# DummyOneButton
+# reference: https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
+EntryOne = Entry(root)
+ChangeOne = Button(root, text="Change", command=change_opt)
+DummyOneButtonEntry = Entry(root)
+DummyOneButtonChange = Button(tab3, text ="Change", command = change_opt, width=20, bg='purple', fg='#fff')
+DummyOneButtonChange.grid(row=2, column=0, padx=15, pady=15)
+DummyOneButtonSubmit = Button(tab3, text ="Submit", command = get_sel, width=20, bg='purple', fg='#fff')
+DummyOneButtonSubmit.grid(row=2, column=1, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
 PredictionButton = Button(tab3, text='Click to see Prediction Results', command=finalPrediction, width=25,
