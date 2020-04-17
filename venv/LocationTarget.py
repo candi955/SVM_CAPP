@@ -161,9 +161,12 @@ listbox.pack()
 # https://note.nkmk.me/en/python-tuple-list-unpack/
 def get_selDummyOne():
     #dummyNumberOne.get(1, 1, dummyOneListBox.curselection())
+    # https://python-forum.io/Thread-Tuple-no-attribute-error
     clickedItems = List1.curselection()
     for item in clickedItems:
         dummyNumberOne.insert(1.0, List1.get(item))
+        for index, line in enumerate(clickedItems):
+            (country, binary) = line[1].split(',')
 
         #newstrsplit = clickedItems.split()
         #print(newstrsplit)
