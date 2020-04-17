@@ -157,10 +157,18 @@ listbox.pack()
 
 # Creating listbox functions
 # https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
+# https://www.youtube.com/watch?v=XJqUu85sMrA
+def get_selDummyOne():
+    #dummyNumberOne.get(1, 1, dummyOneListBox.curselection())
+    clickedItems = List1.curselection()
+    for item in clickedItems:
 
-def get_sel():
-    sel_list.append(listbox.curselection())
-    root.destroy()
+
+
+        dummyNumberOne.insert(1.0, List1.get(item))
+    #for key in List1.curselection():
+        #dummyNumberOne.insert(END, '{}: {}'.format(key, locationDict[key]))
+        #List1.pack(fill=BOTH, expand=TRUE)
 
 def change_opt():
     entry = E.get()
@@ -301,7 +309,7 @@ l3.grid(row=1, column=0)
 
 #--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
 #Listbox of Dummy Numbers
-dummyOneListBox = Listbox(tab3, height=1, width=50, yscrollcommand=TRUE)
+dummyOneListBox = Listbox(tab3) # height=1, width=50, yscrollcommand=TRUE)
 
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
@@ -312,17 +320,20 @@ dummyOneListBox.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ip
 # Creating Listbox insert choices into dummyNumberOne Listbox
 # https://www.youtube.com/watch?v=VwjHa5JsZqw
 # https://www.geeksforgeeks.org/python-list-insert/
+#List1 = Listbox(dummyOneListBox)
+#List1.insert(1, 'Asia')
+#List1.insert(2, 'China')
+#List1.insert(3, 'Europe')
+#List1.insert(4, 'Russia')
+#List1.insert(5, 'USA')
+#List1.pack()
 List1 = Listbox(dummyOneListBox)
-List1.insert(1, 'Asia')
-List1.insert(2, 'China')
-List1.insert(3, 'Europe')
-List1.insert(4, 'Russia')
-List1.insert(5, 'USA')
-List1.pack()
+for key in locationDict:
+    List1.insert(END, '{}: {}'.format(key, locationDict[key]))
+    List1.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberOne = ScrolledText(tab3, height=2, width=50)
-
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyNumberOne.bind("<Tab>", focus_next_widget)
@@ -330,7 +341,6 @@ dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
 # Placing choice from listbox into textbox automatically
 # http://effbot.org/tkinterbook/listbox.htm
-
 
 # original attempt to transfer list selection to tab
 #if List1.index(1):
@@ -347,7 +357,7 @@ dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 #Listbox of Dummy Numbers
-dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=TRUE)
+dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=SCROLL)
 dummyTwoListBox.bind("<Tab>", focus_next_widget)
 dummyTwoListBox.grid(row=3, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
 
@@ -379,11 +389,11 @@ dummyNumberTwo.grid(row=3, column=2, columnspan=1, padx=5, pady=5)
         #mbox.showerror("Error", "Please ensure that your entry is accurate.")
         #clear_display_result()
 
-if List2.index(1):
-    dummyNumberTwo.insert('1.0', key)
-else:
-    mbox.showerror("Error", "Please ensure that your entry is accurate.")
-    clear_display_result()
+#if List2.index(1):
+#    dummyNumberTwo.insert('1.0', key)
+#else:
+#    mbox.showerror("Error", "Please ensure that your entry is accurate.")
+#    clear_display_result()
 
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
@@ -425,9 +435,9 @@ AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
 # http://effbot.org/tkinterbook/listbox.htm
 # reference: https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
 
-DummyOneButtonChange = Button(tab3, text ="Change", command = change_opt, width=20, bg='purple', fg='#fff')
+DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
 DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
-DummyOneButtonSubmit = Button(tab3, text ="Submit", command = get_sel, width=20, bg='purple', fg='#fff')
+DummyOneButtonSubmit = Button(tab3, text="Submit", command=lambda: get_selDummyOne(), width=20, bg='purple', fg='#fff')
 DummyOneButtonSubmit.grid(row=2, column=4, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
