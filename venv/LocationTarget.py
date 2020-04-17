@@ -147,6 +147,10 @@ tab_control.add(tab3, text='Dummy Values and Target Prediction')
 
 tab_control.pack(expand=1, fill='both')
 
+# Attempting to add tkinter listbox with root functions
+# http://effbot.org/tkinterbook/listbox.htm
+listbox = Listbox(root)
+listbox.pack()
 
 #---Creating Tkinter functions----------------------------------------------------------------------------------------
 
