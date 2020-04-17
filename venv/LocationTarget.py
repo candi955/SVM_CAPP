@@ -163,10 +163,10 @@ def get_selDummyOne():
     #dummyNumberOne.get(1, 1, dummyOneListBox.curselection())
     # https://python-forum.io/Thread-Tuple-no-attribute-error
     clickedItems = List1.curselection()
-    for item in clickedItems:
-        dummyNumberOne.insert(1.0, List1.get(item))
-        for index, line in enumerate(clickedItems):
-            (country, binary) = line[1].split(',')
+    #for item in clickedItems:
+        #dummyNumberOne.insert(1.0, List1.get(item))
+        #for index, line in enumerate(clickedItems):
+            #(clickedItems) = line[1].split(',')
 
         #newstrsplit = clickedItems.split()
         #print(newstrsplit)
@@ -333,16 +333,6 @@ dummyOneListBox.bind("<Tab>", focus_next_widget)
 dummyOneListBox.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=1)
 
 
-# Creating Listbox insert choices into dummyNumberOne Listbox
-# https://www.youtube.com/watch?v=VwjHa5JsZqw
-# https://www.geeksforgeeks.org/python-list-insert/
-#List1 = Listbox(dummyOneListBox)
-#List1.insert(1, 'Asia')
-#List1.insert(2, 'China')
-#List1.insert(3, 'Europe')
-#List1.insert(4, 'Russia')
-#List1.insert(5, 'USA')
-#List1.pack()
 List1 = Listbox(dummyOneListBox)
 for key in locationDict:
     List1.insert(END, '{}: {}'.format(key, locationDict[key]))
@@ -358,6 +348,7 @@ dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 # Placing choice from listbox into textbox automatically
 # http://effbot.org/tkinterbook/listbox.htm
 
+# This one didn't completely work; the numbers went into textbox without clicking listbox selection or button
 # original attempt to transfer list selection to tab
 #if List1.index(1):
 #    dummyNumberOne.insert('1.0',"418464229443")
@@ -370,6 +361,18 @@ dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 # Next is the task of ensuring when Listbox entry made, proper float number goes into textbox for Machine Learning
 # process to occur
 # https://www.youtube.com/watch?v=RgYxAu7ekaI
+
+# This example worked also
+# Creating Listbox insert choices into dummyNumberOne Listbox
+# https://www.youtube.com/watch?v=VwjHa5JsZqw
+# https://www.geeksforgeeks.org/python-list-insert/
+#List1 = Listbox(dummyOneListBox)
+#List1.insert(1, 'Asia')
+#List1.insert(2, 'China')
+#List1.insert(3, 'Europe')
+#List1.insert(4, 'Russia')
+#List1.insert(5, 'USA')
+#List1.pack()
 
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 #Listbox of Dummy Numbers
