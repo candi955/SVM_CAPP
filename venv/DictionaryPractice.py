@@ -22,7 +22,6 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 locationDict = {"country1":{"name" : "China", "binary": 418464229443},
                 "country2":{"name":"USA","binary" : 4281173},
                 "country3":{"name":"Russia","binary" : 107105536406866},
-
                 "region1":{"name":"Asia","binary" : 1634300737},
                 "region2":{"name":"Europe","binary" : 111533580514629},}
 
@@ -36,22 +35,46 @@ print('\n')
 print("locationDict: \n" )
 print(locationDict)
 print("\n\n")
+# output:
+# locationDict:
+#
+# {'country1': {'name': 'China', 'binary': 418464229443}, 'country2': {'name': 'USA', 'binary': 4281173}, 'country3': {'name': 'Russia', 'binary': 107105536406866}, 'region1': {'name': 'Asia', 'binary': 1634300737}, 'region2': {'name': 'Europe', 'binary': 111533580514629}}
 
 print("pdDict: \n")
 print(pdDict)
 print("\n\n")
+# output:
+# pdDict:
+#
+#             country1 country2         country3     region1          region2
+# name           China      USA           Russia        Asia           Europe
+# binary  418464229443  4281173  107105536406866  1634300737  111533580514629
 
 print("Values: \n")
 print(locationDict.values())
 print("\n")
+# output:
+# Values:
+#
+# dict_values([{'name': 'China', 'binary': 418464229443}, {'name': 'USA', 'binary': 4281173}, {'name': 'Russia', 'binary': 107105536406866}, {'name': 'Asia', 'binary': 1634300737}, {'name': 'Europe', 'binary': 111533580514629}])
 
 print("Keys: \n")
 print(locationDict.keys())
 print("\n")
 
+# output:
+# Keys:
+#
+# dict_keys(['country1', 'country2', 'country3', 'region1', 'region2'])
+
 print("Items: \n")
 print(locationDict.items())
 print("\n")
+
+# output:
+# Items:
+#
+# dict_items([('country1', {'name': 'China', 'binary': 418464229443}), ('country2', {'name': 'USA', 'binary': 4281173}), ('country3', {'name': 'Russia', 'binary': 107105536406866}), ('region1', {'name': 'Asia', 'binary': 1634300737}), ('region2', {'name': 'Europe', 'binary': 111533580514629})])
 
 print(locationDict.get("country1"))
 country1list = locationDict.get("country1")
