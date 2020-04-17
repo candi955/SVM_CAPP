@@ -76,15 +76,24 @@ print("\n")
 #
 # dict_items([('country1', {'name': 'China', 'binary': 418464229443}), ('country2', {'name': 'USA', 'binary': 4281173}), ('country3', {'name': 'Russia', 'binary': 107105536406866}), ('region1', {'name': 'Asia', 'binary': 1634300737}), ('region2', {'name': 'Europe', 'binary': 111533580514629})])
 
+
+# reference: https://stackoverflow.com/questions/48006690/python-how-to-print-dictionary-key-and-its-values-in-each-line
 print(locationDict.get("country1"))
 country1list = locationDict.get("country1")
-print("hello")
 for k, v in country1list.items():
     print("{}".format(v))
+
+print("\n")
     
 # output:
 # {'name': 'China', 'binary': 418464229443}
-# hello
 # China
 # 418464229443
 
+
+for k, v in country1list.items():
+    print("{}".format(v))
+
+# output:
+# China
+# 418464229443
