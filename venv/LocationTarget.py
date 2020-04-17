@@ -162,17 +162,18 @@ def get_selDummyOne():
     #dummyNumberOne.get(1, 1, dummyOneListBox.curselection())
     clickedItems = List1.curselection()
     for item in clickedItems:
+        dummyNumberOne.insert(1.0, List1.get(item))
 
         #newstrsplit = clickedItems.split()
         #print(newstrsplit)
         #newstr = list(clickedItems)
         #attemptSplitAgain = newstr.split()
-        attemptSplitAgain = item(map(int, input().split(":")))
+        a, b, c = clickedItems
+        print(clickedItems)
+        #attemptSplitAgain = clickedItems(map(str, input().split(":")))
         #print(attemptSplitAgain)
-        print(attemptSplitAgain)
 
-        dummyNumberOne.insert(1.0, List1.get(item))
-    #for key in List1.curselection():
+     #for key in List1.curselection():
         #dummyNumberOne.insert(END, '{}: {}'.format(key, locationDict[key]))
         #List1.pack(fill=BOTH, expand=TRUE)
 
