@@ -168,12 +168,23 @@ def get_selDummyOne():
     # above works
 
     # below works to ensure index in listbox pull from same index in list, and sends to textbox
+    #for i in List1.curselection():
+    #   dummyNumberOne.insert(1.0, List1.get(i))
+    # above works
+
     for i in List1.curselection():
-        dummyNumberOne.insert(1.9, List1.get(i))
+        if i == 0:
+            Chinalist = locationDict.get("China")
+            for k, v in Chinalist.items():
+                ChinaBinary = "{}".format(v)
+            #countryChina = List1.get(i)
+            #if countryChina is True:
+                #for k, v in countryChina.items():
+            dummyNumberOne.insert(1.0, (ChinaBinary))
 
         # from DictionaryTwoPractice.py page, to pull only binary number from key/value list
-        #country1list = locationDict.get("China")
-        #for k, v in country1list.items():
+        #Chinalist = locationDict.get("China")
+        #for k, v in Chinalist.items():
          #   print("{}".format(v))
 
     #if List1.curselection().index(1):
