@@ -1,23 +1,10 @@
+# A page meant to practice with various forms of pulling keys and values from created python dictionaries.
+# This page led me to create the second practice page (where I changed the dictionary format according to my program
+# requirements, DictionaryTwoPractice.py.
+# In the DictionaryTwoPractice.py, I successfully pulled only a value from a specified key in the dictionary.
+
 # Libraries
-import tkinter as tk
-from tkinter import *
-from tkinter import messagebox as mbox
-
-# Window Tabs Libraries
-from tkinter import ttk
-from tkinter.scrolledtext import *
-from sklearn import svm
-from sklearn.metrics import accuracy_score
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split
 import pandas as pd
-import numpy as np
-import xlrd
-
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
-
-
 
 locationDict = {"country1":{"name" : "China", "binary": 418464229443},
                 "country2":{"name":"USA","binary" : 4281173},
