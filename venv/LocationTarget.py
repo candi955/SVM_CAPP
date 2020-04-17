@@ -129,41 +129,12 @@ listbox.pack()
 # https://note.nkmk.me/en/python-tuple-list-unpack/
 def get_selDummyOne():
 
-    clickedItems = List1.curselection()
-
     for i in List1.curselection():
         if i == 0:
             Chinalist = locationDict.get("China")
             for k, v in Chinalist.items():
                 ChinaBinary = "{}".format(v)
                 dummyNumberOne.insert(1.0, (ChinaBinary))
-
-        # from DictionaryTwoPractice.py page, to pull only binary number from key/value list
-        #Chinalist = locationDict.get("China")
-        #for k, v in Chinalist.items():
-         #   print("{}".format(v))
-
-    #if List1.curselection().index(1):
-        #for item in clickedItems:
-            #dummyNumberOne.insert(1.0, List1.get(item))
-
-        #newstrsplit = clickedItems.split()
-        #print(newstrsplit)
-        #newstr = list(clickedItems)
-        #attemptSplitAgain = newstr.split()
-        #t = clickedItems
-        #print(t)
-        #a = clickedItems[0]
-        #print(a)
-        #ac = str(a)
-        #b = ac.split()
-        #print(b)
-        #attemptSplitAgain = clickedItems(map(str, input().split(":")))
-        #print(attemptSplitAgain)
-
-     #for key in List1.curselection():
-        #dummyNumberOne.insert(END, '{}: {}'.format(key, locationDict[key]))
-        #List1.pack(fill=BOTH, expand=TRUE)
 
 def change_opt():
     entry = E.get()
@@ -191,11 +162,7 @@ def focus_next_widget(event):
 def dummyValues():
     while True:
         try:
-
-            # Getting user-input for dummy numbers to be used in the algorithm; planning to
-            # turn this into drop-down list.
-            # For now is 'fill-in-the-blanks'
-
+            # Getting user-input for dummy numbers to be used in the algorithm
             # Dummy User Choice 1 -
             dummyTextOne = dummyNumberOne.get('1.0', tk.END)
             # Dummy User Choice 2 -
@@ -208,7 +175,6 @@ def dummyValues():
             dummyTextFive = dummyNumberFive.get('1.0', tk.END)
             # Dummy 6 User Choice 6 -
             dummyTextSix = dummyNumberSix.get('1.0', tk.END)
-
 
             # changing dummy numbers to integers for algorithm processing
             dummyValues.dummyTextOne = float(dummyTextOne)
@@ -324,35 +290,6 @@ dummyNumberOne = ScrolledText(tab3, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
-# Placing choice from listbox into textbox automatically
-# http://effbot.org/tkinterbook/listbox.htm
-
-# This one didn't completely work; the numbers went into textbox without clicking listbox selection or button
-# original attempt to transfer list selection to tab
-#if List1.index(1):
-#    dummyNumberOne.insert('1.0',"418464229443")
-#if List1.index(2):
-#    dummyNumberOne.insert('1.0',"1111111")
-#else:
-#    mbox.showerror("Error", "Please ensure that your entry is accurate.")
-#    clear_display_result()
-
-# Next is the task of ensuring when Listbox entry made, proper float number goes into textbox for Machine Learning
-# process to occur
-# https://www.youtube.com/watch?v=RgYxAu7ekaI
-
-# This example worked also
-# Creating Listbox insert choices into dummyNumberOne Listbox
-# https://www.youtube.com/watch?v=VwjHa5JsZqw
-# https://www.geeksforgeeks.org/python-list-insert/
-#List1 = Listbox(dummyOneListBox)
-#List1.insert(1, 'Asia')
-#List1.insert(2, 'China')
-#List1.insert(3, 'Europe')
-#List1.insert(4, 'Russia')
-#List1.insert(5, 'USA')
-#List1.pack()
-
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 #Listbox of Dummy Numbers
 dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=SCROLL)
@@ -361,8 +298,8 @@ dummyTwoListBox.grid(row=3, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ip
 
 List2 = Listbox(dummyTwoListBox)
 
-# Attempting to pull locationDict dictionary data and place into listbox
-# reference: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
+# Pulling locationDict dictionary data and placing into listbox
+# references: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
 # https://stackoverflow.com/questions/31046479/resizing-tkinter-listbox-to-width-of-largest-item-using-grid
 for key in locationDict:
     List2.insert(END, '{}: {}'.format(key, locationDict[key]))
@@ -370,28 +307,10 @@ for key in locationDict:
 
 # Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberTwo = ScrolledText(tab3, height=2, width=50)
-
 # the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
 # rather than clicking
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=2, columnspan=1, padx=5, pady=5)
-
-# Placing choice from listbox into textbox automatically
-# references: https://stackoverflow.com/questions/11156739/divide-a-dictionary-into-variables
-# https://stackoverflow.com/questions/4357851/creating-or-assigning-variables-from-a-dictionary-in-python
-
-#locals().update(locationDict)
-#print(locals())
-
-    #else:
-        #mbox.showerror("Error", "Please ensure that your entry is accurate.")
-        #clear_display_result()
-
-#if List2.index(1):
-#    dummyNumberTwo.insert('1.0', key)
-#else:
-#    mbox.showerror("Error", "Please ensure that your entry is accurate.")
-#    clear_display_result()
 
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
