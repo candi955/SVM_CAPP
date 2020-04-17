@@ -312,6 +312,8 @@ dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 # Placing choice from listbox into textbox automatically
 if List1.index(1):
     dummyNumberOne.insert('1.0',"418464229443")
+if List1.index(2):
+    dummyNumberOne.insert('1.0',"1111111")
 else:
     mbox.showerror("Error", "Please ensure that your entry is accurate.")
     clear_display_result()
@@ -344,15 +346,21 @@ dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=2, columnspan=1, padx=5, pady=5)
 
 # Placing choice from listbox into textbox automatically
+# references: https://stackoverflow.com/questions/11156739/divide-a-dictionary-into-variables
+# https://stackoverflow.com/questions/4357851/creating-or-assigning-variables-from-a-dictionary-in-python
 
-#ds = sorted(locationDict.iteritems()
-#for k, v in ds():
-#    setattr(self, k, v)
-#    if List2.index(1):
-#        dummyNumberOne.insert('1.0', v)
-#else:
-#    mbox.showerror("Error", "Please ensure that your entry is accurate.")
-#    clear_display_result()
+#locals().update(locationDict)
+#print(locals())
+
+    #else:
+        #mbox.showerror("Error", "Please ensure that your entry is accurate.")
+        #clear_display_result()
+
+if List2.index(1):
+    dummyNumberTwo.insert('1.0', key)
+else:
+    mbox.showerror("Error", "Please ensure that your entry is accurate.")
+    clear_display_result()
 
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
