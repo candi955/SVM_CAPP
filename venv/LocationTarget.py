@@ -310,13 +310,17 @@ dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
 # Placing choice from listbox into textbox automatically
-if List1.index(1):
-    dummyNumberOne.insert('1.0',"418464229443")
-if List1.index(2):
-    dummyNumberOne.insert('1.0',"1111111")
-else:
-    mbox.showerror("Error", "Please ensure that your entry is accurate.")
-    clear_display_result()
+# http://effbot.org/tkinterbook/listbox.htm
+
+
+# original attempt to transfer list selection to tab
+#if List1.index(1):
+#    dummyNumberOne.insert('1.0',"418464229443")
+#if List1.index(2):
+#    dummyNumberOne.insert('1.0',"1111111")
+#else:
+#    mbox.showerror("Error", "Please ensure that your entry is accurate.")
+#    clear_display_result()
 
 # Next is the task of ensuring when Listbox entry made, proper float number goes into textbox for Machine Learning
 # process to occur
