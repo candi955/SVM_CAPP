@@ -27,14 +27,7 @@
 # https://csis-prod.s3.amazonaws.com/s3fs-public/190904_Significant_Cyber_Events_List.pdf
 # https://www.csis.org/programs/technology-policy-program/significant-cyber-incidents
 
-# To do:
-# 1) Add listbox choice
-# 2) Have prediction accuracy automatically show up with dataset, perhaps separate dataset window, as opposed to
-# a tab
-# 3) Add Tkinter (GUI) to main menu
-# 4) Add exception and fix messagebox upon exit
-# 5) Add other variable options as target data requests, perhaps on different tabs/windows
-# 6) Choose a cloud format and set to a web application
+
 
 #---------Imports----------------------------------------------------------------------------------------------------
 # Libraries
@@ -72,10 +65,6 @@ pd.set_option('display.max_rows', 1000) # Attempting to display all rows and col
 pd.set_option('display.max_columns', 1000)
 pd.set_option('display.width', 1000)
 
-# print('\n\n')
-# print(pdDict)
-
-
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
 cyberExcel = xlrd.open_workbook('NumAsFloatsDataSet_ExpWithNames_Binary.xlsx')
@@ -95,25 +84,6 @@ target = cyberSheetData[:, len(cyberSheetData[0]) - 1]
 # Deleting header column from dataframe, both source and target data
 sourceNoHeader = np.delete(sources, (0), axis=0)
 targetNoHeader = np.delete(target, (0), axis=0)
-
-#sourceNoHeader = sourceNoHeader.astype(float)
-#targetNoHeader = targetNoHeader.astype(float)
-
-
-# print(df)
-# print("\n\n")
-# print(sources)
-# print("\n\n")
-# print(target)
-# print("\n\n")
-# print(sourceNoHeader)
-# print("\n\n")
-# print(targetNoHeader)
-# print("\n\n")
-# print(sourceNoHeader.shape)
-# print("\n\n")
-# print(target.shape)
-# print("\n\n")
 
 X = sourceNoHeader
 y = targetNoHeader
@@ -146,9 +116,8 @@ tab_control.add(tab3, text='Dummy Values and Target Prediction')
 
 tab_control.pack(expand=1, fill='both')
 
-# Attempting to add tkinter listbox with root functions
-# http://effbot.org/tkinterbook/listbox.htm
-
+# Tkinter listbox with root functions
+# reference: http://effbot.org/tkinterbook/listbox.htm
 listbox = Listbox(root, selectmode=SINGLE)
 listbox.pack()
 
@@ -159,28 +128,15 @@ listbox.pack()
 # https://www.youtube.com/watch?v=XJqUu85sMrA
 # https://note.nkmk.me/en/python-tuple-list-unpack/
 def get_selDummyOne():
-    # below works to click entire key and value and sent to textbox
-    #dummyNumberOne.get(1, 1, dummyOneListBox.curselection())
-    # https://python-forum.io/Thread-Tuple-no-attribute-error
-    clickedItems = List1.curselection()
-    #for item in clickedItems:
-        #dummyNumberOne.insert(1.0, List1.get(item))
-    # above works
 
-    # below works to ensure index in listbox pull from same index in list, and sends to textbox
-    #for i in List1.curselection():
-    #   dummyNumberOne.insert(1.0, List1.get(i))
-    # above works
+    clickedItems = List1.curselection()
 
     for i in List1.curselection():
         if i == 0:
             Chinalist = locationDict.get("China")
             for k, v in Chinalist.items():
                 ChinaBinary = "{}".format(v)
-            #countryChina = List1.get(i)
-            #if countryChina is True:
-                #for k, v in countryChina.items():
-            dummyNumberOne.insert(1.0, (ChinaBinary))
+                dummyNumberOne.insert(1.0, (ChinaBinary))
 
         # from DictionaryTwoPractice.py page, to pull only binary number from key/value list
         #Chinalist = locationDict.get("China")
