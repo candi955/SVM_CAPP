@@ -128,7 +128,6 @@ listbox.pack()
 # https://www.youtube.com/watch?v=XJqUu85sMrA
 # https://note.nkmk.me/en/python-tuple-list-unpack/
 def get_selDummyOne():
-
     for i in List1.curselection():
         if i == 0:
             Chinalist = locationDict.get("China")
