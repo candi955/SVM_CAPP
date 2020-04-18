@@ -1,0 +1,15 @@
+# This page was created so that on the InfoAsBinary page, I can copy/past BlankBytes in , for the string 'blank', and
+# use the Find/Replace edit to fill it in with the string I want the binary to
+
+import binascii
+import sys
+import io
+
+print('\n\n')
+BlankBytes = int.from_bytes(b'Blank', byteorder=sys.byteorder)  # creating an int from bytes
+print(BlankBytes)
+BlankAscii = int.to_bytes(BlankBytes, length=20, byteorder=sys.byteorder)
+print(BlankAscii)
+
+# output is:
+#
