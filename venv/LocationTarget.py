@@ -571,15 +571,15 @@ l2 = Label(tab2, text='Please click the button below to see the prediction accur
 l2.grid(row=1, column=0)
 
 # This option will eventually be a dropbox option, rather than fill in the blanks
-l3 = Label(tab3, text='Please enter five dummy numbers in the cells below,\n and then click the Prediction button to ' +
-                      'see your prediction results:', padx=5, pady=5)
+l3 = Label(tab3, text='Please enter six situational choices in the cells below, and then click the Prediction button'+
+                      'to see your prediction results:', padx=5, pady=5)
 l3.grid(row=1, column=0)
 
 #--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
 #Listbox of Dummy Numbers
 dummyOneListBox = Listbox(tab3) # height=1, width=50, yscrollcommand=TRUE)
 dummyOneListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
-dummyOneListBox.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=1)
+dummyOneListBox.grid(row=2, column=0, padx=5, pady=5, ipadx=86, ipady=1)
 
 List1 = Listbox(dummyOneListBox)
 # Pulling locationDict dictionary data and placing into listbox
@@ -590,7 +590,7 @@ for key in listOneDictionary:
     List1.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
-dummyNumberOne = ScrolledText(tab3, height=2, width=50)
+dummyNumberOne = Text(tab3, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
@@ -609,7 +609,7 @@ for key in listTwoDictionary:
     List2.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
-dummyNumberTwo = ScrolledText(tab3, height=2, width=50)
+dummyNumberTwo = Text(tab3, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=2, columnspan=1, padx=5, pady=5)
 
@@ -621,19 +621,19 @@ dummyNumberThree.grid(row=4, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 4 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberFour = ScrolledText(tab3, height=2, width=50)
+dummyNumberFour = Text(tab3, height=2, width=50)
 dummyNumberFour.bind("<Tab>", focus_next_widget)
 dummyNumberFour.grid(row=5, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberFive = ScrolledText(tab3, height=2, width=50)
+dummyNumberFive = Text(tab3, height=2, width=50)
 dummyNumberFive.bind("<Tab>", focus_next_widget)
 dummyNumberFive.grid(row=6, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberSix = ScrolledText(tab3, height=2, width=50)
+dummyNumberSix = Text(tab3, height=2, width=50)
 dummyNumberSix.bind("<Tab>", focus_next_widget)
 dummyNumberSix.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
