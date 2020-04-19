@@ -181,17 +181,85 @@ print(AustraliaAscii)
 # b'Australia'
 
 
+print('\n\n')
+Australia_Canada_Japan_Switzerland_UK_USABytes = int.from_bytes(b'Australia_Canada_Japan_Switzerland_UK_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(Australia_Canada_Japan_Switzerland_UK_USABytes)
+Australia_Canada_Japan_Switzerland_UK_USAAscii = int.to_bytes(Australia_Canada_Japan_Switzerland_UK_USABytes, length=41, byteorder=sys.byteorder)
+print(Australia_Canada_Japan_Switzerland_UK_USAAscii)
+
+# output is:
+# 139534466882955655784457473920909684382362106944851677537702575567474562215766014437633627337749825
+# b'Australia_Canada_Japan_Switzerland_UK_USA'
 
 
-# Australia_Canada_Japan_Switzerland_UK_USA
 # Australia_Canada_New_Zealand_UK_USA
+print('\n\n')
+Australia_Canada_New_Zealand_UK_USABytes = int.from_bytes(b'Australia_Canada_New_Zealand_UK_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(Australia_Canada_New_Zealand_UK_USABytes)
+Australia_Canada_New_Zealand_UK_USAAscii = int.to_bytes(Australia_Canada_New_Zealand_UK_USABytes, length=35, byteorder=sys.byteorder)
+print(Australia_Canada_New_Zealand_UK_USAAscii)
+
+# output is:
+# 495726009159212053789849057507327564583030099413608231039652233206430848978550748481
+# b'Australia_Canada_New_Zealand_UK_USA'
+
+
 # Austria
-# Austria_Germany_Switzerland
-# Bahrain
-# Belarus_Mongolia_Russia
-# Belgium
+
+print('\n\n')
+AustriaBytes = int.from_bytes(b'Austria', byteorder=sys.byteorder)  # creating an int from bytes
+print(AustriaBytes)
+AustriaAscii = int.to_bytes(AustriaBytes, length=7, byteorder=sys.byteorder)
+print(AustriaAscii)
+
+# output is:
+# 27419013041845569
+# b'Austria'
+
+print('\n\n')
+Austria_Germany_SwitzerlandBytes = int.from_bytes(b'Austria_Germany_Switzerland', byteorder=sys.byteorder)  # creating an int from bytes
+print(Austria_Germany_SwitzerlandBytes)
+Austria_Germany_SwitzerlandAscii = int.to_bytes(Austria_Germany_SwitzerlandBytes, length=27, byteorder=sys.byteorder)
+print(Austria_Germany_SwitzerlandAscii)
+
+# output is:
+# 41314988655876265391272827414481922914912132198580508749628405057
+# b'Austria_Germany_Switzerland'
 
 
+
+print('\n\n')
+BahrainBytes = int.from_bytes(b'Bahrain', byteorder=sys.byteorder)  # creating an int from bytes
+print(BahrainBytes)
+BahrainAscii = int.to_bytes(BahrainBytes, length=7, byteorder=sys.byteorder)
+print(BahrainAscii)
+
+# output is:
+# 31078114690359618
+# b'Bahrain'
+
+
+
+print('\n\n')
+Belarus_Mongolia_RussiaBytes = int.from_bytes(b'Belarus_Mongolia_Russia', byteorder=sys.byteorder)  # creating an int from bytes
+print(Belarus_Mongolia_RussiaBytes)
+Belarus_Mongolia_RussiaAscii = int.to_bytes(Belarus_Mongolia_RussiaBytes, length=23, byteorder=sys.byteorder)
+print(Belarus_Mongolia_RussiaAscii)
+
+# output is:
+# 9330208112349500424797783435764896148944012388223182146
+# b'Belarus_Mongolia_Russia'
+
+
+print('\n\n')
+BelgiumBytes = int.from_bytes(b'Belgium', byteorder=sys.byteorder)  # creating an int from bytes
+print(BelgiumBytes)
+BelgiumAscii = int.to_bytes(BelgiumBytes, length=7, byteorder=sys.byteorder)
+print(BelgiumAscii)
+
+# output is:
+# 30809868028634434
+# b'Belgium'
 
 
 print('\n\n')
@@ -205,11 +273,68 @@ print(BrazilAscii)
 # b'Brazil'
 
 
-# Cambodia
-# Canada
-# Canada_France_Multiple_UK_USA
-# Central_America
-# Central_Asia_Eastern_Europe
+print('\n\n')
+CambodiaBytes = int.from_bytes(b'Cambodia', byteorder=sys.byteorder)  # creating an int from bytes
+print(CambodiaBytes)
+CambodiaAscii = int.to_bytes(CambodiaBytes, length=8, byteorder=sys.byteorder)
+print(CambodiaAscii)
+
+# output is:
+# 7019251923789111619
+# b'Cambodia'
+
+
+print('\n\n')
+CanadaBytes = int.from_bytes(b'Canada', byteorder=sys.byteorder)  # creating an int from bytes
+print(CanadaBytes)
+CanadaAscii = int.to_bytes(CanadaBytes, length=6, byteorder=sys.byteorder)
+print(CanadaAscii)
+
+# output is:
+# 107083759247683
+# b'Canada'
+
+
+print('\n\n')
+Canada_France_Multiple_UK_USABytes = int.from_bytes(b'Canada_France_Multiple_UK_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(Canada_France_Multiple_UK_USABytes)
+Canada_France_Multiple_UK_USAAscii = int.to_bytes(Canada_France_Multiple_UK_USABytes, length=29, byteorder=sys.byteorder)
+print(Canada_France_Multiple_UK_USAAscii)
+
+# output is:
+# 1761172573677115074610677974231769886272027516418405464348645768716611
+# b'Canada_France_Multiple_UK_USA'
+
+
+print('\n\n')
+Central_AmericaBytes = int.from_bytes(b'Central_America', byteorder=sys.byteorder)  # creating an int from bytes
+print(Central_AmericaBytes)
+Central_AmericaAscii = int.to_bytes(Central_AmericaBytes, length=15, byteorder=sys.byteorder)
+print(Central_AmericaAscii)
+
+# output is:
+# 505669108189612364370267082941424963
+# b'Central_America'
+
+
+print('\n\n')
+Central_Asia_Eastern_EuropeBytes = int.from_bytes(b'Central_Asia_Eastern_Europe', byteorder=sys.byteorder)  # creating an int from bytes
+print(Central_Asia_Eastern_EuropeBytes)
+Central_Asia_Eastern_EuropeAscii = int.to_bytes(Central_Asia_Eastern_EuropeBytes, length=27, byteorder=sys.byteorder)
+print(Central_Asia_Eastern_EuropeAscii)
+
+# output is:
+# 41729666698114283016919014524090844581596341132174623587355747651
+# b'Central_Asia_Eastern_Europe'
+
+
+
+
+
+
+
+
+
 # Central_Asia_Eastern_Europe_Russia
 # Central_Asia_Europe_USA
 # Chile
