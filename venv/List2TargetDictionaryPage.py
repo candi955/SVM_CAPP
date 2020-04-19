@@ -8,16 +8,16 @@ import pandas as pd
 # creating a dictionary to associate locations with associated binary
 # reference: https://www.w3schools.com/python/python_dictionaries.asp
 
-listTwoDictionary = {"Afghanistan":{"binary": 133442057845059666670216769},
-                "Afghanistan_Application_Users_India_Individuals_Middle_East":{"binary": 5547024738073957303662399576029973568509146976390336004265898740432675875991326601817987176556771282997325216339676316688169204494214088844865},
-                "Africa":{"binary": 107079598761537},
-                "Africa_Asia":{"binary": 117763779069479634143962689},
-                "Al_Quaida":{"binary": 1796569596582678195265},
-                "Application_Users":{"binary": 39284530948651148542945322099333464617025},
-                "Application_Users_Individuals":{"binary": 3111807686350090077732346834447189654644633344498384566960921427079233},
-                "Application_Users_Japan":{"binary": 10572363095725242809903474363794222115376060650679726145},
-                "Armenia":{"binary": 27418995609924161},
-                "Asia":{"binary": 1634300737},
+listTwoDictionary = {"Afghanistan":{"binary": 133442057845059666670216769}, # list option 0
+                "Afghanistan_Application_Users_India_Individuals_Middle_East":{"binary": 5547024738073957303662399576029973568509146976390336004265898740432675875991326601817987176556771282997325216339676316688169204494214088844865}, # list option 1
+                "Africa":{"binary": 107079598761537}, # list option 2
+                "Africa_Asia":{"binary": 117763779069479634143962689}, # list option 3
+                "Al_Quaida":{"binary": 1796569596582678195265}, # list option 4
+                "Application_Users":{"binary": 39284530948651148542945322099333464617025}, # list option 5
+                "Application_Users_Individuals":{"binary": 3111807686350090077732346834447189654644633344498384566960921427079233}, # list option 6
+                "Application_Users_Japan":{"binary": 10572363095725242809903474363794222115376060650679726145}, # list option 7
+                "Armenia":{"binary": 27418995609924161}, # list option 8
+                "Asia":{"binary": 1634300737}, # list option 9
                 "Asia_Canada_Europe_Middle_East_USA":{"binary": 1936429723561952681582869571271737150404117317300876807438770316145334861458666305},
                 "Asia_Europe_Middle_East_USA":{"binary": 26873360808337585803091529125126950972081670239456308127962067777},
                 "Asia_Europe_North_America":{"binary": 611316441071925721528505149291982085844431624011733040460609},

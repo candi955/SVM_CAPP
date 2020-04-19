@@ -7,16 +7,16 @@ import pandas as pd
 # creating a dictionary to associate locations with associated binary
 # reference: https://www.w3schools.com/python/python_dictionaries.asp
 
-listOneDictionary = {"Africa_China":{"binary": 30153525564624871856989693505},
-                "Australia":{"binary": 1796930728965501580609},
-                "Azerbaijan":{"binary": 521257315057726828935745},
-                "Brazil":{"binary": 119200280572482},
-                "China":{"binary": 418464229443},
-                "China_North_Korea":{"binary": 33142235798066285977489245281315271043139},
-                "China_Pakistan":{"binary": 2238786227951005213617790124648515},
-                "China_Russia":{"binary": 30147528365705030538042632259},
-                "Czech_Republic":{"binary": 2016311051235894369754033219271235},
-                "Decentralized_International_Hacktivist_Group":{"binary": 4030061651715448937258886338687573509473192067501578500999556277764116296964663760381662969481473103717700},
+listOneDictionary = {"Africa_China":{"binary": 30153525564624871856989693505}, # list option 0
+                "Australia":{"binary": 1796930728965501580609}, # list option 1
+                "Azerbaijan":{"binary": 521257315057726828935745}, # list option 2
+                "Brazil":{"binary": 119200280572482}, # list option 3
+                "China":{"binary": 418464229443}, # list option 4
+                "China_North_Korea":{"binary": 33142235798066285977489245281315271043139}, # list option 5
+                "China_Pakistan":{"binary": 2238786227951005213617790124648515}, # list option 6
+                "China_Russia":{"binary": 30147528365705030538042632259}, # list option 7
+                "Czech_Republic":{"binary": 2016311051235894369754033219271235}, # list option 8
+                "Decentralized_International_Hacktivist_Group":{"binary": 4030061651715448937258886338687573509473192067501578500999556277764116296964663760381662969481473103717700}, # list option 9
                 "Eastern_Europe":{"binary": 2057431415377846504395799230898501},
                 "Egypt":{"binary": 500103210821},
                 "Gaza":{"binary": 1635410247},

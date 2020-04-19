@@ -335,29 +335,81 @@ listbox.pack()
 # https://note.nkmk.me/en/python-tuple-list-unpack/
 # List 1 function to place list and then transfer answer to textbox, for origin country/region choice
 def get_selDummyOne():
-    for i in List1.curselection():
-        if i == 0:
-            Blanklist = listOneDictionary.get("Blank")
-            for k, v in Blanklist.items():
-                BlankBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (BlankBinary))
+    if i == 0:
+        Africa_Chinalist = listOneDictionary.get("Africa_China")
+        for k, v in Africa_Chinalist.items():
+            Africa_ChinaBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (Africa_ChinaBinary))
+    if i == 1:
+        Australialist = listOneDictionary.get("Australia")
+        for k, v in Australialist.items():
+            AustraliaBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (AustraliaBinary))
+    if i == 2:
+        Azerbaijanlist = listOneDictionary.get("Azerbaijan")
+        for k, v in Azerbaijanlist.items():
+            AzerbaijanBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (AzerbaijanBinary))
+    if i == 3:
+        Brazillist = listOneDictionary.get("Brazil")
+        for k, v in Brazillist.items():
+            BrazilBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (BrazilBinary))
+    if i == 4:
+        Chinalist = listOneDictionary.get("China")
+        for k, v in Chinalist.items():
+            ChinaBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (ChinaBinary))
+    if i == 5:
+        China_North_Korealist = listOneDictionary.get("China_North_Korea")
+        for k, v in China_North_Korealist.items():
+            China_North_KoreaBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (China_North_KoreaBinary))
+    if i == 6:
+        China_Pakistanlist = listOneDictionary.get("China_Pakistan")
+        for k, v in China_Pakistanlist.items():
+            China_PakistanBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (China_PakistanBinary))
+    if i == 7:
+        China_Russialist = listOneDictionary.get("China_Russia")
+        for k, v in China_Russialist.items():
+            China_RussiaBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (China_RussiaBinary))
+    if i == 8:
+        Czech_Republiclist = listOneDictionary.get("Czech_Republic")
+        for k, v in Czech_Republiclist.items():
+            Czech_RepublicBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (Czech_RepublicBinary))
+    if i == 9:
+        Decentralized_International_Hacktivist_Grouplist = listOneDictionary.get("Decentralized_International_Hacktivist_Group")
+        for k, v in Decentralized_International_Hacktivist_Grouplist.items():
+            Decentralized_International_Hacktivist_GroupBinary = "{}".format(v)
+            dummyNumberOne.insert(1.0, (Decentralized_International_Hacktivist_GroupBinary))
 
 
 # List 2 function to place list and then transfer answer to textbox, for origin country/region choice
 def get_selDummyTwo():
     for i in List2.curselection():
         if i == 0:
-            Chinalist = listTwoDictionary.get("China")
-            for k, v in Chinalist.items():
-                ChinaBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (ChinaBinary))
+            Afghanistanlist = listTwoDictionary.get("Afghanistan")
+            for k, v in Afghanistanlist.items():
+                AfghanistanBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (AfghanistanBinary))
+        if i == 1:
+            Afghanistan_Application_Users_India_Individuals_Middle_Eastlist = listTwoDictionary.get("Afghanistan_Application_Users_India_Individuals_Middle_East")
+            for k, v in Afghanistan_Application_Users_India_Individuals_Middle_Eastlist.items():
+                Afghanistan_Application_Users_India_Individuals_Middle_EastBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (Afghanistan_Application_Users_India_Individuals_Middle_EastBinary))
 
-def change_opt():
-    entry = E.get()
-    change = entry.split(" ")
-    print("Change")
-    listbox.insert(int(change[0]),change[1])
-    root.update()
+
+# Leaving this function in as a guide for the 'change answer' option if wish to add
+# to program later (would work with the button function for the lists
+#def change_opt():
+    #entry = E.get()
+    #change = entry.split(" ")
+    #print("Change")
+    #listbox.insert(int(change[0]),change[1])
+    #root.update()
 
 # the dataframe method, tab 1
 def writeDataset():
