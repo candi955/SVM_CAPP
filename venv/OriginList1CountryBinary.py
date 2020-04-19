@@ -180,7 +180,8 @@ print(Individuals_UkraineBytes)
 Individuals_UkraineAscii = int.to_bytes(Individuals_UkraineBytes, length=19, byteorder=sys.byteorder)
 print(Individuals_UkraineAscii)
 
-# output is: 2261993475681827677736728506999153589307600457
+# output is:
+# 2261993475681827677736728506999153589307600457
 # b'Individuals_Ukraine'
 
 print('\n\n')
