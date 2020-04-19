@@ -335,56 +335,57 @@ listbox.pack()
 # https://note.nkmk.me/en/python-tuple-list-unpack/
 # List 1 function to place list and then transfer answer to textbox, for origin country/region choice
 def get_selDummyOne():
-    if i == 0:
-        Africa_Chinalist = listOneDictionary.get("Africa_China")
-        for k, v in Africa_Chinalist.items():
-            Africa_ChinaBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (Africa_ChinaBinary))
-    if i == 1:
-        Australialist = listOneDictionary.get("Australia")
-        for k, v in Australialist.items():
-            AustraliaBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (AustraliaBinary))
-    if i == 2:
-        Azerbaijanlist = listOneDictionary.get("Azerbaijan")
-        for k, v in Azerbaijanlist.items():
-            AzerbaijanBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (AzerbaijanBinary))
-    if i == 3:
-        Brazillist = listOneDictionary.get("Brazil")
-        for k, v in Brazillist.items():
-            BrazilBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (BrazilBinary))
-    if i == 4:
-        Chinalist = listOneDictionary.get("China")
-        for k, v in Chinalist.items():
-            ChinaBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (ChinaBinary))
-    if i == 5:
-        China_North_Korealist = listOneDictionary.get("China_North_Korea")
-        for k, v in China_North_Korealist.items():
-            China_North_KoreaBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (China_North_KoreaBinary))
-    if i == 6:
-        China_Pakistanlist = listOneDictionary.get("China_Pakistan")
-        for k, v in China_Pakistanlist.items():
-            China_PakistanBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (China_PakistanBinary))
-    if i == 7:
-        China_Russialist = listOneDictionary.get("China_Russia")
-        for k, v in China_Russialist.items():
-            China_RussiaBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (China_RussiaBinary))
-    if i == 8:
-        Czech_Republiclist = listOneDictionary.get("Czech_Republic")
-        for k, v in Czech_Republiclist.items():
-            Czech_RepublicBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (Czech_RepublicBinary))
-    if i == 9:
-        Decentralized_International_Hacktivist_Grouplist = listOneDictionary.get("Decentralized_International_Hacktivist_Group")
-        for k, v in Decentralized_International_Hacktivist_Grouplist.items():
-            Decentralized_International_Hacktivist_GroupBinary = "{}".format(v)
-            dummyNumberOne.insert(1.0, (Decentralized_International_Hacktivist_GroupBinary))
+    for i in List1.curselection():
+        if i == 0:
+            Africa_Chinalist = listOneDictionary.get("Africa_China")
+            for k, v in Africa_Chinalist.items():
+                Africa_ChinaBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Africa_ChinaBinary))
+        if i == 1:
+            Australialist = listOneDictionary.get("Australia")
+            for k, v in Australialist.items():
+                AustraliaBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (AustraliaBinary))
+        if i == 2:
+            Azerbaijanlist = listOneDictionary.get("Azerbaijan")
+            for k, v in Azerbaijanlist.items():
+                AzerbaijanBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (AzerbaijanBinary))
+        if i == 3:
+            Brazillist = listOneDictionary.get("Brazil")
+            for k, v in Brazillist.items():
+                BrazilBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (BrazilBinary))
+        if i == 4:
+            Chinalist = listOneDictionary.get("China")
+            for k, v in Chinalist.items():
+                ChinaBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (ChinaBinary))
+        if i == 5:
+            China_North_Korealist = listOneDictionary.get("China_North_Korea")
+            for k, v in China_North_Korealist.items():
+                China_North_KoreaBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (China_North_KoreaBinary))
+        if i == 6:
+            China_Pakistanlist = listOneDictionary.get("China_Pakistan")
+            for k, v in China_Pakistanlist.items():
+                China_PakistanBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (China_PakistanBinary))
+        if i == 7:
+            China_Russialist = listOneDictionary.get("China_Russia")
+            for k, v in China_Russialist.items():
+                China_RussiaBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (China_RussiaBinary))
+        if i == 8:
+            Czech_Republiclist = listOneDictionary.get("Czech_Republic")
+            for k, v in Czech_Republiclist.items():
+                Czech_RepublicBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Czech_RepublicBinary))
+        if i == 9:
+            Decentralized_International_Hacktivist_Grouplist = listOneDictionary.get("Decentralized_International_Hacktivist_Group")
+            for k, v in Decentralized_International_Hacktivist_Grouplist.items():
+                Decentralized_International_Hacktivist_GroupBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Decentralized_International_Hacktivist_GroupBinary))
 
 
 # List 2 function to place list and then transfer answer to textbox, for origin country/region choice
@@ -577,70 +578,64 @@ l3.grid(row=1, column=0)
 #--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
 #Listbox of Dummy Numbers
 dummyOneListBox = Listbox(tab3) # height=1, width=50, yscrollcommand=TRUE)
-
-# the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
-# rather than clicking
-dummyOneListBox.bind("<Tab>", focus_next_widget)
+dummyOneListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
 dummyOneListBox.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=1)
 
-
 List1 = Listbox(dummyOneListBox)
+# Pulling locationDict dictionary data and placing into listbox
+# references: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
+# https://stackoverflow.com/questions/31046479/resizing-tkinter-listbox-to-width-of-largest-item-using-grid
 for key in listOneDictionary:
     List1.insert(END, '{}: {}'.format(key, listOneDictionary[key]))
     List1.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberOne = ScrolledText(tab3, height=2, width=50)
-# the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
-# rather than clicking
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 #Listbox of Dummy Numbers
 dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=SCROLL)
-dummyTwoListBox.bind("<Tab>", focus_next_widget)
+dummyTwoListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
 dummyTwoListBox.grid(row=3, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
 
 List2 = Listbox(dummyTwoListBox)
-
 # Pulling locationDict dictionary data and placing into listbox
 # references: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
 # https://stackoverflow.com/questions/31046479/resizing-tkinter-listbox-to-width-of-largest-item-using-grid
-for key in locationDict:
-    List2.insert(END, '{}: {}'.format(key, locationDict[key]))
+for key in listTwoDictionary:
+    List2.insert(END, '{}: {}'.format(key, listTwoDictionary[key]))
     List2.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberTwo = ScrolledText(tab3, height=2, width=50)
-# the next piece of code is calling from the focus_next_widget method so that the user can tab from textbox to textbox,
-# rather than clicking
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=2, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyThreeListBox = Listbox(tab3, height=2, width=50)
-dummyThreeListBox.bind("<Tab>", focus_next_widget)
-dummyThreeListBox.grid(row=4, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberThree = Text(tab3, height=2, width=50)
+dummyNumberThree.bind("<Tab>", focus_next_widget)
+dummyNumberThree.grid(row=4, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 4 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyFourListBox = Listbox(tab3, height=2, width=50)
-dummyFourListBox.bind("<Tab>", focus_next_widget)
-dummyFourListBox.grid(row=5, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberFour = ScrolledText(tab3, height=2, width=50)
+dummyNumberFour.bind("<Tab>", focus_next_widget)
+dummyNumberFour.grid(row=5, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyFiveListBox = Listbox(tab3, height=2, width=50)
-dummyFiveListBox.bind("<Tab>", focus_next_widget)
-dummyFiveListBox.grid(row=6, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberFive = ScrolledText(tab3, height=2, width=50)
+dummyNumberFive.bind("<Tab>", focus_next_widget)
+dummyNumberFive.grid(row=6, column=0, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
 
-dummySixListBox = Listbox(tab3, height=2, width=50)
-dummySixListBox.bind("<Tab>", focus_next_widget)
-dummySixListBox.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberSix = ScrolledText(tab3, height=2, width=50)
+dummyNumberSix.bind("<Tab>", focus_next_widget)
+dummyNumberSix.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
 #-------Tkinter Buttons------------------------------------------------------------------------------------------------
 #Tab 1
