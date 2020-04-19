@@ -337,7 +337,7 @@ listbox.pack()
 def get_selDummyOne():
     for i in List1.curselection():
         if i == 0:
-            Blanklist = listOneDictionary.get("China")
+            Blanklist = listOneDictionary.get("Blank")
             for k, v in Blanklist.items():
                 BlankBinary = "{}".format(v)
                 dummyNumberOne.insert(1.0, (BlankBinary))
