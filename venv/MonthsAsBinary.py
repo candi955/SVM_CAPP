@@ -104,6 +104,8 @@ UnlistedAscii = int.to_bytes(UnlistedBytes, length=8, byteorder=sys.byteorder)
 print(UnlistedAscii)
 
 
+# ----- output of program---------------------------------------------------------------------------------------------
+
 # 34184235089551690
 # b'January'
 #
