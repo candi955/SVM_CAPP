@@ -579,7 +579,7 @@ l3.grid(row=1, column=0)
 #Listbox of Dummy Numbers
 dummyOneListBox = Listbox(tab3) # height=1, width=50, yscrollcommand=TRUE)
 dummyOneListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
-dummyOneListBox.grid(row=2, column=0, padx=5, pady=5, ipadx=86, ipady=1)
+dummyOneListBox.grid(row=2, column=0, padx=5, pady=5, ipadx=250, ipady=0)
 
 List1 = Listbox(dummyOneListBox)
 # Pulling locationDict dictionary data and placing into listbox
@@ -592,13 +592,13 @@ for key in listOneDictionary:
 # Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberOne = Text(tab3, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
-dummyNumberOne.grid(row=2, column=2, columnspan=1, padx=5, pady=5)
+dummyNumberOne.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
 #Listbox of Dummy Numbers
 dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=SCROLL)
 dummyTwoListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
-dummyTwoListBox.grid(row=3, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ipady=10)
+dummyTwoListBox.grid(row=4, column=0, columnspan=1, padx=5, pady=5, ipadx=250, ipady=0)
 
 List2 = Listbox(dummyTwoListBox)
 # Pulling locationDict dictionary data and placing into listbox
@@ -611,31 +611,31 @@ for key in listTwoDictionary:
 # Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberTwo = Text(tab3, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
-dummyNumberTwo.grid(row=3, column=2, columnspan=1, padx=5, pady=5)
+dummyNumberTwo.grid(row=3, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
 
 dummyNumberThree = Text(tab3, height=2, width=50)
 dummyNumberThree.bind("<Tab>", focus_next_widget)
-dummyNumberThree.grid(row=4, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberThree.grid(row=4, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 4 Listbox and Textbox ---------------------------------------------------------------------
 
 dummyNumberFour = Text(tab3, height=2, width=50)
 dummyNumberFour.bind("<Tab>", focus_next_widget)
-dummyNumberFour.grid(row=5, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberFour.grid(row=5, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
 
 dummyNumberFive = Text(tab3, height=2, width=50)
 dummyNumberFive.bind("<Tab>", focus_next_widget)
-dummyNumberFive.grid(row=6, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberFive.grid(row=6, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
 
 dummyNumberSix = Text(tab3, height=2, width=50)
 dummyNumberSix.bind("<Tab>", focus_next_widget)
-dummyNumberSix.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
+dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
 
 #-------Tkinter Buttons------------------------------------------------------------------------------------------------
 #Tab 1
@@ -658,14 +658,14 @@ AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
 # DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
 # DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
 DummyOneButtonSubmit = Button(tab3, text="Submit", command=lambda: get_selDummyOne(), width=20, bg='purple', fg='#fff')
-DummyOneButtonSubmit.grid(row=2, column=4, padx=15, pady=15)
+DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
 # Hashing the 'change answer' buttons for now in case I want to add the option in later
 # DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
 # DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
-DummyOneButtonSubmit = Button(tab3, text="Submit", command=lambda: get_selDummyTwo(), width=20, bg='purple', fg='#fff')
-DummyOneButtonSubmit.grid(row=3, column=4, padx=15, pady=15)
+DummyTwoButtonSubmit = Button(tab3, text="Submit", command=lambda: get_selDummyTwo(), width=20, bg='purple', fg='#fff')
+DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
 PredictionButton = Button(tab3, text='Click to see Prediction Results', command=finalPrediction, width=25,
@@ -696,8 +696,9 @@ tab1_display.grid(row=4, column=0, columnspan=3, padx=5, pady=5)
 tab2_display = ScrolledText(tab2, height=1, width=20)
 tab2_display.grid(row=3, column=0, columnspan=3, padx=5, pady=5)
 
+# Prediction results window in tab 3
 tab3_display = ScrolledText(tab3, height=1)
-tab3_display.grid(row=8, column=0, columnspan=3, padx=5, pady=5)
+tab3_display.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
 # Keep window alive
 mainloop()
