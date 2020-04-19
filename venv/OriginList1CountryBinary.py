@@ -1,4 +1,4 @@
-# Countries listed as binary
+# Origin (alleged attack) countries listed as binary
 
 import binascii
 import sys
@@ -334,10 +334,242 @@ print(MultipleAscii)
 # b'Multiple'
 
 print('\n\n')
-BlankBytes = int.from_bytes(b'Blank', byteorder=sys.byteorder)  # creating an int from bytes
-print(BlankBytes)
-BlankAscii = int.to_bytes(BlankBytes, length=20, byteorder=sys.byteorder)
-print(BlankAscii)
+Nation_State_Actor_Eastern_EuropeBytes = int.from_bytes(b'Nation_State_Actor_Eastern_Europe', byteorder=sys.byteorder)  # creating an int from bytes
+print(Nation_State_Actor_Eastern_EuropeBytes)
+Nation_State_Actor_Eastern_EuropeAscii = int.to_bytes(Nation_State_Actor_Eastern_EuropeBytes, length=33, byteorder=sys.byteorder)
+print(Nation_State_Actor_Eastern_EuropeAscii)
 
 # output is:
-#
+# 11745856961995155074459591118783721087539815469043632190606120890413099009728846
+# b'Nation_State_Actor_Eastern_Europe'
+
+print('\n\n')
+Nation_State_Actor_UnlistedBytes = int.from_bytes(b'Nation_State_Actor_Unlisted', byteorder=sys.byteorder)  # creating an int from bytes
+print(Nation_State_Actor_UnlistedBytes)
+Nation_State_Actor_UnlistedAscii = int.to_bytes(Nation_State_Actor_UnlistedBytes, length=27, byteorder=sys.byteorder)
+print(Nation_State_Actor_UnlistedAscii)
+
+# output is:
+# 41300645649190979956682253942903520807850576892501048304935919950
+# b'Nation_State_Actor_Unlisted'
+
+print('\n\n')
+Non_State_Actor_UnlistedBytes = int.from_bytes(b'Non_State_Actor_Unlisted', byteorder=sys.byteorder)  # creating an int from bytes
+print(Non_State_Actor_UnlistedBytes)
+Non_State_Actor_UnlistedAscii = int.to_bytes(Non_State_Actor_UnlistedBytes, length=24, byteorder=sys.byteorder)
+print(Non_State_Actor_UnlistedAscii)
+
+# output is:
+# 2461710312914310691158905860358686495295201354771914977102
+# b'Non_State_Actor_Unlisted'
+
+print('\n\n')
+North_KoreaBytes = int.from_bytes(b'North_Korea', byteorder=sys.byteorder)  # creating an int from bytes
+print(North_KoreaBytes)
+North_KoreaAscii = int.to_bytes(North_KoreaBytes, length=11, byteorder=sys.byteorder)
+print(North_KoreaAscii)
+
+# output is:
+# 117744874465821730700160846
+# b'North_Korea'
+
+print('\n\n')
+PakistanBytes = int.from_bytes(b'Pakistan', byteorder=sys.byteorder)  # creating an int from bytes
+print(PakistanBytes)
+PakistanAscii = int.to_bytes(PakistanBytes, length=8, byteorder=sys.byteorder)
+print(PakistanAscii)
+
+# output is:
+# 7953766455951712592
+# b'Pakistan'
+
+print('\n\n')
+RussiaBytes = int.from_bytes(b'Russia', byteorder=sys.byteorder)  # creating an int from bytes
+print(RussiaBytes)
+RussiaAscii = int.to_bytes(RussiaBytes, length=6, byteorder=sys.byteorder)
+print(RussiaAscii)
+
+# output is:
+# 107105536406866
+# b'Russia'
+
+print('\n\n')
+Russia_UkraineBytes = int.from_bytes(b'Russia_Ukraine', byteorder=sys.byteorder)  # creating an int from bytes
+print(Russia_UkraineBytes)
+Russia_UkraineAscii = int.to_bytes(Russia_UkraineBytes, length=14, byteorder=sys.byteorder)
+print(Russia_UkraineAscii)
+
+# output is:
+# 2057271081577553266210956287112530
+# b'Russia_Ukraine'
+
+print('\n\n')
+Russia_Ukraine_USABytes = int.from_bytes(b'Russia_Ukraine_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(Russia_Ukraine_USABytes)
+Russia_Ukraine_USAAscii = int.to_bytes(Russia_Ukraine_USABytes, length=18, byteorder=sys.byteorder)
+print(Russia_Ukraine_USAAscii)
+
+# output is:
+# 5690655501723968284733388360289691192489298
+# b'Russia_Ukraine_USA'
+
+print('\n\n')
+Saudi_ArabiaBytes = int.from_bytes(b'Saudi_Arabia', byteorder=sys.byteorder)  # creating an int from bytes
+print(Saudi_ArabiaBytes)
+Saudi_ArabiaAscii = int.to_bytes(Saudi_ArabiaBytes, length=12, byteorder=sys.byteorder)
+print(Saudi_ArabiaAscii)
+
+# output is:
+# 30147447753212470604776956243
+# b'Saudi_Arabia'
+
+print('\n\n')
+South_KoreaBytes = int.from_bytes(b'South_Korea', byteorder=sys.byteorder)  # creating an int from bytes
+print(South_KoreaBytes)
+South_KoreaAscii = int.to_bytes(South_KoreaBytes, length=11, byteorder=sys.byteorder)
+print(South_KoreaAscii)
+
+# output is:
+# 117744874465821730700357459
+# b'South_Korea'
+
+print('\n\n')
+South_Korea_USABytes = int.from_bytes(b'South_Korea_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(South_Korea_USABytes)
+South_Korea_USAAscii = int.to_bytes(South_Korea_USABytes, length=15, byteorder=sys.byteorder)
+print(South_Korea_USAAscii)
+
+# output is:
+# 339189499714501404461968594046381907
+# b'South_Korea_USA'
+
+print('\n\n')
+State_Sponsored_Actor_UnlistedBytes = int.from_bytes(b'State_Sponsored_Actor_Unlisted', byteorder=sys.byteorder)  # creating an int from bytes
+print(State_Sponsored_Actor_UnlistedBytes)
+State_Sponsored_Actor_UnlistedAscii = int.to_bytes(State_Sponsored_Actor_UnlistedBytes, length=30, byteorder=sys.byteorder)
+print(State_Sponsored_Actor_UnlistedAscii)
+
+# output is:
+# 692909852995937295984928817766944035748308436617603438577965161292854355
+# b'State_Sponsored_Actor_Unlisted'
+
+print('\n\n')
+SyriaBytes = int.from_bytes(b'Syria', byteorder=sys.byteorder)  # creating an int from bytes
+print(SyriaBytes)
+SyriaAscii = int.to_bytes(SyriaBytes, length=5, byteorder=sys.byteorder)
+print(SyriaAscii)
+
+# output is:
+# 418380937555
+# b'Syria'
+
+print('\n\n')
+TaiwanBytes = int.from_bytes(b'Taiwan', byteorder=sys.byteorder)  # creating an int from bytes
+print(TaiwanBytes)
+TaiwanAscii = int.to_bytes(TaiwanBytes, length=6, byteorder=sys.byteorder)
+print(TaiwanAscii)
+
+# output is:
+# 121364894277972
+# b'Taiwan'
+
+print('\n\n')
+Taiwan_USABytes = int.from_bytes(b'Taiwan_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(Taiwan_USABytes)
+Taiwan_USAAscii = int.to_bytes(Taiwan_USABytes, length=10, byteorder=sys.byteorder)
+print(Taiwan_USAAscii)
+
+# output is:
+# 308491052901625737339220
+# b'Taiwan_USA'
+
+print('\n\n')
+TurkeyBytes = int.from_bytes(b'Turkey', byteorder=sys.byteorder)  # creating an int from bytes
+print(TurkeyBytes)
+TurkeyAscii = int.to_bytes(TurkeyBytes, length=6, byteorder=sys.byteorder)
+print(TurkeyAscii)
+
+# output is:
+# 133476501321044
+# b'Turkey'
+
+print('\n\n')
+UAEBytes = int.from_bytes(b'UAE', byteorder=sys.byteorder)  # creating an int from bytes
+print(UAEBytes)
+UAEAscii = int.to_bytes(UAEBytes, length=3, byteorder=sys.byteorder)
+print(UAEAscii)
+
+# output is:
+# 4538709
+# b'UAE'
+
+print('\n\n')
+UKBytes = int.from_bytes(b'UK', byteorder=sys.byteorder)  # creating an int from bytes
+print(UKBytes)
+UKAscii = int.to_bytes(UKBytes, length=2, byteorder=sys.byteorder)
+print(UKAscii)
+
+# output is:
+# 19285
+# b'UK'
+
+print('\n\n')
+UK_USABytes = int.from_bytes(b'UK_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(UK_USABytes)
+UK_USAAscii = int.to_bytes(UK_USABytes, length=6, byteorder=sys.byteorder)
+print(UK_USAAscii)
+
+# output is:
+# 71826170399573
+# b'UK_USA'
+
+print('\n\n')
+UnlistedBytes = int.from_bytes(b'Unlisted', byteorder=sys.byteorder)  # creating an int from bytes
+print(UnlistedBytes)
+UnlistedAscii = int.to_bytes(UnlistedBytes, length=8, byteorder=sys.byteorder)
+print(UnlistedAscii)
+
+# output is:
+# 7234316415479344725
+# b'Unlisted'
+
+print('\n\n')
+USABytes = int.from_bytes(b'USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(USABytes)
+USAAscii = int.to_bytes(USABytes, length=3, byteorder=sys.byteorder)
+print(USAAscii)
+
+# output is:
+# 4281173
+# b'USA'
+
+print('\n\n')
+VietnamBytes = int.from_bytes(b'Vietnam', byteorder=sys.byteorder)  # creating an int from bytes
+print(VietnamBytes)
+VietnamAscii = int.to_bytes(VietnamBytes, length=7, byteorder=sys.byteorder)
+print(VietnamAscii)
+
+# output is:
+# 30787899488561494
+# b'Vietnam'
+
+
+print('\n\n')
+Western_WorldBytes = int.from_bytes(b'Western_World', byteorder=sys.byteorder)  # creating an int from bytes
+print(Western_WorldBytes)
+Western_WorldAscii = int.to_bytes(Western_WorldBytes, length=13, byteorder=sys.byteorder)
+print(Western_WorldAscii)
+
+# output is:
+# 7956378975824997986907049911639
+# b'Western_World'
+
+print('\n\n')
+YemenBytes = int.from_bytes(b'Yemen', byteorder=sys.byteorder)  # creating an int from bytes
+print(YemenBytes)
+YemenAscii = int.to_bytes(YemenBytes, length=5, byteorder=sys.byteorder)
+print(YemenAscii)
+
+# output is:
+# 474148070745
+# b'Yemen'
