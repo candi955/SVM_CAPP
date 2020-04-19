@@ -609,21 +609,57 @@ print(FinlandAscii)
 # b'Finland'
 
 
+print('\n\n')
+FranceBytes = int.from_bytes(b'France', byteorder=sys.byteorder)  # creating an int from bytes
+print(FranceBytes)
+FranceAscii = int.to_bytes(FranceBytes, length=6, byteorder=sys.byteorder)
+print(FranceAscii)
 
+# output is:
+# 111477728047686
+# b'France'
 
-
-
-
-
-
-
-# France
 # France_Germany_UK
-# France_South_Korea
-# French_German_Japanese
-# Georgia
+print('\n\n')
+France_Germany_UKBytes = int.from_bytes(b'France_Germany_UK', byteorder=sys.byteorder)  # creating an int from bytes
+print(France_Germany_UKBytes)
+France_Germany_UKAscii = int.to_bytes(France_Germany_UKBytes, length=17, byteorder=sys.byteorder)
+print(France_Germany_UKAscii)
+
+# output is:
+# 25634657629830475695080879593172735455814
+# b'France_Germany_UK'
+
+print('\n\n')
+France_South_KoreaBytes = int.from_bytes(b'France_South_Korea', byteorder=sys.byteorder)  # creating an int from bytes
+print(France_South_KoreaBytes)
+France_South_KoreaAscii = int.to_bytes(France_South_KoreaBytes, length=18, byteorder=sys.byteorder)
+print(France_South_KoreaAscii)
+
+# output is:
+# 8484412364304969210251414251757639397634630
+# b'France_South_Korea'
 
 
+print('\n\n')
+France_Germany_JapanBytes = int.from_bytes(b'France_Germany_Japan', byteorder=sys.byteorder)  # creating an int from bytes
+print(France_Germany_JapanBytes)
+France_Germany_JapanAscii = int.to_bytes(France_Germany_JapanBytes, length=20, byteorder=sys.byteorder)
+print(France_Germany_JapanAscii)
+
+# output is:
+# 630161946757152369395487029780148113741199798854
+# b'France_Germany_Japan'
+
+print('\n\n')
+GeorgiaBytes = int.from_bytes(b'Georgia', byteorder=sys.byteorder)  # creating an int from bytes
+print(GeorgiaBytes)
+GeorgiaAscii = int.to_bytes(GeorgiaBytes, length=7, byteorder=sys.byteorder)
+print(GeorgiaAscii)
+
+# output is:
+# 27418965763384647
+# b'Georgia'
 
 print('\n\n')
 GermanyBytes = int.from_bytes(b'Germany', byteorder=sys.byteorder)  # creating an int from bytes
