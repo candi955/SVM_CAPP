@@ -165,10 +165,179 @@ print(IndiaAscii)
 # b'India'
 
 print('\n\n')
+IndividualsBytes = int.from_bytes(b'Individuals', byteorder=sys.byteorder)  # creating an int from bytes
+print(IndividualsBytes)
+IndividualsAscii = int.to_bytes(IndividualsBytes, length=11, byteorder=sys.byteorder)
+print(IndividualsAscii)
+
+# output is:
+# 139538282629009384004677193
+# b'Individuals'
+
+print('\n\n')
+Individuals_UkraineBytes = int.from_bytes(b'Individuals_Ukraine', byteorder=sys.byteorder)  # creating an int from bytes
+print(Individuals_UkraineBytes)
+Individuals_UkraineAscii = int.to_bytes(Individuals_UkraineBytes, length=19, byteorder=sys.byteorder)
+print(Individuals_UkraineAscii)
+
+# output is: 2261993475681827677736728506999153589307600457
+# b'Individuals_Ukraine'
+
+print('\n\n')
+Individuals_UnlistedBytes = int.from_bytes(b'Individuals_Unlisted', byteorder=sys.byteorder)  # creating an int from bytes
+print(Individuals_UnlistedBytes)
+Individuals_UnlistedAscii = int.to_bytes(Individuals_UnlistedBytes, length=20, byteorder=sys.byteorder)
+print(Individuals_UnlistedAscii)
+
+# output is:
+# 573161596645207770904272559636410843002082455113
+# b'Individuals_Unlisted'
+
+print('\n\n')
+InternationalBytes = int.from_bytes(b'International', byteorder=sys.byteorder)  # creating an int from bytes
+print(InternationalBytes)
+InternationalAscii = int.to_bytes(InternationalBytes, length=13, byteorder=sys.byteorder)
+print(InternationalAscii)
+
+# output is:
+# 8586795105461350372667137748553
+# b'International'
+
+print('\n\n')
+IranBytes = int.from_bytes(b'Iran', byteorder=sys.byteorder)  # creating an int from bytes
+print(IranBytes)
+IranAscii = int.to_bytes(IranBytes, length=4, byteorder=sys.byteorder)
+print(IranAscii)
+
+# output is:
+# 1851880009
+# b'Iran'
+
+print('\n\n')
+Iran_North_Korea_RussiaBytes = int.from_bytes(b'Iran_North_Korea_Russia', byteorder=sys.byteorder)  # creating an int from bytes
+print(Iran_North_Korea_RussiaBytes)
+Iran_North_Korea_RussiaAscii = int.to_bytes(Iran_North_Korea_RussiaBytes, length=23, byteorder=sys.byteorder)
+print(Iran_North_Korea_RussiaAscii)
+
+# output is:
+# 9330208112349500424777135934104632250386116936128885321
+# b'Iran_North_Korea_Russia'
+
+print('\n\n')
+Iran_RussiaBytes = int.from_bytes(b'Iran_Russia', byteorder=sys.byteorder)  # creating an int from bytes
+print(Iran_RussiaBytes)
+Iran_RussiaAscii = int.to_bytes(Iran_RussiaBytes, length=11, byteorder=sys.byteorder)
+print(Iran_RussiaAscii)
+
+# output is:
+# 117763782678535275756483145
+# b'Iran_Russia'
+
+print('\n\n')
+Iran_UnlistedBytes = int.from_bytes(b'Iran_Unlisted', byteorder=sys.byteorder)  # creating an int from bytes
+print(Iran_UnlistedBytes)
+Iran_UnlistedAscii = int.to_bytes(Iran_UnlistedBytes, length=13, byteorder=sys.byteorder)
+print(Iran_UnlistedAscii)
+
+# output is:
+# 7954215017830331842300462854729
+# b'Iran_Unlisted'
+
+print('\n\n')
+IraqBytes = int.from_bytes(b'Iraq', byteorder=sys.byteorder)  # creating an int from bytes
+print(IraqBytes)
+IraqAscii = int.to_bytes(IraqBytes, length=4, byteorder=sys.byteorder)
+print(IraqAscii)
+
+# output is:
+# 1902211657
+# b'Iraq'
+
+print('\n\n')
+ISISBytes = int.from_bytes(b'ISIS', byteorder=sys.byteorder)  # creating an int from bytes
+print(ISISBytes)
+ISISAscii = int.to_bytes(ISISBytes, length=4, byteorder=sys.byteorder)
+print(ISISAscii)
+
+# output is:
+# 1397314377
+# b'ISIS'
+
+print('\n\n')
+IsraelBytes = int.from_bytes(b'Israel', byteorder=sys.byteorder)  # creating an int from bytes
+print(IsraelBytes)
+IsraelAscii = int.to_bytes(IsraelBytes, length=6, byteorder=sys.byteorder)
+print(IsraelAscii)
+
+# output is:
+# 119182682387273
+# b'Israel'
+
+print('\n\n')
+Israel_USABytes = int.from_bytes(b'Israel_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(Israel_USABytes)
+Israel_USAAscii = int.to_bytes(Israel_USABytes, length=10, byteorder=sys.byteorder)
+print(Israel_USAAscii)
+
+# output is:
+# 308491052899443525448521
+# b'Israel_USA'
+
+print('\n\n')
+LebanonBytes = int.from_bytes(b'Lebanon', byteorder=sys.byteorder)  # creating an int from bytes
+print(LebanonBytes)
+LebanonAscii = int.to_bytes(LebanonBytes, length=7, byteorder=sys.byteorder)
+print(LebanonAscii)
+
+# output is:
+# 31084767309096268
+# b'Lebanon'
+
+print('\n\n')
+MexicoBytes = int.from_bytes(b'Mexico', byteorder=sys.byteorder)  # creating an int from bytes
+print(MexicoBytes)
+MexicoAscii = int.to_bytes(MexicoBytes, length=6, byteorder=sys.byteorder)
+print(MexicoAscii)
+
+# output is:
+# 122472761943373
+# b'Mexico'
+
+print('\n\n')
+Middle_EastBytes = int.from_bytes(b'Middle_East', byteorder=sys.byteorder)  # creating an int from bytes
+print(Middle_EastBytes)
+Middle_EastAscii = int.to_bytes(Middle_EastBytes, length=11, byteorder=sys.byteorder)
+print(Middle_EastAscii)
+
+# output is:
+# 140780261553827770911713613
+# b'Middle_East'
+
+print('\n\n')
+MoroccoBytes = int.from_bytes(b'Morocco', byteorder=sys.byteorder)  # creating an int from bytes
+print(MoroccoBytes)
+MoroccoAscii = int.to_bytes(MoroccoBytes, length=7, byteorder=sys.byteorder)
+print(MoroccoAscii)
+
+# output is:
+# 31353001137565517
+# b'Morocco'
+
+print('\n\n')
+MultipleBytes = int.from_bytes(b'Multiple', byteorder=sys.byteorder)  # creating an int from bytes
+print(MultipleBytes)
+MultipleAscii = int.to_bytes(MultipleBytes, length=8, byteorder=sys.byteorder)
+print(MultipleAscii)
+
+# output is:
+# 7308339893542614349
+# b'Multiple'
+
+print('\n\n')
 BlankBytes = int.from_bytes(b'Blank', byteorder=sys.byteorder)  # creating an int from bytes
 print(BlankBytes)
 BlankAscii = int.to_bytes(BlankBytes, length=20, byteorder=sys.byteorder)
 print(BlankAscii)
 
 # output is:
-# 
+#
