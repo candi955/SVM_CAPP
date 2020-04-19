@@ -400,8 +400,46 @@ def get_selDummyTwo():
             for k, v in Afghanistan_Application_Users_India_Individuals_Middle_Eastlist.items():
                 Afghanistan_Application_Users_India_Individuals_Middle_EastBinary = "{}".format(v)
                 dummyNumberTwo.insert(1.0, (Afghanistan_Application_Users_India_Individuals_Middle_EastBinary))
-
-
+        if i == 2:
+            Africalist = listTwoDictionary.get("Africa")
+            for k, v in Africalist.items():
+                AfricaBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (AfricaBinary))
+        if i == 3:
+            Africa_Asialist = listTwoDictionary.get("Africa_Asia")
+            for k, v in Africa_Asialist.items():
+                Africa_AsiaBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (Africa_AsiaBinary))
+        if i == 4:
+            Al_Quaidalist = listTwoDictionary.get("Al_Quaida")
+            for k, v in Al_Quaidalist.items():
+                Al_QuaidaBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (Al_QuaidaBinary))
+        if i == 5:
+            Application_Userslist = listTwoDictionary.get("Application_Users")
+            for k, v in Application_Userslist.items():
+                Application_UsersBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (Application_UsersBinary))
+        if i == 6:
+            Application_Users_Individualslist = listTwoDictionary.get("Application_Users_Individuals")
+            for k, v in Application_Users_Individualslist.items():
+                Application_Users_IndividualsBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (Application_Users_IndividualsBinary))
+        if i == 7:
+            Application_Users_Japanlist = listTwoDictionary.get("Application_Users_Japan")
+            for k, v in Application_Users_Japanlist.items():
+                Application_Users_JapanBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (Application_Users_JapanBinary))
+        if i == 8:
+            Armenialist = listTwoDictionary.get("Armenia")
+            for k, v in Armenialist.items():
+                ArmeniaBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (ArmeniaBinary))
+        if i == 9:
+            Asialist = listTwoDictionary.get("Asia")
+            for k, v in Asialist.items():
+                AsiaBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (AsiaBinary))
 # Leaving this function in as a guide for the 'change answer' option if wish to add
 # to program later (would work with the button function for the lists
 #def change_opt():
