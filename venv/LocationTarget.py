@@ -333,13 +333,24 @@ listbox.pack()
 # https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
 # https://www.youtube.com/watch?v=XJqUu85sMrA
 # https://note.nkmk.me/en/python-tuple-list-unpack/
+# List 1 function to place list and then transfer answer to textbox, for origin country/region choice
 def get_selDummyOne():
     for i in List1.curselection():
         if i == 0:
-            Chinalist = locationDict.get("China")
+            Blanklist = listOneDictionary.get("China")
+            for k, v in Blanklist.items():
+                BlankBinary = "{}".format(v)
+                dummyNumberOne.insert(1.0, (BlankBinary))
+
+
+# List 2 function to place list and then transfer answer to textbox, for origin country/region choice
+def get_selDummyTwo():
+    for i in List2.curselection():
+        if i == 0:
+            Chinalist = listTwoDictionary.get("China")
             for k, v in Chinalist.items():
                 ChinaBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (ChinaBinary))
+                dummyNumberTwo.insert(1.0, (ChinaBinary))
 
 def change_opt():
     entry = E.get()
@@ -484,8 +495,8 @@ dummyOneListBox.grid(row=2, column=0, columnspan=1, padx=5, pady=5, ipadx=86, ip
 
 
 List1 = Listbox(dummyOneListBox)
-for key in locationDict:
-    List1.insert(END, '{}: {}'.format(key, locationDict[key]))
+for key in listOneDictionary:
+    List1.insert(END, '{}: {}'.format(key, listOneDictionary[key]))
     List1.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
@@ -557,10 +568,19 @@ AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
 # http://effbot.org/tkinterbook/listbox.htm
 # reference: https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
 
-DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
-DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
+# List 1 Origin country/region choice buttons
+# Hashing the 'change answer' buttons for now in case I want to add the option in later
+# DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
+# DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
 DummyOneButtonSubmit = Button(tab3, text="Submit", command=lambda: get_selDummyOne(), width=20, bg='purple', fg='#fff')
 DummyOneButtonSubmit.grid(row=2, column=4, padx=15, pady=15)
+
+# List 2 Origin country/region choice button
+# Hashing the 'change answer' buttons for now in case I want to add the option in later
+# DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
+# DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
+DummyOneButtonSubmit = Button(tab3, text="Submit", command=lambda: get_selDummyTwo(), width=20, bg='purple', fg='#fff')
+DummyOneButtonSubmit.grid(row=3, column=4, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
 PredictionButton = Button(tab3, text='Click to see Prediction Results', command=finalPrediction, width=25,
