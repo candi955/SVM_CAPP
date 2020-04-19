@@ -328,18 +328,37 @@ print(Central_Asia_Eastern_EuropeAscii)
 # b'Central_Asia_Eastern_Europe'
 
 
+print('\n\n')
+Central_Asia_Eastern_Europe_RussiaBytes = int.from_bytes(b'Central_Asia_Eastern_Europe_Russia', byteorder=sys.byteorder)  # creating an int from bytes
+print(Central_Asia_Eastern_Europe_RussiaBytes)
+Central_Asia_Eastern_Europe_RussiaAscii = int.to_bytes(Central_Asia_Eastern_Europe_RussiaBytes, length=34, byteorder=sys.byteorder)
+print(Central_Asia_Eastern_Europe_RussiaAscii)
 
+# output is:
+# 2887559549285678575025028014159333265348920949327583776587248794714267494332130627
+# b'Central_Asia_Eastern_Europe_Russia'
 
-
-
-
-
-
-# Central_Asia_Eastern_Europe_Russia
 # Central_Asia_Europe_USA
-# Chile
 
+print('\n\n')
+Central_Asia_Europe_USABytes = int.from_bytes(b'Central_Asia_Europe_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(Central_Asia_Europe_USABytes)
+Central_Asia_Europe_USAAscii = int.to_bytes(Central_Asia_Europe_USABytes, length=23, byteorder=sys.byteorder)
+print(Central_Asia_Europe_USAAscii)
 
+# output is:
+# 6256941893813146631859154412586712377514069709544121667
+# b'Central_Asia_Europe_USA'
+
+print('\n\n')
+ChileBytes = int.from_bytes(b'Chile', byteorder=sys.byteorder)  # creating an int from bytes
+print(ChileBytes)
+ChileAscii = int.to_bytes(ChileBytes, length=5, byteorder=sys.byteorder)
+print(ChileAscii)
+
+# output is:
+# 435610544195
+# b'Chile'
 
 print('\n\n')
 ChinaBytes = int.from_bytes(b'China', byteorder=sys.byteorder)  # creating an int from bytes
@@ -351,10 +370,28 @@ print(ChinaAscii)
 # 418464229443
 # b'China'
 
-
-
 # China_Germany
-# China_Individuals
+
+print('\n\n')
+China_GermanyBytes = int.from_bytes(b'China_Germany', byteorder=sys.byteorder)  # creating an int from bytes
+print(China_GermanyBytes)
+China_GermanyAscii = int.to_bytes(China_GermanyBytes, length=13, byteorder=sys.byteorder)
+print(China_GermanyAscii)
+
+# output is:
+# 9620768797959008789195953629251
+# b'China_Germany'
+
+
+print('\n\n')
+China_IndividualsBytes = int.from_bytes(b'China_Individuals', byteorder=sys.byteorder)  # creating an int from bytes
+print(China_IndividualsBytes)
+China_IndividualsAscii = int.to_bytes(China_IndividualsBytes, length=17, byteorder=sys.byteorder)
+print(China_IndividualsAscii)
+
+# output is:
+# 39276534853245351046492589691522312136771
+# b'China_Individuals'
 
 
 print('\n\n')
@@ -368,9 +405,15 @@ print(China_PakistanAscii)
 # b'China_Pakistan'
 
 
+print('\n\n')
+CSIS_USABytes = int.from_bytes(b'CSIS_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(CSIS_USABytes)
+CSIS_USAAscii = int.to_bytes(CSIS_USABytes, length=8, byteorder=sys.byteorder)
+print(CSIS_USAAscii)
 
-# CSIS_USA
-
+# output is:
+# 4707199903439868739
+# b'CSIS_USA'
 
 
 print('\n\n')
@@ -384,13 +427,36 @@ print(Czech_RepublicAscii)
 # b'Czech_Republic'
 
 
+print('\n\n')
+Czech_Republic_IndividualsBytes = int.from_bytes(b'Czech_Republic_Individuals', byteorder=sys.byteorder)  # creating an int from bytes
+print(Czech_Republic_IndividualsBytes)
+Czech_Republic_IndividualsAscii = int.to_bytes(Czech_Republic_IndividualsBytes, length=26, byteorder=sys.byteorder)
+print(Czech_Republic_IndividualsAscii)
 
-#------ Czech_Republic_Individuals
-#------ Denmark
-#------ East_Asia
+# output is:
+# 185478191754227285249969174530609441383227936193346174183635523
+# b'Czech_Republic_Individuals'
 
 
+print('\n\n')
+DenmarkBytes = int.from_bytes(b'Denmark', byteorder=sys.byteorder)  # creating an int from bytes
+print(DenmarkBytes)
+DenmarkAscii = int.to_bytes(DenmarkBytes, length=7, byteorder=sys.byteorder)
+print(DenmarkAscii)
 
+# output is:
+# 30243585281385796
+# b'Denmark'
+
+print('\n\n')
+East_AsiaBytes = int.from_bytes(b'East_Asia', byteorder=sys.byteorder)  # creating an int from bytes
+print(East_AsiaBytes)
+East_AsiaAscii = int.to_bytes(East_AsiaBytes, length=9, byteorder=sys.byteorder)
+print(East_AsiaAscii)
+
+# output is:
+# 1796932664024362082629
+# b'East_Asia'
 
 print('\n\n')
 Eastern_EuropeBytes = int.from_bytes(b'Eastern_Europe', byteorder=sys.byteorder)  # creating an int from bytes
@@ -412,21 +478,145 @@ print(EgyptAscii)
 # 500103210821
 # b'Egypt'
 
-
-
-
 # Estonia
-# Europe
-# Europe_Individuals
-# Europe_Individuals_Middle_East
-# Europe_Japan_USA
+print('\n\n')
+EstoniaBytes = int.from_bytes(b'Estonia', byteorder=sys.byteorder)  # creating an int from bytes
+print(EstoniaBytes)
+EstoniaAscii = int.to_bytes(EstoniaBytes, length=7, byteorder=sys.byteorder)
+print(EstoniaAscii)
+
+# output is:
+# 27418995778155333
+# b'Estonia'
+
+
+print('\n\n')
+EuropeBytes = int.from_bytes(b'Europe', byteorder=sys.byteorder)  # creating an int from bytes
+print(EuropeBytes)
+EuropeAscii = int.to_bytes(EuropeBytes, length=6, byteorder=sys.byteorder)
+print(EuropeAscii)
+
+# output is:
+# 111533580514629
+# b'Europe'
+
+print('\n\n')
+Europe_IndividualsBytes = int.from_bytes(b'Europe_Individuals', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_IndividualsBytes)
+Europe_IndividualsAscii = int.to_bytes(Europe_IndividualsBytes, length=18, byteorder=sys.byteorder)
+print(Europe_IndividualsAscii)
+
+# output is:
+# 10054792922430809867902102961034118644790597
+# b'Europe_Individuals'
+
+
+
+print('\n\n')
+Europe_Individuals_Middle_EastBytes = int.from_bytes(b'Europe_Individuals_Middle_East', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_Individuals_Middle_EastBytes)
+Europe_Individuals_Middle_EastAscii = int.to_bytes(Europe_Individuals_Middle_EastBytes, length=30, byteorder=sys.byteorder)
+print(Europe_Individuals_Middle_EastAscii)
+
+# output is:
+# 803713213924968946004570530890938146356423406018987839112189083435300165
+# b'Europe_Individuals_Middle_East'
+
+print('\n\n')
+Europe_Japan_USABytes = int.from_bytes(b'Europe_Japan_USA', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_Japan_USABytes)
+Europe_Japan_USAAscii = int.to_bytes(Europe_Japan_USABytes, length=16, byteorder=sys.byteorder)
+print(Europe_Japan_USAAscii)
+
+# output is:
+# 86832511930930819263603543771519808837
+# b'Europe_Japan_USA'
+
 # Europe_Middle_East
+print('\n\n')
+Europe_Middle_EastBytes = int.from_bytes(b'Europe_Middle_East', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_Middle_EastBytes)
+Europe_Middle_EastAscii = int.to_bytes(Europe_Middle_EastBytes, length=18, byteorder=sys.byteorder)
+print(Europe_Middle_EastAscii)
+
+# output is:
+# 10144286935599035412558109646840913932219717
+# b'Europe_Middle_East'
+
 # Europe_Middle_East_North_America
-# Europe_NATO
-# Europe_NATO_Ukraine
+print('\n\n')
+Europe_Middle_East_North_AmericaBytes = int.from_bytes(b'Europe_Middle_East_North_America', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_Middle_East_North_AmericaBytes)
+Europe_Middle_East_North_AmericaAscii = int.to_bytes(Europe_Middle_East_North_AmericaBytes, length=32, byteorder=sys.byteorder)
+print(Europe_Middle_East_North_AmericaAscii)
+
+# output is:
+# 44049991939471719292781853637477999382754235777045428286303327005162211538245
+# b'Europe_Middle_East_North_America'
+
+print('\n\n')
+Europe_NATOBytes = int.from_bytes(b'Europe_NATO', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_NATOBytes)
+Europe_NATOAscii = int.to_bytes(Europe_NATOBytes, length=11, byteorder=sys.byteorder)
+print(Europe_NATOAscii)
+
+# output is:
+# 95903023219825537446999365
+# b'Europe_NATO'
+
+
+print('\n\n')
+Europe_NATO_UkraineBytes = int.from_bytes(b'Europe_NATO_Ukraine', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_NATO_UkraineBytes)
+Europe_NATO_UkraineAscii = int.to_bytes(Europe_NATO_UkraineBytes, length=19, byteorder=sys.byteorder)
+print(Europe_NATO_UkraineAscii)
+
+# output is:
+# 2261993475681827677693093247589969742749922629
+# b'Europe_NATO_Ukraine'
+
 # Europe_North_America
+print('\n\n')
+Europe_North_AmericaBytes = int.from_bytes(b'Europe_North_America', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_North_AmericaBytes)
+Europe_North_AmericaAscii = int.to_bytes(Europe_North_AmericaBytes, length=20, byteorder=sys.byteorder)
+print(Europe_North_AmericaAscii)
+
+# output is:
+# 555989064261598943201993414997543446447190603077
+# b'Europe_North_America'
+
 # Europe_Russia
+print('\n\n')
+Europe_RussiaBytes = int.from_bytes(b'Europe_Russia', byteorder=sys.byteorder)  # creating an int from bytes
+print(Europe_RussiaBytes)
+Europe_RussiaAscii = int.to_bytes(Europe_RussiaBytes, length=13, byteorder=sys.byteorder)
+print(Europe_RussiaAscii)
+
+# output is:
+# 7717767261620487822145651635525
+# b'Europe_Russia'
+
 # Finland
+print('\n\n')
+FinlandBytes = int.from_bytes(b'Finland', byteorder=sys.byteorder)  # creating an int from bytes
+print(FinlandBytes)
+FinlandAscii = int.to_bytes(FinlandBytes, length=7, byteorder=sys.byteorder)
+print(FinlandAscii)
+
+# output is:
+# 28268862381123910
+# b'Finland'
+
+
+
+
+
+
+
+
+
+
 # France
 # France_Germany_UK
 # France_South_Korea
