@@ -280,8 +280,6 @@ sheets = cyberExcel.sheets()
 for sheet in sheets:
    cyberSheetData = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
 
-# creating dataframe for tkinter
-df = pd.DataFrame(cyberSheetData)
 
 # Removing target row from source dataset, with the -1, and removing source data from target data column, so that the -1
 # will only show the last column in the target data
@@ -442,13 +440,26 @@ def get_selDummyTwo():
                 AsiaBinary = "{}".format(v)
                 dummyNumberTwo.insert(1.0, (AsiaBinary))
 
-# the dataframe method, tab 1
-def writeDataset():
-    tab1_display.insert(1.0, pd.DataFrame(df))
 
-# the accuracy score method, tab 2
+# the accuracy score method
 def writeAccuracy():
-    tab2_display.insert(4.0, str(accuracy_score(y_test, y_pred)))
+
+    if buttonClicks == 1:
+        # Creating pop up window for dataset
+        # reference: https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-tkinter
+        win = tk.Toplevel()
+        win.wm_title("Prediction accuracy of target prediction page")
+
+        popUpLabel.grid(row=0, column=0)
+
+        # Display Boxes for Results
+        dataSetDisplay = ScrolledText(win, height=20, width=20)
+        dataSetDisplay.grid(row=3, column=0, columnspan=5, padx=5, pady=5)
+        dataSetDisplay.insert(4.0, str(accuracy_score(y_test, y_pred)))
+
+    else:
+        mbox.showerror("Error", "Returning to the main menu.")
+        import mainPage
 
 # creating a method so that the user can tab from one dummy number textbox to the next, instead of clicking
 def focus_next_widget(event):
@@ -637,8 +648,8 @@ datasetButton.grid(row=3, column=0, padx=15, pady=15)
 
 # Tab 2
 # Accuracy Button
-AccuracyButton = Button(tab2, text='Prediction Accuracy', command=writeAccuracy, width=20, bg='purple', fg='#fff')
-AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
+AccuracyButton = Button(tab3, text='Prediction Accuracy', command=writeAccuracy, width=20, bg='purple', fg='#fff')
+AccuracyButton.grid(row=0, column=4, padx=15, pady=15)
 
 # Tab 3
 # DummyOneButton
