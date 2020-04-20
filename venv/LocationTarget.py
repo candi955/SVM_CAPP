@@ -143,7 +143,7 @@ pd.set_option('display.width', 1000)
 
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
-cyberExcel = xlrd.open_workbook('SVMCAPPdataset8Apr2020_TargetOnly_19Apr2020_1048pm_fakeDummyNums.xlsx')
+cyberExcel = xlrd.open_workbook('FakeTargetNumsDataset SVMCAPPdataset.xlsx')
 # Creating variable to convert excel file to a dataframe (using pandas)
 sheets = cyberExcel.sheets()
 for sheet in sheets:
@@ -160,6 +160,7 @@ for sheet in sheets:
 
     X = sourceNoHeader
     y = targetNoHeader
+
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=50)
 
