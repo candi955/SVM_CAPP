@@ -22,14 +22,15 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
-cyberExcel = xlrd.open_workbook('SVMCAPPdataset8Apr2020_FullSet_19Apr2020_810pm_fakeDummyNums.xlsx')
+cyberExcel = xlrd.open_workbook('SVMCAPPdataset8Apr2020_DataSetWindow_19Apr2020_1013pm_fakeDummyNums.xlsx')
 # Creating variable to convert excel file to a dataframe (using pandas)
 sheets = cyberExcel.sheets()
 for sheet in sheets:
    cyberSheetData = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
 pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
-pd.set_option('display.max_columns', 1000)
-pd.set_option('display.width', 1000)
+pd.set_option('display.max_columns', 7)
+pd.set_option('display.width', 200)
+pd.set_option('display.max_colwidth', 40)
 
 # creating dataframe for tkinter
 df = pd.DataFrame(cyberSheetData)
@@ -40,8 +41,10 @@ root.title('SVM Cyber Attack Prediction Program')
 root.geometry("375x200")
 style = ttk.Style(root)
 
+
 # Tabs and Frames
 page1 = ttk.Notebook(root)
+
 
 #---Creating Tkinter functions----------------------------------------------------------------------------------------
 
@@ -55,8 +58,6 @@ def onButtonClick(buttonClicks):
     if buttonClicks == 2:
         import LocationOrigin
     if buttonClicks == 3:
-        print(df)
-
         # Creating pop up window for dataset
         # reference: https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-tkinter
         win = tk.Toplevel()
@@ -73,10 +74,6 @@ def onButtonClick(buttonClicks):
         dataSetDisplay.grid(row=4, column=0, columnspan=5, padx=5, pady=5)
         dataSetDisplay.insert(1.0, pd.DataFrame(df))
 
-        #popUpLabelButton = ttk.Button(win, text="Okay", command=win.destroy)
-        #popUpLabelButton.grid(row=1, column=0)
-        # the dataframe method, tab 1
-        #tab1_display.insert(1.0, pd.DataFrame(df))
     if buttonClicks == 4:
         exit()
 
@@ -94,6 +91,7 @@ l1.grid(row=1, column=0)
 
 TargetPageButton = tk.Button(root, text='Click for prediction of Attack Target', command=lambda: onButtonClick(1),
                              height=2, width=30, bg='purple', fg='#fff')
+
 TargetPageButton.pack()
 
 OriginPageButton = tk.Button(root, text='Click for prediction of Attack Origin', command= lambda: onButtonClick(2),
@@ -108,25 +106,10 @@ ExitButton = tk.Button(root, text='Click here to exit the program',
                           command=lambda: onButtonClick(4), height=2, width=30, bg='green', fg='#fff')
 ExitButton.pack()
 
-mainloop()
+root.mainloop()
 
 
 
 
 
 
-
-#Tab 1
-# Dataset Button
-datasetButton = Button(tab1, text='Click for prediction of Attack Target', command=locationTargetPageChoice(), width=12, bg='purple', fg='#fff')
-datasetButton.grid(row=1, column=0, padx=15, pady=15)
-datasetButton.pack()
-
-# Button on tab 1, to exit the program
-ExitTabOneButton = Button(tab_control, text='Exit Program', command=exitProgram, width=14,
-                          bg='purple', fg='#fff')
-ExitTabOneButton.grid(row=2, column=0, padx=5, pady=5)
-
-
-# Keep window alive
-mainloop()
