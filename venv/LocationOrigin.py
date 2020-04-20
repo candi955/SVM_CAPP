@@ -208,19 +208,19 @@ pd.set_option('display.width', 1000)
 
 # List 2 (Month of attack in Code numbers)
 
-listMonthDictionary = {"January":{"Code": 34184235089551690}, # list option 0
-                "February":{"Code": 8751164182992414022}, # list option 1
-                "March":{"Code": 448345039181}, # list option 2
-                "April":{"Code": 465625575489}, # list option 3
-                "May":{"Code": 7954765}, # list option 4
-                "June":{"Code": 1701737802}, # list option 5
-                "July":{"Code": 2037151050}, # list option 6
-                "August":{"Code": 128039239775553}, # list option 7
-                "September":{"Code": 2110234346230949897555}, # list option 8
-                "October":{"Code": 32199620796113743}, # list option 9
-                "November":{"Code": 8243102914964778830}, # list option 10
-                "December":{"Code": 8243102914963531076}, # list option 11
-                "Unlisted":{"Code": 7234316415479344725}} # list option 12
+listMonthDictionary = {"January":{"code": 1}, # list option 0
+                "February":{"Code": 2}, # list option 1
+                "March":{"Code": 3}, # list option 2
+                "April":{"Code": 4}, # list option 3
+                "May":{"Code": 5}, # list option 4
+                "June":{"Code": 6}, # list option 5
+                "July":{"Code": 7}, # list option 6
+                "August":{"Code": 8}, # list option 7
+                "September":{"Code": 9}, # list option 8
+                "October":{"Code": 10}, # list option 9
+                "November":{"Code": 11}, # list option 10
+                "December":{"Code": 12}, # list option 11
+                "Unlisted":{"Code": 13}} # list option 12
 
 # Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
 #pdDictTwo = pd.DataFrame(locationDict)
@@ -261,7 +261,7 @@ for sheet in sheets:
 
 #-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
 root = tk.Tk()
-root.title('SVM Prediction: Global attack by location (country)')
+root.title('SVM Prediction: Attack Origin')
 #root.geometry("1000x1000")
 style = ttk.Style(root)
 style.configure('lefttab.TNotebook', tabposition='wn')
@@ -627,7 +627,7 @@ DummyOneButtonSubmit = Button(tab3, text="Submit Attack Origin", command=lambda:
 DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
-DummyTwoButtonSubmit = Button(tab3, text="Submit Attack Target", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
+DummyTwoButtonSubmit = Button(tab3, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
 DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results

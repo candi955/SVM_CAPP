@@ -121,19 +121,19 @@ pd.set_option('display.width', 1000)
 
 # List 2 (Month of attack in Code numbers)
 
-listMonthDictionary = {"January":{"code": 34184235089551690}, # list option 0
-                "February":{"Code": 8751164182992414022}, # list option 1
-                "March":{"Code": 448345039181}, # list option 2
-                "April":{"Code": 465625575489}, # list option 3
-                "May":{"Code": 7954765}, # list option 4
-                "June":{"Code": 1701737802}, # list option 5
-                "July":{"Code": 2037151050}, # list option 6
-                "August":{"Code": 128039239775553}, # list option 7
-                "September":{"Code": 2110234346230949897555}, # list option 8
-                "October":{"Code": 32199620796113743}, # list option 9
-                "November":{"Code": 8243102914964778830}, # list option 10
-                "December":{"Code": 8243102914963531076}, # list option 11
-                "Unlisted":{"Code": 7234316415479344725}} # list option 12
+listMonthDictionary = {"January":{"code": 1}, # list option 0
+                "February":{"Code": 2}, # list option 1
+                "March":{"Code": 3}, # list option 2
+                "April":{"Code": 4}, # list option 3
+                "May":{"Code": 5}, # list option 4
+                "June":{"Code": 6}, # list option 5
+                "July":{"Code": 7}, # list option 6
+                "August":{"Code": 8}, # list option 7
+                "September":{"Code": 9}, # list option 8
+                "October":{"Code": 10}, # list option 9
+                "November":{"Code": 11}, # list option 10
+                "December":{"Code": 12}, # list option 11
+                "Unlisted":{"Code": 13}} # list option 12
 
 # Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
 #pdDictTwo = pd.DataFrame(locationDict)
@@ -174,7 +174,7 @@ for sheet in sheets:
 
 #-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
 root = tk.Tk()
-root.title('SVM Prediction: Global attack by location (country)')
+root.title('SVM Prediction: Target Attack')
 #root.geometry("1000x1000")
 style = ttk.Style(root)
 style.configure('lefttab.TNotebook', tabposition='wn')
@@ -255,59 +255,74 @@ def get_selDummyOne():
                 dummyNumberOne.insert(1.0, (Decentralized_International_Hacktivist_GroupCode))
 
 
-# List 2 function to place list and then transfer answer to textbox, for origin country/region choice
-def get_selDummyTwo():
+# List 2 function to place list and then transfer answer to textbox, for Month choice
+def get_selDummyTwoMonth():
     for i in List2.curselection():
         if i == 0:
-            Afghanistanlist = listMonthDictionary.get("Afghanistan")
-            for k, v in Afghanistanlist.items():
-                AfghanistanCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (AfghanistanCode))
+            Januarylist = listMonthDictionary.get("January")
+            for k, v in Januarylist.items():
+                JanuaryCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (JanuaryCode))
         if i == 1:
-            Afghanistan_Application_Users_India_Individuals_Middle_Eastlist = listMonthDictionary.get("Afghanistan_Application_Users_India_Individuals_Middle_East")
-            for k, v in Afghanistan_Application_Users_India_Individuals_Middle_Eastlist.items():
-                Afghanistan_Application_Users_India_Individuals_Middle_EastCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Afghanistan_Application_Users_India_Individuals_Middle_EastCode))
+            Februarylist = listMonthDictionary.get("February")
+            for k, v in Februarylist.items():
+                FebruaryCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (FebruaryCode))
         if i == 2:
-            Africalist = listMonthDictionary.get("Africa")
-            for k, v in Africalist.items():
-                AfricaCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (AfricaCode))
+            Marchlist = listMonthDictionary.get("March")
+            for k, v in Marchlist.items():
+                MarchCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (MarchCode))
         if i == 3:
-            Africa_Asialist = listMonthDictionary.get("Africa_Asia")
-            for k, v in Africa_Asialist.items():
-                Africa_AsiaCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Africa_AsiaCode))
+            Aprillist = listMonthDictionary.get("April")
+            for k, v in Aprillist.items():
+                AprilCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (AprilCode))
         if i == 4:
-            Al_Quaidalist = listMonthDictionary.get("Al_Quaida")
-            for k, v in Al_Quaidalist.items():
-                Al_QuaidaCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Al_QuaidaCode))
+            Maylist = listMonthDictionary.get("May")
+            for k, v in Maylist.items():
+                MayCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (MayCode))
         if i == 5:
-            Application_Userslist = listMonthDictionary.get("Application_Users")
-            for k, v in Application_Userslist.items():
-                Application_UsersCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Application_UsersCode))
+            Junelist = listMonthDictionary.get("June")
+            for k, v in Junelist.items():
+                JuneCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (JuneCode))
         if i == 6:
-            Application_Users_Individualslist = listMonthDictionary.get("Application_Users_Individuals")
-            for k, v in Application_Users_Individualslist.items():
-                Application_Users_IndividualsCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Application_Users_IndividualsCode))
+            Julylist = listMonthDictionary.get("July")
+            for k, v in Julylist.items():
+                JulyCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (JulyCode))
         if i == 7:
-            Application_Users_Japanlist = listMonthDictionary.get("Application_Users_Japan")
-            for k, v in Application_Users_Japanlist.items():
-                Application_Users_JapanCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Application_Users_JapanCode))
+            Augustlist = listMonthDictionary.get("August")
+            for k, v in Augustlist.items():
+                AugustCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (AugustCode))
         if i == 8:
-            Armenialist = listMonthDictionary.get("Armenia")
-            for k, v in Armenialist.items():
-                ArmeniaCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (ArmeniaCode))
+            Septemberlist = listMonthDictionary.get("September")
+            for k, v in Septemberlist.items():
+                SeptemberCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (SeptemberCode))
         if i == 9:
-            Asialist = listMonthDictionary.get("Asia")
-            for k, v in Asialist.items():
-                AsiaCode = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (AsiaCode))
+            Octoberlist = listMonthDictionary.get("October")
+            for k, v in Octoberlist.items():
+                OctoberCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (OctoberCode))
+        if i == 10:
+            Novemberlist = listMonthDictionary.get("November")
+            for k, v in Novemberlist.items():
+                NovemberCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (NovemberCode))
+        if i == 11:
+            Decemberlist = listMonthDictionary.get("December")
+            for k, v in Decemberlist.items():
+                DecemberCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (DecemberCode))
+        if i == 12:
+            Unlistedlist = listMonthDictionary.get("Unlisted")
+            for k, v in Unlistedlist.items():
+                UnlistedCode = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (UnlistedCode))
 
 
 # the accuracy score method
@@ -526,7 +541,7 @@ DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
 
-DummyTwoButtonSubmit = Button(tab3, text="Submit Attack Target", command=lambda: get_selDummyTwo(), width=20, bg='purple', fg='#fff')
+DummyTwoButtonSubmit = Button(tab3, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
 DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
