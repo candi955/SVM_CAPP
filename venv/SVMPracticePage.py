@@ -53,6 +53,7 @@ for sheet in sheets:
     print(cyberDF.dtypes)
     print("\n\n")
     cyberDFDataFrame = pd.DataFrame(cyberDF)
+    pd.set_option('display.float_format', lambda x: '%.5f' % x)
     pd.set_option('display.max_rows', 1000)  # Attempting to display all rows and columns
     pd.set_option('display.max_columns', 1000)
     pd.set_option('display.width', 1000)
@@ -64,14 +65,49 @@ for sheet in sheets:
 
     # Writing updated file back into project folder
 
-    writer = pd.ExcelWriter(r'c:\Users\Hachidori\PycharmProjects\SVM_CAPP_GSIP_2nd\venv\Targetoutput.xlsx')
+#    writer = pd.ExcelWriter(r'c:\Users\Hachidori\PycharmProjects\SVM_CAPP_GSIP_2nd\venv\Targetoutput.xlsx')
+#    # This method will truncate the data past the first decimal point
+#    cyberDF.to_excel(writer, 'Sheet1', float_format="%0.5f")
+#    writer.save()
+#
+#    # pulling excel file and creating variable
+#    cyberExcelTwo = xlrd.open_workbook('Targetoutput.xlsx')
+#    # Creating variable to convert excel file to a dataframe (using pandas)
+#    sheets2 = cyberExcelTwo.sheets()
+#    for sheet in sheets2:
+#        cyberSheetDataAgain = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
+
+#        cyberDFAgain = pd.DataFrame(cyberSheetDataAgain)
+#        print("\n\nCyberDFAgain dtypes after file re-written and pulled:\n\n")
+#        print(cyberDFAgain.dtypes)
+#        print("\n\n")
+
+
+        # reference for suppressing scientific notation
+        # https://re-thought.com/how-to-suppress-scientific-notation-in-pandas/
+
+# -------Finished writing and reading file, still doesn't want to read it as float--------------------------------------
+
+    # Removing target row from source dataset, with the -1, and removing source data from target data column, so that the -1
+    # will only show the last column in the target data
+    # iloc[row slicing, column slicing]
+    # sources if first row (header) removed, then rows 0-5 included (off with row 6)
+    # target is first row(header) removed, then column 6 only included
+    #sources = cyberDFDataFrame.iloc[1:, :6]
+    #target = cyberDFDataFrame.iloc[1:,6:]
+
+    # Writing updated file back into project folder
+
+    writer = pd.ExcelWriter(r'c:\Users\Hachidori\PycharmProjects\SVM_CAPP_GSIP_2nd\venv\Targetoutput.xlsx', engine='openpyxl')
     # This method will truncate the data past the first decimal point
-    cyberDF.to_excel(writer, 'Sheet1', float_format="%0.5f")
+    #writer.book = workbook
+    #writer.sheets = dict((ws.title, ws) for was in workbook.worksheets)
+    cyberDFDataFrame.to_excel(writer, sheet_name='Sheet1', header=True, float_format="%60.8f")
     writer.save()
 
     # pulling excel file and creating variable
     cyberExcelTwo = xlrd.open_workbook('Targetoutput.xlsx')
-    # Creating variable to convert excel file to a dataframe (using pandas)
+    #  Creating variable to convert excel file to a dataframe (using pandas)
     sheets2 = cyberExcelTwo.sheets()
     for sheet in sheets2:
         cyberSheetDataAgain = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
@@ -81,21 +117,8 @@ for sheet in sheets:
         print(cyberDFAgain.dtypes)
         print("\n\n")
 
-
-        # reference for suppressing scientific notation
-        # https://re-thought.com/how-to-suppress-scientific-notation-in-pandas/
-
-# -------Finished writing and reading file, still doesn't want to read it as float--------------------------------------
-
-        # Removing target row from source dataset, with the -1, and removing source data from target data column, so that the -1
-        # will only show the last column in the target data
-        # iloc[row slicing, column slicing]
-        # sources if first row (header) removed, then rows 0-5 included (off with row 6)
-        # target is first row(header) removed, then column 6 only included
-        sources = cyberDF.iloc[1:, :6]
-        target = cyberDF.iloc[1:,6:]
-        #sources = cyberDF[:, :-1]
-        #target = cyberDF[:, len(cyberDF[0]) - 1]
+        sources = cyberSheetDataAgain[:, :-1]
+        target = cyberSheetDataAgain[:, len(cyberSheetDataAgain[0]) - 1]
 
         print('\n\nSources:\n\n')
         print(sources)
@@ -103,15 +126,15 @@ for sheet in sheets:
         print(target)
 
         # Deleting header column from dataframe, both source and target data
-        #sourceNoHeader = np.delete(sources, (0), axis=0)
-        #targetNoHeader = np.delete(target, (0), axis=0)
+        sourceNoHeader = np.delete(sources, (0), axis=0)
+        targetNoHeader = np.delete(target, (0), axis=0)
 
         print('\n\nSources without header and datatype:\n\n')
-        #print(sourceNoHeader)
-        #print(type(sourceNoHeader))
+        print(sourceNoHeader)
+        print(type(sourceNoHeader))
         print('\n\nTarget without header and datatype:\n\n')
-        #print(targetNoHeader)
-        #print(type(targetNoHeader))
+        print(targetNoHeader)
+        print(type(targetNoHeader))
          # Will attempt to turn excel numbers into floats
         # https: // stackoverflow.com / questions / 44423036 / pandas - to - excel - float - format
 
@@ -119,8 +142,8 @@ for sheet in sheets:
         # https://datascience.stackexchange.com/questions/48049/valueerror-could-not-convert-string-to-float
 
 
-        X = sources
-        y = target
+        X = sourceNoHeader
+        y = targetNoHeader
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=50)
 
