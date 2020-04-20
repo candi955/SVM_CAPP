@@ -285,7 +285,7 @@ df = pd.DataFrame(cyberSheetData)
 
 # Removing target row from source dataset, with the -1, and removing source data from target data column, so that the -1
 # will only show the last column in the target data
-sources = cyberSheetData[:, :-2]
+sources = cyberSheetData[:, :-1]
 target = cyberSheetData[:, len(cyberSheetData[0]) - 1]
 
 # Deleting header column from dataframe, both source and target data
