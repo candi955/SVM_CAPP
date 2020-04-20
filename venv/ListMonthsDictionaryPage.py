@@ -4,7 +4,7 @@ import pandas as pd
 
 
 #------------ListBox Country/Region/binary Dictionary--------------------------------------------------------------------------
-# creating a dictionary to associate locations with associated binary
+# creating a dictionary to associate months with associated binary
 # reference: https://www.w3schools.com/python/python_dictionaries.asp
 
 

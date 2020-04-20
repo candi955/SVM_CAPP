@@ -54,74 +54,8 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 # creating a dictionary to associate locations with associated binary
 # reference: https://www.w3schools.com/python/python_dictionaries.asp
 
-# List 1 (Origin country/region)
-listOneDictionary = {"Africa_China":{"binary": 30153525564624871856989693505},
-                "Australia":{"binary": 1796930728965501580609},
-                "Azerbaijan":{"binary": 521257315057726828935745},
-                "Brazil":{"binary": 119200280572482},
-                "China":{"binary": 418464229443},
-                "China_North_Korea":{"binary": 33142235798066285977489245281315271043139},
-                "China_Pakistan":{"binary": 2238786227951005213617790124648515},
-                "China_Russia":{"binary": 30147528365705030538042632259},
-                "Czech_Republic":{"binary": 2016311051235894369754033219271235},
-                "Decentralized_International_Hacktivist_Group":{"binary": 4030061651715448937258886338687573509473192067501578500999556277764116296964663760381662969481473103717700},
-                "Eastern_Europe":{"binary": 2057431415377846504395799230898501},
-                "Egypt":{"binary": 500103210821},
-                "Gaza":{"binary": 1635410247},
-                "Gaza_Former_Soviet_Union_Lebanon":{"binary": 49951295185924953357192938129459662694624102732189565470444669956949290934599},
-                "Germany":{"binary": 34179836909086023},
-                "India":{"binary": 418380017225},
-                "Individuals":{"binary": 139538282629009384004677193},
-                "Individuals_Ukraine":{"binary": 2261993475681827677736728506999153589307600457},
-                "Individuals_Unlisted":{"binary": 573161596645207770904272559636410843002082455113},
-                "International":{"binary": 8586795105461350372667137748553},
-                "Iran":{"binary": 1851880009},
-                "Iran_North_Korea_Russia":{"binary": 9330208112349500424777135934104632250386116936128885321},
-                "Iran_Russia":{"binary": 117763782678535275756483145},
-                "Iran_Unlisted":{"binary": 7954215017830331842300462854729},
-                "Iraq":{"binary": 1902211657},
-                "ISIS":{"binary": 1397314377},
-                "Israel":{"binary": 119182682387273},
-                "Israel_USA":{"binary": 308491052899443525448521},
-                "Lebanon":{"binary": 31084767309096268},
-                "Mexico":{"binary": 122472761943373},
-                "Middle_East":{"binary": 140780261553827770911713613},
-                "Morocco":{"binary": 31353001137565517},
-                "Multiple":{"binary": 7308339893542614349},
-                "Nation_State_Actor_Eastern_Europe":{"binary": 11745856961995155074459591118783721087539815469043632190606120890413099009728846},
-                "Nation_State_Actor_Unlisted":{"binary": 41300645649190979956682253942903520807850576892501048304935919950},
-                "Non_State_Actor_Unlisted":{"binary": 2461710312914310691158905860358686495295201354771914977102},
-                "North_Korea":{"binary": 117744874465821730700160846},
-                "Pakistan":{"binary": 7953766455951712592},
-                "Russia":{"binary": 107105536406866},
-                "Russia_Ukraine":{"binary": 2057271081577553266210956287112530},
-                "Russia_Ukraine_USA":{"binary": 5690655501723968284733388360289691192489298},
-                "Saudi_Arabia":{"binary": 30147447753212470604776956243},
-                "South_Korea":{"binary": 117744874465821730700357459},
-                "South_Korea_USA":{"binary": 339189499714501404461968594046381907},
-                "State_Sponsored_Actor_Unlisted":{"binary": 692909852995937295984928817766944035748308436617603438577965161292854355},
-                "Syria":{"binary": 418380937555},
-                "Taiwan":{"binary": 121364894277972},
-                "Taiwan_USA":{"binary": 308491052901625737339220},
-                "Turkey":{"binary": 133476501321044},
-                "UAE":{"binary": 4538709},
-                "UK":{"binary": 19285},
-                "UK_USA":{"binary": 71826170399573},
-                "Unlisted":{"binary": 7234316415479344725},
-                "USA":{"binary": 4281173},
-                "Vietnam":{"binary": 30787899488561494},
-                "Western_World":{"binary": 7956378975824997986907049911639},
-                "Yemen":{"binary": 474148070745}}
-
-# Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
-# pdDictOne = pd.DataFrame(locationDict)
-pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
-pd.set_option('display.max_columns', 1000)
-pd.set_option('display.width', 1000)
-
-# List 2 (Target country/region)
-
-listTwoDictionary = {"Afghanistan":{"binary": 133442057845059666670216769},
+# List 1 (Target country/region)
+listTargetDictionary = {"Afghanistan":{"binary": 133442057845059666670216769},
                 "Afghanistan_Application_Users_India_Individuals_Middle_East":{"binary": 5547024738073957303662399576029973568509146976390336004265898740432675875991326601817987176556771282997325216339676316688169204494214088844865},
                 "Africa":{"binary": 107079598761537},
                 "Africa_Asia":{"binary": 117763779069479634143962689},
@@ -267,6 +201,28 @@ listTwoDictionary = {"Afghanistan":{"binary": 133442057845059666670216769},
                 "Xinjiang": {"binary": 7453001538729830744}}
 
 # Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
+# pdDictOne = pd.DataFrame(locationDict)
+pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
+pd.set_option('display.max_columns', 1000)
+pd.set_option('display.width', 1000)
+
+# List 2 (Month of attack in binary numbers)
+
+listMonthDictionary = {"January":{"binary": 34184235089551690}, # list option 0
+                "February":{"binary": 8751164182992414022}, # list option 1
+                "March":{"binary": 448345039181}, # list option 2
+                "April":{"binary": 465625575489}, # list option 3
+                "May":{"binary": 7954765}, # list option 4
+                "June":{"binary": 1701737802}, # list option 5
+                "July":{"binary": 2037151050}, # list option 6
+                "August":{"binary": 128039239775553}, # list option 7
+                "September":{"binary": 2110234346230949897555}, # list option 8
+                "October":{"binary": 32199620796113743}, # list option 9
+                "November":{"binary": 8243102914964778830},
+                "December":{"binary": 8243102914963531076},
+                "Unlisted":{"binary": 7234316415479344725}}
+
+# Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
 #pdDictTwo = pd.DataFrame(locationDict)
 pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
 pd.set_option('display.max_columns', 1000)
@@ -335,121 +291,128 @@ listbox = Listbox(root, selectmode=SINGLE)
 # https://www.youtube.com/watch?v=XJqUu85sMrA
 # https://note.nkmk.me/en/python-tuple-list-unpack/
 # List 1 function to place list and then transfer answer to textbox, for origin country/region choice
-def get_selDummyOne():
+def get_selDummyOneTarget():
     for i in List1.curselection():
         if i == 0:
-            Africa_Chinalist = listOneDictionary.get("Africa_China")
-            for k, v in Africa_Chinalist.items():
-                Africa_ChinaBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (Africa_ChinaBinary))
-        if i == 1:
-            Australialist = listOneDictionary.get("Australia")
-            for k, v in Australialist.items():
-                AustraliaBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (AustraliaBinary))
-        if i == 2:
-            Azerbaijanlist = listOneDictionary.get("Azerbaijan")
-            for k, v in Azerbaijanlist.items():
-                AzerbaijanBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (AzerbaijanBinary))
-        if i == 3:
-            Brazillist = listOneDictionary.get("Brazil")
-            for k, v in Brazillist.items():
-                BrazilBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (BrazilBinary))
-        if i == 4:
-            Chinalist = listOneDictionary.get("China")
-            for k, v in Chinalist.items():
-                ChinaBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (ChinaBinary))
-        if i == 5:
-            China_North_Korealist = listOneDictionary.get("China_North_Korea")
-            for k, v in China_North_Korealist.items():
-                China_North_KoreaBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (China_North_KoreaBinary))
-        if i == 6:
-            China_Pakistanlist = listOneDictionary.get("China_Pakistan")
-            for k, v in China_Pakistanlist.items():
-                China_PakistanBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (China_PakistanBinary))
-        if i == 7:
-            China_Russialist = listOneDictionary.get("China_Russia")
-            for k, v in China_Russialist.items():
-                China_RussiaBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (China_RussiaBinary))
-        if i == 8:
-            Czech_Republiclist = listOneDictionary.get("Czech_Republic")
-            for k, v in Czech_Republiclist.items():
-                Czech_RepublicBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (Czech_RepublicBinary))
-        if i == 9:
-            Decentralized_International_Hacktivist_Grouplist = listOneDictionary.get("Decentralized_International_Hacktivist_Group")
-            for k, v in Decentralized_International_Hacktivist_Grouplist.items():
-                Decentralized_International_Hacktivist_GroupBinary = "{}".format(v)
-                dummyNumberOne.insert(1.0, (Decentralized_International_Hacktivist_GroupBinary))
-
-
-# List 2 function to place list and then transfer answer to textbox, for origin country/region choice
-def get_selDummyTwo():
-    for i in List2.curselection():
-        if i == 0:
-            Afghanistanlist = listTwoDictionary.get("Afghanistan")
+            Afghanistanlist = listTargetDictionary.get("Afghanistan")
             for k, v in Afghanistanlist.items():
                 AfghanistanBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (AfghanistanBinary))
+                dummyNumberOne.insert(1.0, (AfghanistanBinary))
         if i == 1:
-            Afghanistan_Application_Users_India_Individuals_Middle_Eastlist = listTwoDictionary.get("Afghanistan_Application_Users_India_Individuals_Middle_East")
+            Afghanistan_Application_Users_India_Individuals_Middle_Eastlist = listTargetDictionary.get(
+                "Afghanistan_Application_Users_India_Individuals_Middle_East")
             for k, v in Afghanistan_Application_Users_India_Individuals_Middle_Eastlist.items():
                 Afghanistan_Application_Users_India_Individuals_Middle_EastBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Afghanistan_Application_Users_India_Individuals_Middle_EastBinary))
+                dummyNumberOne.insert(1.0, (Afghanistan_Application_Users_India_Individuals_Middle_EastBinary))
         if i == 2:
-            Africalist = listTwoDictionary.get("Africa")
+            Africalist = listTargetDictionary.get("Africa")
             for k, v in Africalist.items():
                 AfricaBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (AfricaBinary))
+                dummyNumberOne.insert(1.0, (AfricaBinary))
         if i == 3:
-            Africa_Asialist = listTwoDictionary.get("Africa_Asia")
+            Africa_Asialist = listTargetDictionary.get("Africa_Asia")
             for k, v in Africa_Asialist.items():
                 Africa_AsiaBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Africa_AsiaBinary))
+                dummyNumberOne.insert(1.0, (Africa_AsiaBinary))
         if i == 4:
-            Al_Quaidalist = listTwoDictionary.get("Al_Quaida")
+            Al_Quaidalist = listTargetDictionary.get("Al_Quaida")
             for k, v in Al_Quaidalist.items():
                 Al_QuaidaBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Al_QuaidaBinary))
+                dummyNumberOne.insert(1.0, (Al_QuaidaBinary))
         if i == 5:
-            Application_Userslist = listTwoDictionary.get("Application_Users")
+            Application_Userslist = listTargetDictionary.get("Application_Users")
             for k, v in Application_Userslist.items():
                 Application_UsersBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Application_UsersBinary))
+                dummyNumberOne.insert(1.0, (Application_UsersBinary))
         if i == 6:
-            Application_Users_Individualslist = listTwoDictionary.get("Application_Users_Individuals")
+            Application_Users_Individualslist = listTargetDictionary.get("Application_Users_Individuals")
             for k, v in Application_Users_Individualslist.items():
                 Application_Users_IndividualsBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Application_Users_IndividualsBinary))
+                dummyNumberOne.insert(1.0, (Application_Users_IndividualsBinary))
         if i == 7:
-            Application_Users_Japanlist = listTwoDictionary.get("Application_Users_Japan")
+            Application_Users_Japanlist = listTargetDictionary.get("Application_Users_Japan")
             for k, v in Application_Users_Japanlist.items():
                 Application_Users_JapanBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (Application_Users_JapanBinary))
+                dummyNumberOne.insert(1.0, (Application_Users_JapanBinary))
         if i == 8:
-            Armenialist = listTwoDictionary.get("Armenia")
+            Armenialist = listTargetDictionary.get("Armenia")
             for k, v in Armenialist.items():
                 ArmeniaBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (ArmeniaBinary))
+                dummyNumberOne.insert(1.0, (ArmeniaBinary))
         if i == 9:
-            Asialist = listTwoDictionary.get("Asia")
+            Asialist = listTargetDictionary.get("Asia")
             for k, v in Asialist.items():
                 AsiaBinary = "{}".format(v)
-                dummyNumberTwo.insert(1.0, (AsiaBinary))
-# Leaving this function in as a guide for the 'change answer' option if wish to add
-# to program later (would work with the button function for the lists
-#def change_opt():
-    #entry = E.get()
-    #change = entry.split(" ")
-    #print("Change")
-    #listbox.insert(int(change[0]),change[1])
-    #root.update()
+                dummyNumberOne.insert(1.0, (AsiaBinary))
+
+# List 2 function to place list and then transfer answer to textbox, for Month choice
+def get_selDummyTwoMonth():
+    for i in List2.curselection():
+        if i == 0:
+            Januarylist = listMonthDictionary.get("January")
+            for k, v in Januarylist.items():
+                JanuaryBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (JanuaryBinary))
+        if i == 1:
+            Februarylist = listMonthDictionary.get("February")
+            for k, v in Februarylist.items():
+                FebruaryBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (FebruaryBinary))
+        if i == 2:
+            Marchlist = listMonthDictionary.get("March")
+            for k, v in Marchlist.items():
+                MarchBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (MarchBinary))
+        if i == 3:
+            Aprillist = listMonthDictionary.get("April")
+            for k, v in Aprillist.items():
+                AprilBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (AprilBinary))
+        if i == 4:
+            Maylist = listMonthDictionary.get("May")
+            for k, v in Maylist.items():
+                MayBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (MayBinary))
+        if i == 5:
+            Junelist = listMonthDictionary.get("June")
+            for k, v in Junelist.items():
+                JuneBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (JuneBinary))
+        if i == 6:
+            Julylist = listMonthDictionary.get("July")
+            for k, v in Julylist.items():
+                JulyBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (JulyBinary))
+        if i == 7:
+            Augustlist = listMonthDictionary.get("August")
+            for k, v in Augustlist.items():
+                AugustBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (AugustBinary))
+        if i == 8:
+            Septemberlist = listMonthDictionary.get("September")
+            for k, v in Septemberlist.items():
+                SeptemberBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (SeptemberBinary))
+        if i == 9:
+            Octoberlist = listMonthDictionary.get("October")
+            for k, v in Octoberlist.items():
+                OctoberBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (OctoberBinary))
+        if i == 10:
+            Novemberlist = listMonthDictionary.get("November")
+            for k, v in Novemberlist.items():
+                NovemberBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (NovemberBinary))
+        if i == 11:
+            Decemberlist = listMonthDictionary.get("December")
+            for k, v in Decemberlist.items():
+                DecemberBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (DecemberBinary))
+        if i == 12:
+            Unlistedlist = listMonthDictionary.get("Unlisted")
+            for k, v in Unlistedlist.items():
+                UnlistedBinary = "{}".format(v)
+                dummyNumberTwo.insert(1.0, (UnlistedBinary))
 
 # the dataframe method, tab 1
 def writeDataset():
@@ -586,8 +549,8 @@ List1 = Listbox(dummyOneListBox)
 # Pulling locationDict dictionary data and placing into listbox
 # references: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
 # https://stackoverflow.com/questions/31046479/resizing-tkinter-listbox-to-width-of-largest-item-using-grid
-for key in listOneDictionary:
-    List1.insert(END, '{}: {}'.format(key, listOneDictionary[key]))
+for key in listTargetDictionary:
+    List1.insert(END, '{}: {}'.format(key, listTargetDictionary[key]))
     List1.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
@@ -605,8 +568,8 @@ List2 = Listbox(dummyTwoListBox)
 # Pulling locationDict dictionary data and placing into listbox
 # references: https://stackoverflow.com/questions/39315584/tkinter-listbox-and-dictionaries
 # https://stackoverflow.com/questions/31046479/resizing-tkinter-listbox-to-width-of-largest-item-using-grid
-for key in listTwoDictionary:
-    List2.insert(END, '{}: {}'.format(key, listTwoDictionary[key]))
+for key in listMonthDictionary:
+    List2.insert(END, '{}: {}'.format(key, listMonthDictionary[key]))
     List2.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
@@ -658,14 +621,14 @@ AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
 # Hashing the 'change answer' buttons for now in case I want to add the option in later
 # DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
 # DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
-DummyOneButtonSubmit = Button(tab3, text="Submit Attack Origin", command=lambda: get_selDummyOne(), width=20, bg='purple', fg='#fff')
+DummyOneButtonSubmit = Button(tab3, text="Submit Attack Origin", command=lambda: get_selDummyOneTarget(), width=20, bg='purple', fg='#fff')
 DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
 # Hashing the 'change answer' buttons for now in case I want to add the option in later
 # DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
 # DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
-DummyTwoButtonSubmit = Button(tab3, text="Submit Attack Target", command=lambda: get_selDummyTwo(), width=20, bg='purple', fg='#fff')
+DummyTwoButtonSubmit = Button(tab3, text="Submit Attack Target", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
 DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
