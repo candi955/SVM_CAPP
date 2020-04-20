@@ -1,3 +1,4 @@
+# Prediction of Attack Target page
 # Support Vector Machine Cyber-Attack Prediction Program (SVM CAPP)__
 
 # A GUI program (through Tkinter) utilizing SKLearn, SVM algorithm, to predict cybersecurity data via a Supervised
@@ -310,7 +311,6 @@ root.title('SVM Prediction: Global attack by location (country)')
 #root.geometry("1000x1000")
 style = ttk.Style(root)
 style.configure('lefttab.TNotebook', tabposition='wn')
-
 # Tabs and Frames
 tab_control = ttk.Notebook(root)
 tab1 = ttk.Frame(tab_control)
@@ -325,7 +325,7 @@ tab_control.pack(expand=1, fill='both')
 # Tkinter listbox with root functions
 # reference: http://effbot.org/tkinterbook/listbox.htm
 listbox = Listbox(root, selectmode=SINGLE)
-listbox.pack()
+
 
 #---Creating Tkinter functions----------------------------------------------------------------------------------------
 
@@ -441,14 +441,6 @@ def get_selDummyTwo():
             for k, v in Asialist.items():
                 AsiaBinary = "{}".format(v)
                 dummyNumberTwo.insert(1.0, (AsiaBinary))
-# Leaving this function in as a guide for the 'change answer' option if wish to add
-# to program later (would work with the button function for the lists
-#def change_opt():
-    #entry = E.get()
-    #change = entry.split(" ")
-    #print("Change")
-    #listbox.insert(int(change[0]),change[1])
-    #root.update()
 
 # the dataframe method, tab 1
 def writeDataset():
@@ -575,7 +567,7 @@ l3 = Label(tab3, text='Please enter six situational choices in the cells below, 
                       'to see your prediction results:', padx=5, pady=5)
 l3.grid(row=1, column=0)
 
-#--------------------- Dummy 1 Listbox and Textbox ---------------------------------------------------------------------
+#--------------------- Dummy 1 Listbox and Textbox Attack Origin-------------------------------------------------------
 #Listbox of Dummy Numbers
 dummyOneListBox = Listbox(tab3) # height=1, width=50, yscrollcommand=TRUE)
 dummyOneListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
@@ -594,7 +586,7 @@ dummyNumberOne = Text(tab3, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
 
-#--------------------- Dummy 2 Listbox and Textbox ---------------------------------------------------------------------
+#--------------------- Dummy 2 Listbox and Textbox  (Attack Target) ----------------------------------------------------
 #Listbox of Dummy Numbers
 dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=SCROLL)
 dummyTwoListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
@@ -613,13 +605,13 @@ dummyNumberTwo = Text(tab3, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=1, columnspan=1, padx=5, pady=5)
 
-#--------------------- Dummy 3 Listbox and Textbox ---------------------------------------------------------------------
+#--------------------- Dummy 3 Listbox and Textbox Attack Month--------------------------------------------------------
 
 dummyNumberThree = Text(tab3, height=2, width=50)
 dummyNumberThree.bind("<Tab>", focus_next_widget)
 dummyNumberThree.grid(row=4, column=1, columnspan=1, padx=5, pady=5)
 
-#--------------------- Dummy 4 Listbox and Textbox ---------------------------------------------------------------------
+#--------------------- Dummy 4 Listbox and Textbox Attack Year----------------------------------------------------------
 
 dummyNumberFour = Text(tab3, height=2, width=50)
 dummyNumberFour.bind("<Tab>", focus_next_widget)
@@ -657,20 +649,20 @@ AccuracyButton.grid(row=15, column=0, padx=15, pady=15)
 # Hashing the 'change answer' buttons for now in case I want to add the option in later
 # DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
 # DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
-DummyOneButtonSubmit = Button(tab3, text="Submit", command=lambda: get_selDummyOne(), width=20, bg='purple', fg='#fff')
+DummyOneButtonSubmit = Button(tab3, text="Submit Attack Origin", command=lambda: get_selDummyOne(), width=20, bg='purple', fg='#fff')
 DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
 # Hashing the 'change answer' buttons for now in case I want to add the option in later
 # DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
 # DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
-DummyTwoButtonSubmit = Button(tab3, text="Submit", command=lambda: get_selDummyTwo(), width=20, bg='purple', fg='#fff')
+DummyTwoButtonSubmit = Button(tab3, text="Submit Attack Target", command=lambda: get_selDummyTwo(), width=20, bg='purple', fg='#fff')
 DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
 PredictionButton = Button(tab3, text='Click to see Prediction Results', command=finalPrediction, width=25,
-                          bg='purple', fg='#fff')
-PredictionButton.grid(row=9, column=0, padx=5, pady=5)
+                          bg='blue', fg='#fff')
+PredictionButton.grid(row=6, column=0, padx=5, pady=5)
 
 # Button to clear Tab 3 and start over
 ClearTabThreeButton = Button(tab3, text='Clear results and start over', command=clear_display_result, width=25,

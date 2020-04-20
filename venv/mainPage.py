@@ -1,72 +1,93 @@
-# This page is being built of the template referenced on the TestPage.py.  It will be the main page with
-# menu options for the program eventually.
+# Mainpage
 
-# It is stil in the initial stages of being built.
+#---------Imports----------------------------------------------------------------------------------------------------
+# Libraries
+import tkinter as tk
+from tkinter import *
+from tkinter import messagebox as mbox
 
-import random
+# Window Tabs Libraries
+from tkinter import ttk
+from tkinter.scrolledtext import *
+from sklearn import svm
+from sklearn.metrics import accuracy_score
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
+import pandas as pd
+import numpy as np
+import xlrd
 
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
-class MainMenu():
+#-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
+root = tk.Tk()
+root.title('SVM Prediction: Global attack by location (country)')
+root.geometry("500x500")
+style = ttk.Style(root)
+style.configure('lefttab.TNotebook', tabposition='wn')
+# Tabs and Frames
+page1 = ttk.Notebook(root)
 
-    # Creating menu method with user input for non-contacts pages
-    def main(self):
+#---Creating Tkinter functions----------------------------------------------------------------------------------------
 
-        lottoContacts = Definitions()
-        mainM = MainMenu()
+def focus_next_widget(event):
+    event.widget.tk_focusNext().focus()
+    return("break")
 
-        chooseRunQuit = str(input("\n" + "Please choose:" + "\n\n" +
-                                  "GO - to return to the " +
-                                  "main screen" + "\n" +
-                                  "QUIT - to exit the program" + "\n\n" +
-                                  "Please enter your choice here / Por favor ingrese su elección aquí: "))
-
-        if chooseRunQuit == "GO":
-            Choice()
-
-
-        if chooseRunQuit == "QUIT":
-            exit()
-
-        else:
-            print("Incorrect entry. Please try again.")
-            mainM.main()
-
-    # Creating menu method with user input for the Contacts pages (gives customer the choice to return to the
-    # Contacts page first, rather than the first choice being for the main menu)
-
-MainMenu()
-
-def Choice():
-
-    #Naming variables to pull methods from the Balls() class
-
-    mainM = MainMenu()
-
-
-
-
-# Setting introduction and instructions for Powerball Success Number Generator
-
-    print("\n\n" + "Welcome to the SVM Cyber-Attack Predication Project! " + "\n")
-
-# Setting up the actual input method LotteryChoices for Choice() class; also added spanish translation to the menu
-
-    LotteryChoices = str(input("Please choose: " + "\n\n" +
-
-                               "SVM - to try the SVM and KNN algorithm to " +
-                               "make a cybersecurity prediction" + "\n\n" +
-                               "Enter your choice here: "))
-
-
-
-    if LotteryChoices == "SVM":
-
+def onButtonClick(buttonClicks):
+    if buttonClicks == 1:
+        import LocationTarget
+    if buttonClicks == 2:
+        mbox.showinfo("Click 1")
+    if buttonClicks == 3:
+        mbox.showinfo("Click 2")
         import LocationTarget
 
-    else:
-        print("Incorrect entry. Please try again.")
-        mainM.main()
+def exitProgram():
+    exit()
+
+def flush(self):
+    pass
+
+#------------Tkinter Labels for Tabs-----------------------------------------------------------------------------------
+
+l1 = Label(page1, text='Please click on one of the following choices.', padx=5, pady=5)
+l1.grid(row=1, column=0)
 
 
-Choice()
+#-------Tkinter Buttons------------------------------------------------------------------------------------------------
 
+
+TargetPageButton = tk.Button(root, text='Click for prediction of Attack Target', command=lambda: onButtonClick(1), height=2, width=30, bg='purple', fg='#fff')
+TargetPageButton.config(padx=5, pady=5)
+TargetPageButton.pack()
+
+b2 = tk.Button(root, text="Page 2", command= lambda: onButtonClick(2), width=12, bg='purple', fg='#fff')
+b2.pack()
+
+b3 = Button(root, text="Page 3", command= lambda: onButtonClick(3), width=12, bg='purple', fg='#fff')
+b3.pack()
+
+mainloop()
+
+
+
+
+
+
+
+#Tab 1
+# Dataset Button
+datasetButton = Button(tab1, text='Click for prediction of Attack Target', command=locationTargetPageChoice(), width=12, bg='purple', fg='#fff')
+datasetButton.grid(row=1, column=0, padx=15, pady=15)
+datasetButton.pack()
+
+# Button on tab 1, to exit the program
+ExitTabOneButton = Button(tab_control, text='Exit Program', command=exitProgram, width=14,
+                          bg='purple', fg='#fff')
+ExitTabOneButton.grid(row=2, column=0, padx=5, pady=5)
+
+
+# Keep window alive
+mainloop()
