@@ -268,12 +268,10 @@ style.configure('lefttab.TNotebook', tabposition='wn')
 
 # Tabs and Frames
 tab_control = ttk.Notebook(root)
+
 tab1 = ttk.Frame(tab_control)
-tab2 = ttk.Frame(tab_control)
-tab3 = ttk.Frame(tab_control)
-tab_control.add(tab1, text='Dataset')
-tab_control.add(tab2, text='Prediction Accuracy')
-tab_control.add(tab3, text='Dummy Values and Target Prediction')
+
+tab_control.add(tab1, text='Dummy Values and Target Prediction')
 
 tab_control.pack(expand=1, fill='both')
 
@@ -493,7 +491,7 @@ def finalPrediction():
             # inserting dummy array variable as argument to K-nearest neighbor algorithm to create prediction, which is
             # placed within the prediction variable
             prediction = knn.predict([a])
-            tab3_display.insert(4.0, prediction)
+            tab1_display.insert(4.0, prediction)
         except ValueError:
             mbox.showerror("Error", "Please ensure that your entry is accurate.")
             clear_display_result()
@@ -503,7 +501,7 @@ def finalPrediction():
 
 # Below is the creation of textbox entries; however am planning to make dummy number option a label option
 def clear_display_result():
-    tab3_display.delete(1.0, END)
+    tab1_display.delete(1.0, END)
     dummyNumberOne.delete(1.0, END)
     dummyNumberTwo.delete(1.0, END)
     dummyNumberThree.delete(1.0, END)
@@ -537,20 +535,14 @@ def flush(self):
 
 #------------Tkinter Labels for Tabs-----------------------------------------------------------------------------------
 
-l1 = Label(tab1, text='Please click the button below to scroll through the original dataset model.', padx=5, pady=5)
-l1.grid(row=1, column=0)
-l2 = Label(tab2, text='Please click the button below to see the prediction accuracy of the model in decimal ' +
-                      'format.', padx=5, pady=5)
-l2.grid(row=1, column=0)
-
 # This option will eventually be a dropbox option, rather than fill in the blanks
-l3 = Label(tab3, text='Please enter six situational choices in the cells below, and then click the Prediction button'+
+l3 = Label(tab1, text='Please enter six situational choices in the cells below, and then click the Prediction button'+
                       'to see your prediction results:', padx=5, pady=5)
 l3.grid(row=1, column=0)
 
 #--------------------- Dummy 1 Listbox and Textbox Attack Origin-------------------------------------------------------
 #Listbox of Dummy Numbers
-dummyOneListBox = Listbox(tab3) # height=1, width=50, yscrollcommand=TRUE)
+dummyOneListBox = Listbox(tab1) # height=1, width=50, yscrollcommand=TRUE)
 dummyOneListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
 dummyOneListBox.grid(row=2, column=0, padx=5, pady=5, ipadx=250, ipady=0)
 
@@ -563,13 +555,13 @@ for key in listTargetDictionary:
     List1.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
-dummyNumberOne = Text(tab3, height=2, width=50)
+dummyNumberOne = Text(tab1, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 2 Listbox and Textbox  (Attack Target) ----------------------------------------------------
 #Listbox of Dummy Numbers
-dummyTwoListBox = Listbox(tab3, height=2, width=50, yscrollcommand=SCROLL)
+dummyTwoListBox = Listbox(tab1, height=2, width=50, yscrollcommand=SCROLL)
 dummyTwoListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
 dummyTwoListBox.grid(row=4, column=0, columnspan=1, padx=5, pady=5, ipadx=250, ipady=0)
 
@@ -582,31 +574,31 @@ for key in listMonthDictionary:
     List2.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
-dummyNumberTwo = Text(tab3, height=2, width=50)
+dummyNumberTwo = Text(tab1, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 3 Listbox and Textbox Attack Month--------------------------------------------------------
 
-dummyNumberThree = Text(tab3, height=2, width=50)
+dummyNumberThree = Text(tab1, height=2, width=50)
 dummyNumberThree.bind("<Tab>", focus_next_widget)
 dummyNumberThree.grid(row=4, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 4 Listbox and Textbox Attack Year----------------------------------------------------------
 
-dummyNumberFour = Text(tab3, height=2, width=50)
+dummyNumberFour = Text(tab1, height=2, width=50)
 dummyNumberFour.bind("<Tab>", focus_next_widget)
 dummyNumberFour.grid(row=5, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberFive = Text(tab3, height=2, width=50)
+dummyNumberFive = Text(tab1, height=2, width=50)
 dummyNumberFive.bind("<Tab>", focus_next_widget)
 dummyNumberFive.grid(row=6, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberSix = Text(tab3, height=2, width=50)
+dummyNumberSix = Text(tab1, height=2, width=50)
 dummyNumberSix.bind("<Tab>", focus_next_widget)
 dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
 
@@ -614,7 +606,7 @@ dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
 
 # Tab 2
 # Accuracy Button
-AccuracyButton = Button(tab3, text='Prediction Accuracy', command=writeAccuracy, width=20, bg='purple', fg='#fff')
+AccuracyButton = Button(tab1, text='Prediction Accuracy', command=writeAccuracy, width=20, bg='purple', fg='#fff')
 AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
 
 # Tab 3
@@ -623,45 +615,40 @@ AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
 # reference: https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
 
 # List 1 Origin country/region choice buttons
-DummyOneButtonSubmit = Button(tab3, text="Submit Attack Origin", command=lambda: get_selDummyOneTarget(), width=20, bg='purple', fg='#fff')
+DummyOneButtonSubmit = Button(tab1, text="Submit Attack Origin", command=lambda: get_selDummyOneTarget(), width=20, bg='purple', fg='#fff')
 DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
-DummyTwoButtonSubmit = Button(tab3, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
+DummyTwoButtonSubmit = Button(tab1, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
 DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
-PredictionButton = Button(tab3, text='Click to see Prediction Results', command=finalPrediction, width=25,
+PredictionButton = Button(tab1, text='Click to see Prediction Results', command=finalPrediction, width=25,
                           bg='blue', fg='#fff')
 PredictionButton.grid(row=6, column=0, padx=5, pady=5)
 
 # Button to clear Tab 3 and start over
-ClearTabThreeButton = Button(tab3, text='Clear results and start over', command=clear_display_result, width=25,
+ClearTabThreeButton = Button(tab1, text='Clear results and start over', command=clear_display_result, width=25,
                           bg='purple', fg='#fff')
 ClearTabThreeButton.grid(row=1, column=1, padx=5, pady=5)
 
 # Menu button on tab 1, to start program over
 MenuTabOneButton = Button(tab1, text='Return to Program Main Menu', command=mainMenu, width=25,
                           bg='purple', fg='#fff')
-MenuTabOneButton.grid(row=3, column=3, padx=5, pady=5)
+MenuTabOneButton.grid(row=0, column=0, padx=5, pady=5)
 
 # Button on tab 1, to exit the program
 ExitTabOneButton = Button(tab1, text='Exit Program', command=exitProgram, width=14,
                           bg='purple', fg='#fff')
-ExitTabOneButton.grid(row=4, column=3, padx=5, pady=5)
+ExitTabOneButton.grid(row=8, column=0, padx=5, pady=5)
 
 #------Result Display tabs---------------------------------------------------------------------------------------------
 
 # Display Boxes for Results
-tab1_display = ScrolledText(tab1, height=20, width=50)
-tab1_display.grid(row=4, column=0, columnspan=3, padx=5, pady=5)
-
-tab2_display = ScrolledText(tab2, height=1, width=20)
-tab2_display.grid(row=3, column=0, columnspan=3, padx=5, pady=5)
 
 # Prediction results window in tab 3
-tab3_display = ScrolledText(tab3, height=1)
-tab3_display.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
+tab1_display = Text(tab1, height=1)
+tab1_display.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
 # Keep window alive
 mainloop()
