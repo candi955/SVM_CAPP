@@ -104,14 +104,14 @@ listOriginDictionary = {"Africa_China":{"Code": 6},
                 "Taiwan":{"Code": 152},
                 "Taiwan_USA":{"Code": 153},
                 "Turkey":{"Code": 156},
-                "UAE":{"Code": 4538709},
-                "UK":{"Code": 19285},
-                "UK_USA":{"Code": 71826170399573},
+                "UAE":{"Code": 157},
+                "UK":{"Code": 158},
+                "UK_USA":{"Code": 159},
                 "Unlisted":{"Code": 1},
-                "USA":{"Code": 4281173},
-                "Vietnam":{"Code": 30787899488561494},
-                "Western_World":{"Code": 7956378975824997986907049911639},
-                "Yemen":{"Code": 474148070745}}
+                "USA":{"Code": 162},
+                "Vietnam":{"Code": 166},
+                "Western_World":{"Code": 167},
+                "Yemen":{"Code": 169}}
 
 # Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
 # pdDictOne = pd.DataFrame(locationDict)

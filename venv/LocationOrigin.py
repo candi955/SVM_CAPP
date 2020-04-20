@@ -188,17 +188,17 @@ listTargetDictionary = {"Afghanistan":{"Code": 2},
                 "Tehran": {"Code": 154},
                 "Tibet": {"Code": 155},
                 "Turkey": {"Code": 156},
-                "UK": {"Code": 19285},
-                "UK_USA": {"Code": 71826170399573},
-                "Ukraine": {"Code": 28550371533286229},
-                "UN": {"Code": 20053},
+                "UK": {"Code": 158},
+                "UK_USA": {"Code": 159},
+                "Ukraine": {"Code": 160},
+                "UN": {"Code": 161},
                 "Unlisted": {"Code": 1},
-                "USA": {"Code": 4281173},
-                "USA_Europe": {"Code": 479033080716116002689877},
-                "USA_Western_World": {"Code": 34172387495750340973031615562330792874837},
-                "Venezuela": {"Code": 1797144953447118693718},
-                "Western_World": {"Code": 7956378975824997986907049911639},
-                "Xinjiang": {"Code": 7453001538729830744}}
+                "USA": {"Code": 162},
+                "USA_Europe": {"Code": 163},
+                "USA_Western_World": {"Code": 164},
+                "Venezuela": {"Code": 165},
+                "Western_World": {"Code": 167},
+                "Xinjiang": {"Code": 168}}
 
 # Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
 # pdDictOne = pd.DataFrame(locationDict)
