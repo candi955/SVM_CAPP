@@ -23,7 +23,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 #-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
 root = tk.Tk()
 root.title('SVM Cyber Attack Prediction Program')
-root.geometry("500x500")
+root.geometry("375x200")
 style = ttk.Style(root)
 
 # Tabs and Frames
@@ -39,13 +39,9 @@ def onButtonClick(buttonClicks):
     if buttonClicks == 1:
         import LocationTarget
     if buttonClicks == 2:
-        mbox.showinfo("Click 1")
+        import LocationOrigin
     if buttonClicks == 3:
-        mbox.showinfo("Click 2")
-        import LocationTarget
-
-def exitProgram():
-    exit()
+        exit()
 
 def flush(self):
     pass
@@ -59,15 +55,17 @@ l1.grid(row=1, column=0)
 #-------Tkinter Buttons------------------------------------------------------------------------------------------------
 
 
-TargetPageButton = tk.Button(root, text='Click for prediction of Attack Target', command=lambda: onButtonClick(1), height=2, width=30, bg='purple', fg='#fff')
-TargetPageButton.grid_slaves(row=2, column=0)
+TargetPageButton = tk.Button(root, text='Click for prediction of Attack Target', command=lambda: onButtonClick(1),
+                             height=2, width=30, bg='purple', fg='#fff')
 TargetPageButton.pack()
 
-b2 = tk.Button(root, text="Page 2", command= lambda: onButtonClick(2), width=12, bg='purple', fg='#fff')
-b2.pack()
+OriginPageButton = tk.Button(root, text='Click for prediction of Attack Origin', command= lambda: onButtonClick(2),
+                             height=2, width=30, bg='purple', fg='#fff')
+OriginPageButton.pack()
 
-b3 = Button(root, text="Page 3", command= lambda: onButtonClick(3), width=12, bg='purple', fg='#fff')
-b3.pack()
+ExitButton = tk.Button(root, text='Click here to exit the program',
+                          command=lambda: onButtonClick(3), height=2, width=30, bg='green', fg='#fff')
+ExitButton.pack()
 
 mainloop()
 
