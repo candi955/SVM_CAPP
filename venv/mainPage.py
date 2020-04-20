@@ -22,10 +22,10 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 #-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
 root = tk.Tk()
-root.title('SVM Prediction: Global attack by location (country)')
+root.title('SVM Cyber Attack Prediction Program')
 root.geometry("500x500")
 style = ttk.Style(root)
-style.configure('lefttab.TNotebook', tabposition='wn')
+
 # Tabs and Frames
 page1 = ttk.Notebook(root)
 
@@ -60,7 +60,7 @@ l1.grid(row=1, column=0)
 
 
 TargetPageButton = tk.Button(root, text='Click for prediction of Attack Target', command=lambda: onButtonClick(1), height=2, width=30, bg='purple', fg='#fff')
-TargetPageButton.config(padx=5, pady=5)
+TargetPageButton.grid_slaves(row=2, column=0)
 TargetPageButton.pack()
 
 b2 = tk.Button(root, text="Page 2", command= lambda: onButtonClick(2), width=12, bg='purple', fg='#fff')
