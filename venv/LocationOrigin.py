@@ -218,9 +218,9 @@ listMonthDictionary = {"January":{"binary": 34184235089551690}, # list option 0
                 "August":{"binary": 128039239775553}, # list option 7
                 "September":{"binary": 2110234346230949897555}, # list option 8
                 "October":{"binary": 32199620796113743}, # list option 9
-                "November":{"binary": 8243102914964778830},
-                "December":{"binary": 8243102914963531076},
-                "Unlisted":{"binary": 7234316415479344725}}
+                "November":{"binary": 8243102914964778830}, # list option 10
+                "December":{"binary": 8243102914963531076}, # list option 11
+                "Unlisted":{"binary": 7234316415479344725}} # list option 12
 
 # Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
 #pdDictTwo = pd.DataFrame(locationDict)
@@ -230,33 +230,33 @@ pd.set_option('display.width', 1000)
 
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
-cyberExcel = xlrd.open_workbook('SVMCAPPdataset8Apr2020_OriginOnly_19Apr2020_810pm_fakeDummyNums.xlsx')
+cyberExcel = xlrd.open_workbook('SVMCAPPdataset8Apr2020_OriginOnly_19Apr2020_2310pm_fakeDummyNums.xlsx')
 # Creating variable to convert excel file to a dataframe (using pandas)
 sheets = cyberExcel.sheets()
 for sheet in sheets:
-   cyberSheetData = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
+    cyberSheetData = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
 
 
-# Removing target row from source dataset, with the -1, and removing source data from target data column, so that the -1
-# will only show the last column in the target data
-sources = cyberSheetData[:, :-1]
-target = cyberSheetData[:, len(cyberSheetData[0]) - 1]
+    # Removing target row from source dataset, with the -1, and removing source data from target data column, so that the -1
+    # will only show the last column in the target data
+    sources = cyberSheetData[:, :-1]
+    target = cyberSheetData[:, len(cyberSheetData[0]) - 1]
 
-# Deleting header column from dataframe, both source and target data
-sourceNoHeader = np.delete(sources, (0), axis=0)
-targetNoHeader = np.delete(target, (0), axis=0)
+    # Deleting header column from dataframe, both source and target data
+    sourceNoHeader = np.delete(sources, (0), axis=0)
+    targetNoHeader = np.delete(target, (0), axis=0)
 
-X = sourceNoHeader
-y = targetNoHeader
+    X = sourceNoHeader
+    y = targetNoHeader
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=50)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=50)
 
-model = svm.SVC(kernel='linear')
-model.fit(X_train, y_train.ravel())
-y_pred = model.predict(X_test)
+    model = svm.SVC(kernel='linear')
+    model.fit(X_train, y_train.ravel())
+    y_pred = model.predict(X_test)
 
-knn = KNeighborsClassifier(n_neighbors=1)
-knn.fit(X, y)
+    knn = KNeighborsClassifier(n_neighbors=1)
+    knn.fit(X, y)
 
 
 #-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
@@ -488,7 +488,7 @@ def finalPrediction():
             dummyValues()
             # turning the dummy values, which were string then integer, back into an array for the prediction
             a = np.array([dummyValues.dummyTextOne, dummyValues.dummyTextTwo, dummyValues.dummyTextThree,
-                          dummyValues.dummyTextFour, dummyValues.dummyTextFive])
+                          dummyValues.dummyTextFour, dummyValues.dummyTextFive, dummyValues.dummyTextSix])
 
             # inserting dummy array variable as argument to K-nearest neighbor algorithm to create prediction, which is
             # placed within the prediction variable
@@ -611,10 +611,6 @@ dummyNumberSix.bind("<Tab>", focus_next_widget)
 dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
 
 #-------Tkinter Buttons------------------------------------------------------------------------------------------------
-#Tab 1
-# Dataset Button
-datasetButton = Button(tab1, text='Dataset', command=writeDataset, width=12, bg='purple', fg='#fff')
-datasetButton.grid(row=3, column=0, padx=15, pady=15)
 
 # Tab 2
 # Accuracy Button
@@ -627,16 +623,10 @@ AccuracyButton.grid(row=0, column=4, padx=15, pady=15)
 # reference: https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
 
 # List 1 Origin country/region choice buttons
-# Hashing the 'change answer' buttons for now in case I want to add the option in later
-# DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
-# DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
 DummyOneButtonSubmit = Button(tab3, text="Submit Attack Origin", command=lambda: get_selDummyOneTarget(), width=20, bg='purple', fg='#fff')
 DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
-# Hashing the 'change answer' buttons for now in case I want to add the option in later
-# DummyOneButtonChange = Button(tab3, text="Change", command = change_opt, width=20, bg='purple', fg='#fff')
-# DummyOneButtonChange.grid(row=1, column=4, padx=15, pady=15)
 DummyTwoButtonSubmit = Button(tab3, text="Submit Attack Target", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
 DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 
