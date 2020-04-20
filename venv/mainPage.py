@@ -20,6 +20,20 @@ import xlrd
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+# ----------Opening and creating DataFrame-----------------------------------------------------------------------
+# pulling excel file and creating variable
+cyberExcel = xlrd.open_workbook('SVMCAPPdataset8Apr2020_FullSet_19Apr2020_810pm_fakeDummyNums.xlsx')
+# Creating variable to convert excel file to a dataframe (using pandas)
+sheets = cyberExcel.sheets()
+for sheet in sheets:
+   cyberSheetData = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
+pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
+pd.set_option('display.max_columns', 1000)
+pd.set_option('display.width', 1000)
+
+# creating dataframe for tkinter
+df = pd.DataFrame(cyberSheetData)
+
 #-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
 root = tk.Tk()
 root.title('SVM Cyber Attack Prediction Program')
@@ -41,6 +55,29 @@ def onButtonClick(buttonClicks):
     if buttonClicks == 2:
         import LocationOrigin
     if buttonClicks == 3:
+        print(df)
+
+        # Creating pop up window for dataset
+        # reference: https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-tkinter
+        win = tk.Toplevel()
+        win.wm_title("Full Cyber event Dataset used for prediction algorithm")
+
+        popUpLabel = tk.Label(win, text="Dataset created by program authors utilizing the CSIS Significant Cyber " +
+                                        "Incidents and The World Bank DataBank websites:\n\n" +
+                                        "https://csis-prod.s3.amazonaws.com/s3fs-public/200306_Significant_Cyber_Events_List.pdf?qRZXF65CUUOKTOl9rLVBMJhXfXtmJZMj\n" +
+                                        "https://databank.worldbank.org/home.aspx\n\n")
+        popUpLabel.grid(row=0, column=0)
+
+        # Display Boxes for Results
+        dataSetDisplay = ScrolledText(win, height=35, width=150)
+        dataSetDisplay.grid(row=4, column=0, columnspan=5, padx=5, pady=5)
+        dataSetDisplay.insert(1.0, pd.DataFrame(df))
+
+        #popUpLabelButton = ttk.Button(win, text="Okay", command=win.destroy)
+        #popUpLabelButton.grid(row=1, column=0)
+        # the dataframe method, tab 1
+        #tab1_display.insert(1.0, pd.DataFrame(df))
+    if buttonClicks == 4:
         exit()
 
 def flush(self):
@@ -63,8 +100,12 @@ OriginPageButton = tk.Button(root, text='Click for prediction of Attack Origin',
                              height=2, width=30, bg='purple', fg='#fff')
 OriginPageButton.pack()
 
+DataSetPageButton = tk.Button(root, text='Click to see original dataset', command= lambda: onButtonClick(3),
+                             height=2, width=30, bg='blue', fg='#fff')
+DataSetPageButton.pack()
+
 ExitButton = tk.Button(root, text='Click here to exit the program',
-                          command=lambda: onButtonClick(3), height=2, width=30, bg='green', fg='#fff')
+                          command=lambda: onButtonClick(4), height=2, width=30, bg='green', fg='#fff')
 ExitButton.pack()
 
 mainloop()
