@@ -1,0 +1,194 @@
+# List 2 Dictionary page of Target countries
+
+
+import pandas as pd
+
+
+#------------ListBox Country/Region/binary Dictionary--------------------------------------------------------------------------
+# creating a dictionary to associate locations with associated binary
+# reference: https://www.w3schools.com/python/python_dictionaries.asp
+
+listTwoDictionary = {"Afghanistan":{"binary": 133442057845059666670216769}, # list option 0
+                "Afghanistan_Application_Users_India_Individuals_Middle_East":{"binary": 5547024738073957303662399576029973568509146976390336004265898740432675875991326601817987176556771282997325216339676316688169204494214088844865}, # list option 1
+                "Africa":{"binary": 107079598761537}, # list option 2
+                "Africa_Asia":{"binary": 117763779069479634143962689}, # list option 3
+                "Al_Quaida":{"binary": 1796569596582678195265}, # list option 4
+                "Application_Users":{"binary": 39284530948651148542945322099333464617025}, # list option 5
+                "Application_Users_Individuals":{"binary": 3111807686350090077732346834447189654644633344498384566960921427079233}, # list option 6
+                "Application_Users_Japan":{"binary": 10572363095725242809903474363794222115376060650679726145}, # list option 7
+                "Armenia":{"binary": 27418995609924161}, # list option 8
+                "Asia":{"binary": 1634300737}, # list option 9
+                "Asia_Canada_Europe_Middle_East_USA":{"binary": 1936429723561952681582869571271737150404117317300876807438770316145334861458666305},
+                "Asia_Europe_Middle_East_USA":{"binary": 26873360808337585803091529125126950972081670239456308127962067777},
+                "Asia_Europe_North_America":{"binary": 611316441071925721528505149291982085844431624011733040460609},
+                "Asia_South_America":{"binary": 8483719852624495593292136065139819009372993},
+                "Asia_USA":{"binary": 4707199903676855105},
+                "Australia":{"binary": 1796930728965501580609},
+                "Australia_Canada_Japan_Switzerland_UK_USA":{"binary": 139534466882955655784457473920909684382362106944851677537702575567474562215766014437633627337749825},
+                "Australia_Canada_New_Zealand_UK_USA":{"binary": 495726009159212053789849057507327564583030099413608231039652233206430848978550748481},
+                "Austria":{"binary": 27419013041845569},
+                "Austria_Germany_Switzerland":{"binary": 41314988655876265391272827414481922914912132198580508749628405057},
+                "Bahrain":{"binary": 31078114690359618},
+                "Belarus_Mongolia_Russia":{"binary": 9330208112349500424797783435764896148944012388223182146},
+                "Belgium":{"binary": 30809868028634434},
+                "Brazil":{"binary": 119200280572482},
+                "Cambodia":{"binary": 7019251923789111619},
+                "Canada":{"binary": 107083759247683},
+                "Canada_France_Multiple_UK_USA":{"binary": 1761172573677115074610677974231769886272027516418405464348645768716611},
+                "Central_America":{"binary": 505669108189612364370267082941424963},
+                "Central_Asia_Eastern_Europe":{"binary": 41729666698114283016919014524090844581596341132174623587355747651},
+                "Central_Asia_Eastern_Europe_Russia":{"binary": 2887559549285678575025028014159333265348920949327583776587248794714267494332130627},
+                "Central_Asia_Europe_USA":{"binary": 6256941893813146631859154412586712377514069709544121667},
+                "Chile":{"binary": 435610544195},
+                "China":{"binary": 418464229443},
+                "China_Germany":{"binary": 9620768797959008789195953629251},
+                "China_Individuals":{"binary": 39276534853245351046492589691522312136771},
+                "China_Pakistan":{"binary": 2238786227951005213617790124648515},
+                "CSIS_USA":{"binary": 4707199903439868739},
+                "Czech_Republic":{"binary": 2016311051235894369754033219271235},
+                "Czech_Republic_Individuals":{"binary": 185478191754227285249969174530609441383227936193346174183635523},
+                "Denmark":{"binary": 30243585281385796},
+                "East_Asia":{"binary": 1796932664024362082629},
+                "Eastern_Europe":{"binary": 2057431415377846504395799230898501},
+                "Egypt":{"binary": 500103210821},
+                "Estonia":{"binary": 27418995778155333},
+                "Europe":{"binary": 111533580514629},
+                "Europe_Individuals":{"binary": 10054792922430809867902102961034118644790597},
+                "Europe_Individuals_Middle_East":{"binary": 803713213924968946004570530890938146356423406018987839112189083435300165},
+                "Europe_Japan_USA":{"binary": 86832511930930819263603543771519808837},
+                "Europe_Middle_East":{"binary": 10144286935599035412558109646840913932219717},
+                "Europe_Middle_East_North_America":{"binary": 44049991939471719292781853637477999382754235777045428286303327005162211538245},
+                "Europe_NATO":{"binary": 95903023219825537446999365},
+                "Europe_NATO_Ukraine":{"binary": 2261993475681827677693093247589969742749922629},
+                "Europe_North_America":{"binary": 555989064261598943201993414997543446447190603077},
+                "Europe_Russia":{"binary": 7717767261620487822145651635525},
+                "Finland":{"binary": 28268862381123910},
+                "France":{"binary": 111477728047686},
+                "France_Germany_Japan":{"binary": 630161946757152369395487029780148113741199798854},
+                "France_Germany_UK": {"binary": 25634657629830475695080879593172735455814},
+                "France_South_Korea": {"binary": 8484412364304969210251414251757639397634630},
+                "Georgia": {"binary": 27418965763384647},
+                "Germany": {"binary": 34179836909086023},
+                "Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA": {"binary": 3599295972025478897151354840582044557016535795860902688018405021916292137618025118208661378066604542240384327},
+                "Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals": {"binary": 327711598681358806473535046145613536099155348676132340178557461795987392748287290496883585939262089223124598924634327352459624440816967},
+                "Germany_Turkey": {"binary": 2462206859723460424033855417247047},
+                "Global_Unlisted": {"binary": 521287435408528627617000934358346823},
+                "India": {"binary": 418380017225},
+                "India_Italy_Saudi_Arabia_Scotland_UAE": {"binary": 34442224644743318243735343714622843513968332852566796037896488177251263385944346459401801},
+                "India_Pakistan": {"binary": 2238786227951005213617790040436297},
+                "Individuals": {"binary": 139538282629009384004677193},
+                "Individuals_Iran": {"binary": 146721050339509918346768000002986110537},
+                "Individuals_Latvia": {"binary": 8485778837090825286018691921867596733115977},
+                "Individuals_Multiple": {"binary": 579026340795075577836801232462293422175315848777},
+                "Individuals_NATO_Ukraine": {"binary": 2487088128465618221363062841210218726675521088406281285193},
+                "Individuals_Sri_Lanka": {"binary": 142378982391427591699701078127165432569250395221577},
+                "Individuals_USA": {"binary": 339189499736294812625156247350701641},
+                "Individuals_Vietnam": {"binary": 2439268704152585959516329496284772107676839497},
+                "Indonesia": {"binary": 1796932703671120326217},
+                "Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang": {"binary": 293663212810770379135919508023638240622048108390492839331378670437676906065559292090827246281641117934618254935537732048405501613207113},
+                "International": {"binary": 8586795105461350372667137748553},
+                "Iran": {"binary": 1851880009},
+                "Iran_Israel_Middle_East": {"binary": 11153761441187306308117234849995952050181433635710792265},
+                "Iran_Syria": {"binary": 460014705681956933300809},
+                "Iraq_Pakistan_Tajikistan": {"binary": 2706526475567613707123455675952615284393656146857744757321},
+                "Ireland": {"binary": 28268862380536393},
+                "ISIS": {"binary": 1397314377},
+                "Israel": {"binary": 119182682387273},
+                "Israel_Saudi_Arabia_USA": {"binary": 6256941893723329418780205680006274667958179856383112009},
+                "Israel_Sudan_Syria_Middle_East": {"binary": 803713213924968946004570530889369126979850478811228792355694693835764553},
+                "Italy": {"binary": 521509368905},
+                "Italy_France_Germany_Poland_Spain_Turkey_USA": {"binary": 2340999890724526941997479847528907046777487003526924268424622113184721296010098148746237170904876170966089},
+                "Japan": {"binary": 474081157450},
+                "Japan_Multiple_Unlisted": {"binary": 9616055909821526137339212106786338705010904763416469834},
+                "Japan_Unlisted": {"binary": 2036279044564564951628918490685770},
+                "Kazakhstan": {"binary": 521258038456151927578955},
+                "Lebanon": {"binary": 31084767309096268},
+                "Lebanon_UAE": {"binary": 83724410224598406217753932},
+                "Libya": {"binary": 418648320332},
+                "Lithuania": {"binary": 1796931291928138639692},
+                "Malaysia": {"binary": 7019268459396358477},
+                "Mexico": {"binary": 122472761943373},
+                "Middle_East": {"binary": 140780261553827770911713613},
+                "Middle_East_South_America_UK_USA": {"binary": 29547572681856873838269706859280096340519948949106405771628223098370744674637},
+                "Montenegro": {"binary": 526293058905474086104909},
+                "Multiple": {"binary": 7308339893542614349},
+                "Multiple_Unlisted": {"binary": 34163093366933332139507271942542625371469},
+                "Netherlands": {"binary": 139500742065929126696740174},
+                "Netherlands_territory": {"binary": 177495008588537150289569034074503311374442523026766},
+                "NGOs_UN": {"binary": 22048916628260686},
+                "North_America_Pakistan_Russia_Saudi_Arabia_Turkey": {"binary": 4783252672609565942086426335538687073561207333492445561892257896545894802454521445006773297625430995809981742445653838},
+                "North_Korea": {"binary": 117744874465821730700160846},
+                "Norway": {"binary": 133459522776910},
+                "Oman_UAE": {"binary": 4990363730465353039},
+                "Pakistan": {"binary": 7953766455951712592},
+                "Philippines": {"binary": 139505465009996466775222352},
+                "Qatar": {"binary": 491261288785},
+                "Qatar_Saudi_Arabia": {"binary": 8485752154221198716887260754064792649752913},
+                "Russia": {"binary": 107105536406866},
+                "Saudi_Arabia": {"binary": 30147447753212470604776956243},
+                "Saudi_Arabia_South_Korea_USA": {"binary": 6879580366467208809293824059458255306814834697835999905549076750675},
+                "Saudi_Arabia_USA": {"binary": 86832511926917119432226067621359214931},
+                "Scotland": {"binary": 7236828769668784979},
+                "Singapore": {"binary": 1871367084451052808531},
+                "South_Africa": {"binary": 30140227567590121037825929043},
+                "South_Korea": {"binary": 117744874465821730700357459},
+                "South_Korea_USA": {"binary": 339189499714501404461968594046381907},
+                "Southeast_Asia": {"binary": 1975748358425290468427058206043987},
+                "Sweden": {"binary": 121381755123539},
+                "Switzerland": {"binary": 121413839423173608325347155},
+                "Syria": {"binary": 418380937555},
+                "Taiwan": {"binary": 121364894277972},
+                "Tehran": {"binary": 121364810327380},
+                "Tibet": {"binary": 499917154644},
+                "Turkey": {"binary": 133476501321044},
+                "UK": {"binary": 19285},
+                "UK_USA": {"binary": 71826170399573},
+                "Ukraine": {"binary": 28550371533286229},
+                "UN": {"binary": 20053},
+                "Unlisted": {"binary": 7234316415479344725},
+                "USA": {"binary": 4281173},
+                "USA_Europe": {"binary": 479033080716116002689877},
+                "USA_Western_World": {"binary": 34172387495750340973031615562330792874837},
+                "Venezuela": {"binary": 1797144953447118693718},
+                "Western_World": {"binary": 7956378975824997986907049911639},
+                "Xinjiang": {"binary": 7453001538729830744}}
+
+pdDictListTwo = pd.DataFrame(listTwoDictionary)
+pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
+pd.set_option('display.max_columns', 1000)
+pd.set_option('display.width', 1000)
+
+
+print("\nList 2 Dictionary of Target countries: \n")
+print(listTwoDictionary)
+print("\n\n")
+
+print("In excel format: \n")
+print(pdDictListTwo)
+
+# ----- output of program---------------------------------------------------------------------------------------------
+
+# List 2 Dictionary of Target countries:
+#
+# {'Afghanistan': {'binary': 133442057845059666670216769}, 'Afghanistan_Application_Users_India_Individuals_Middle_East': {'binary': 5547024738073957303662399576029973568509146976390336004265898740432675875991326601817987176556771282997325216339676316688169204494214088844865}, 'Africa': {'binary': 107079598761537}, 'Africa_Asia': {'binary': 117763779069479634143962689}, 'Al_Quaida': {'binary': 1796569596582678195265}, 'Application_Users': {'binary': 39284530948651148542945322099333464617025}, 'Application_Users_Individuals': {'binary': 3111807686350090077732346834447189654644633344498384566960921427079233}, 'Application_Users_Japan': {'binary': 10572363095725242809903474363794222115376060650679726145}, 'Armenia': {'binary': 27418995609924161}, 'Asia': {'binary': 1634300737}, 'Asia_Canada_Europe_Middle_East_USA': {'binary': 1936429723561952681582869571271737150404117317300876807438770316145334861458666305}, 'Asia_Europe_Middle_East_USA': {'binary': 26873360808337585803091529125126950972081670239456308127962067777}, 'Asia_Europe_North_America': {'binary': 611316441071925721528505149291982085844431624011733040460609}, 'Asia_South_America': {'binary': 8483719852624495593292136065139819009372993}, 'Asia_USA': {'binary': 4707199903676855105}, 'Australia': {'binary': 1796930728965501580609}, 'Australia_Canada_Japan_Switzerland_UK_USA': {'binary': 139534466882955655784457473920909684382362106944851677537702575567474562215766014437633627337749825}, 'Australia_Canada_New_Zealand_UK_USA': {'binary': 495726009159212053789849057507327564583030099413608231039652233206430848978550748481}, 'Austria': {'binary': 27419013041845569}, 'Austria_Germany_Switzerland': {'binary': 41314988655876265391272827414481922914912132198580508749628405057}, 'Bahrain': {'binary': 31078114690359618}, 'Belarus_Mongolia_Russia': {'binary': 9330208112349500424797783435764896148944012388223182146}, 'Belgium': {'binary': 30809868028634434}, 'Brazil': {'binary': 119200280572482}, 'Cambodia': {'binary': 7019251923789111619}, 'Canada': {'binary': 107083759247683}, 'Canada_France_Multiple_UK_USA': {'binary': 1761172573677115074610677974231769886272027516418405464348645768716611}, 'Central_America': {'binary': 505669108189612364370267082941424963}, 'Central_Asia_Eastern_Europe': {'binary': 41729666698114283016919014524090844581596341132174623587355747651}, 'Central_Asia_Eastern_Europe_Russia': {'binary': 2887559549285678575025028014159333265348920949327583776587248794714267494332130627}, 'Central_Asia_Europe_USA': {'binary': 6256941893813146631859154412586712377514069709544121667}, 'Chile': {'binary': 435610544195}, 'China': {'binary': 418464229443}, 'China_Germany': {'binary': 9620768797959008789195953629251}, 'China_Individuals': {'binary': 39276534853245351046492589691522312136771}, 'China_Pakistan': {'binary': 2238786227951005213617790124648515}, 'CSIS_USA': {'binary': 4707199903439868739}, 'Czech_Republic': {'binary': 2016311051235894369754033219271235}, 'Czech_Republic_Individuals': {'binary': 185478191754227285249969174530609441383227936193346174183635523}, 'Denmark': {'binary': 30243585281385796}, 'East_Asia': {'binary': 1796932664024362082629}, 'Eastern_Europe': {'binary': 2057431415377846504395799230898501}, 'Egypt': {'binary': 500103210821}, 'Estonia': {'binary': 27418995778155333}, 'Europe': {'binary': 111533580514629}, 'Europe_Individuals': {'binary': 10054792922430809867902102961034118644790597}, 'Europe_Individuals_Middle_East': {'binary': 803713213924968946004570530890938146356423406018987839112189083435300165}, 'Europe_Japan_USA': {'binary': 86832511930930819263603543771519808837}, 'Europe_Middle_East': {'binary': 10144286935599035412558109646840913932219717}, 'Europe_Middle_East_North_America': {'binary': 44049991939471719292781853637477999382754235777045428286303327005162211538245}, 'Europe_NATO': {'binary': 95903023219825537446999365}, 'Europe_NATO_Ukraine': {'binary': 2261993475681827677693093247589969742749922629}, 'Europe_North_America': {'binary': 555989064261598943201993414997543446447190603077}, 'Europe_Russia': {'binary': 7717767261620487822145651635525}, 'Finland': {'binary': 28268862381123910}, 'France': {'binary': 111477728047686}, 'France_Germany_Japan': {'binary': 630161946757152369395487029780148113741199798854}, 'France_Germany_UK': {'binary': 25634657629830475695080879593172735455814}, 'France_South_Korea': {'binary': 8484412364304969210251414251757639397634630}, 'Georgia': {'binary': 27418965763384647}, 'Germany': {'binary': 34179836909086023}, 'Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA': {'binary': 3599295972025478897151354840582044557016535795860902688018405021916292137618025118208661378066604542240384327}, 'Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals': {'binary': 327711598681358806473535046145613536099155348676132340178557461795987392748287290496883585939262089223124598924634327352459624440816967}, 'Germany_Turkey': {'binary': 2462206859723460424033855417247047}, 'Global_Unlisted': {'binary': 521287435408528627617000934358346823}, 'India': {'binary': 418380017225}, 'India_Italy_Saudi_Arabia_Scotland_UAE': {'binary': 34442224644743318243735343714622843513968332852566796037896488177251263385944346459401801}, 'India_Pakistan': {'binary': 2238786227951005213617790040436297}, 'Individuals': {'binary': 139538282629009384004677193}, 'Individuals_Iran': {'binary': 146721050339509918346768000002986110537}, 'Individuals_Latvia': {'binary': 8485778837090825286018691921867596733115977}, 'Individuals_Multiple': {'binary': 579026340795075577836801232462293422175315848777}, 'Individuals_NATO_Ukraine': {'binary': 2487088128465618221363062841210218726675521088406281285193}, 'Individuals_Sri_Lanka': {'binary': 142378982391427591699701078127165432569250395221577}, 'Individuals_USA': {'binary': 339189499736294812625156247350701641}, 'Individuals_Vietnam': {'binary': 2439268704152585959516329496284772107676839497}, 'Indonesia': {'binary': 1796932703671120326217}, 'Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang': {'binary': 293663212810770379135919508023638240622048108390492839331378670437676906065559292090827246281641117934618254935537732048405501613207113}, 'International': {'binary': 8586795105461350372667137748553}, 'Iran': {'binary': 1851880009}, 'Iran_Israel_Middle_East': {'binary': 11153761441187306308117234849995952050181433635710792265}, 'Iran_Syria': {'binary': 460014705681956933300809}, 'Iraq_Pakistan_Tajikistan': {'binary': 2706526475567613707123455675952615284393656146857744757321}, 'Ireland': {'binary': 28268862380536393}, 'ISIS': {'binary': 1397314377}, 'Israel': {'binary': 119182682387273}, 'Israel_Saudi_Arabia_USA': {'binary': 6256941893723329418780205680006274667958179856383112009}, 'Israel_Sudan_Syria_Middle_East': {'binary': 803713213924968946004570530889369126979850478811228792355694693835764553}, 'Italy': {'binary': 521509368905}, 'Italy_France_Germany_Poland_Spain_Turkey_USA': {'binary': 2340999890724526941997479847528907046777487003526924268424622113184721296010098148746237170904876170966089}, 'Japan': {'binary': 474081157450}, 'Japan_Multiple_Unlisted': {'binary': 9616055909821526137339212106786338705010904763416469834}, 'Japan_Unlisted': {'binary': 2036279044564564951628918490685770}, 'Kazakhstan': {'binary': 521258038456151927578955}, 'Lebanon': {'binary': 31084767309096268}, 'Lebanon_UAE': {'binary': 83724410224598406217753932}, 'Libya': {'binary': 418648320332}, 'Lithuania': {'binary': 1796931291928138639692}, 'Malaysia': {'binary': 7019268459396358477}, 'Mexico': {'binary': 122472761943373}, 'Middle_East': {'binary': 140780261553827770911713613}, 'Middle_East_South_America_UK_USA': {'binary': 29547572681856873838269706859280096340519948949106405771628223098370744674637}, 'Montenegro': {'binary': 526293058905474086104909}, 'Multiple': {'binary': 7308339893542614349}, 'Multiple_Unlisted': {'binary': 34163093366933332139507271942542625371469}, 'Netherlands': {'binary': 139500742065929126696740174}, 'Netherlands_territory': {'binary': 177495008588537150289569034074503311374442523026766}, 'NGOs_UN': {'binary': 22048916628260686}, 'North_America_Pakistan_Russia_Saudi_Arabia_Turkey': {'binary': 4783252672609565942086426335538687073561207333492445561892257896545894802454521445006773297625430995809981742445653838}, 'North_Korea': {'binary': 117744874465821730700160846}, 'Norway': {'binary': 133459522776910}, 'Oman_UAE': {'binary': 4990363730465353039}, 'Pakistan': {'binary': 7953766455951712592}, 'Philippines': {'binary': 139505465009996466775222352}, 'Qatar': {'binary': 491261288785}, 'Qatar_Saudi_Arabia': {'binary': 8485752154221198716887260754064792649752913}, 'Russia': {'binary': 107105536406866}, 'Saudi_Arabia': {'binary': 30147447753212470604776956243}, 'Saudi_Arabia_South_Korea_USA': {'binary': 6879580366467208809293824059458255306814834697835999905549076750675}, 'Saudi_Arabia_USA': {'binary': 86832511926917119432226067621359214931}, 'Scotland': {'binary': 7236828769668784979}, 'Singapore': {'binary': 1871367084451052808531}, 'South_Africa': {'binary': 30140227567590121037825929043}, 'South_Korea': {'binary': 117744874465821730700357459}, 'South_Korea_USA': {'binary': 339189499714501404461968594046381907}, 'Southeast_Asia': {'binary': 1975748358425290468427058206043987}, 'Sweden': {'binary': 121381755123539}, 'Switzerland': {'binary': 121413839423173608325347155}, 'Syria': {'binary': 418380937555}, 'Taiwan': {'binary': 121364894277972}, 'Tehran': {'binary': 121364810327380}, 'Tibet': {'binary': 499917154644}, 'Turkey': {'binary': 133476501321044}, 'UK': {'binary': 19285}, 'UK_USA': {'binary': 71826170399573}, 'Ukraine': {'binary': 28550371533286229}, 'UN': {'binary': 20053}, 'Unlisted': {'binary': 7234316415479344725}, 'USA': {'binary': 4281173}, 'USA_Europe': {'binary': 479033080716116002689877}, 'USA_Western_World': {'binary': 34172387495750340973031615562330792874837}, 'Venezuela': {'binary': 1797144953447118693718}, 'Western_World': {'binary': 7956378975824997986907049911639}, 'Xinjiang': {'binary': 7453001538729830744}}
+#
+#
+#
+# In excel format:
+#
+#                         Afghanistan Afghanistan_Application_Users_India_Individuals_Middle_East           Africa                  Africa_Asia               Al_Quaida                          Application_Users                      Application_Users_Individuals                            Application_Users_Japan            Armenia        Asia                 Asia_Canada_Europe_Middle_East_USA                        Asia_Europe_Middle_East_USA                          Asia_Europe_North_America                           Asia_South_America             Asia_USA               Australia          Australia_Canada_Japan_Switzerland_UK_USA                Australia_Canada_New_Zealand_UK_USA            Austria                        Austria_Germany_Switzerland            Bahrain                            Belarus_Mongolia_Russia            Belgium           Brazil             Cambodia           Canada                      Canada_France_Multiple_UK_USA                       Central_America  \
+# binary  133442057845059666670216769  5547024738073957303662399576029973568509146976...           107079598761537  117763779069479634143962689  1796569596582678195265  39284530948651148542945322099333464617025  3111807686350090077732346834447189654644633344...  1057236309572524280990347436379422211537606065...  27418995609924161  1634300737  1936429723561952681582869571271737150404117317...  2687336080833758580309152912512695097208167023...  6113164410719257215285051492919820858444316240...  8483719852624495593292136065139819009372993  4707199903676855105  1796930728965501580609  1395344668829556557844574739209096843823621069...  4957260091592120537898490575073275645830300994...  27419013041845569  4131498865587626539127282741448192291491213219...  31078114690359618  9330208112349500424797783435764896148944012388...  30809868028634434  119200280572482  7019251923789111619  107083759247683  1761172573677115074610677974231769886272027516...  505669108189612364370267082941424963
+#
+#                               Central_Asia_Eastern_Europe                 Central_Asia_Eastern_Europe_Russia                            Central_Asia_Europe_USA         Chile         China                    China_Germany                          China_Individuals                      China_Pakistan             CSIS_USA                      Czech_Republic                         Czech_Republic_Individuals            Denmark               East_Asia                      Eastern_Europe         Egypt            Estonia           Europe                            Europe_Individuals                     Europe_Individuals_Middle_East                        Europe_Japan_USA                            Europe_Middle_East                   Europe_Middle_East_North_America                 Europe_NATO                             Europe_NATO_Ukraine                              Europe_North_America                    Europe_Russia            Finland           France  \
+# binary  4172966669811428301691901452409084458159634113...  2887559549285678575025028014159333265348920949...  6256941893813146631859154412586712377514069709...  435610544195  418464229443  9620768797959008789195953629251  39276534853245351046492589691522312136771  2238786227951005213617790124648515  4707199903439868739  2016311051235894369754033219271235  1854781917542272852499691745306094413832279361...  30243585281385796  1796932664024362082629  2057431415377846504395799230898501  500103210821  27418995778155333  111533580514629  10054792922430809867902102961034118644790597  8037132139249689460045705308909381463564234060...  86832511930930819263603543771519808837  10144286935599035412558109646840913932219717  4404999193947171929278185363747799938275423577...  95903023219825537446999365  2261993475681827677693093247589969742749922629  555989064261598943201993414997543446447190603077  7717767261620487822145651635525  28268862381123910  111477728047686
+#
+#                                     France_Germany_Japan                          France_Germany_UK                           France_South_Korea            Georgia            Germany      Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals                      Germany_Turkey                       Global_Unlisted         India              India_Italy_Saudi_Arabia_Scotland_UAE                      India_Pakistan                  Individuals                         Individuals_Iran                           Individuals_Latvia                              Individuals_Multiple                           Individuals_NATO_Ukraine                              Individuals_Sri_Lanka                       Individuals_USA                             Individuals_Vietnam               Indonesia Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang                    International        Iran                            Iran_Israel_Middle_East  \
+# binary  630161946757152369395487029780148113741199798854  25634657629830475695080879593172735455814  8484412364304969210251414251757639397634630  27418965763384647  34179836909086023  3599295972025478897151354840582044557016535795...  3277115986813588064735350461456135360991553486...        2462206859723460424033855417247047  521287435408528627617000934358346823  418380017225  3444222464474331824373534371462284351396833285...  2238786227951005213617790040436297  139538282629009384004677193  146721050339509918346768000002986110537  8485778837090825286018691921867596733115977  579026340795075577836801232462293422175315848777  2487088128465618221363062841210218726675521088...  1423789823914275916997010781271654325692503952...  339189499736294812625156247350701641  2439268704152585959516329496284772107676839497  1796932703671120326217  2936632128107703791359195080236382406220481083...        8586795105461350372667137748553  1851880009  1115376144118730630811723484999595205018143363...
+#
+#                       Iran_Syria                           Iraq_Pakistan_Tajikistan            Ireland        ISIS           Israel                            Israel_Saudi_Arabia_USA                     Israel_Sudan_Syria_Middle_East         Italy       Italy_France_Germany_Poland_Spain_Turkey_USA         Japan                            Japan_Multiple_Unlisted                      Japan_Unlisted                Kazakhstan            Lebanon                 Lebanon_UAE         Libya               Lithuania             Malaysia           Mexico                  Middle_East                   Middle_East_South_America_UK_USA                Montenegro             Multiple                          Multiple_Unlisted                  Netherlands                              Netherlands_territory            NGOs_UN  North_America_Pakistan_Russia_Saudi_Arabia_Turkey                  North_Korea           Norway             Oman_UAE             Pakistan                  Philippines  \
+# binary  460014705681956933300809  2706526475567613707123455675952615284393656146...  28268862380536393  1397314377  119182682387273  6256941893723329418780205680006274667958179856...  8037132139249689460045705308893691269798504788...  521509368905  2340999890724526941997479847528907046777487003...  474081157450  9616055909821526137339212106786338705010904763...  2036279044564564951628918490685770  521258038456151927578955  31084767309096268  83724410224598406217753932  418648320332  1796931291928138639692  7019268459396358477  122472761943373  140780261553827770911713613  2954757268185687383826970685928009634051994894...  526293058905474086104909  7308339893542614349  34163093366933332139507271942542625371469  139500742065929126696740174  1774950085885371502895690340745033113744425230...  22048916628260686  4783252672609565942086426335538687073561207333...  117744874465821730700160846  133459522776910  4990363730465353039  7953766455951712592  139505465009996466775222352
+#
+#                Qatar                           Qatar_Saudi_Arabia           Russia                   Saudi_Arabia                       Saudi_Arabia_South_Korea_USA                        Saudi_Arabia_USA             Scotland               Singapore                   South_Africa                  South_Korea                       South_Korea_USA                      Southeast_Asia           Sweden                  Switzerland         Syria           Taiwan           Tehran         Tibet           Turkey     UK          UK_USA            Ukraine     UN             Unlisted      USA                USA_Europe                          USA_Western_World               Venezuela                    Western_World             Xinjiang
+# binary  491261288785  8485752154221198716887260754064792649752913  107105536406866  30147447753212470604776956243  6879580366467208809293824059458255306814834697...  86832511926917119432226067621359214931  7236828769668784979  1871367084451052808531  30140227567590121037825929043  117744874465821730700357459  339189499714501404461968594046381907  1975748358425290468427058206043987  121381755123539  121413839423173608325347155  418380937555  121364894277972  121364810327380  499917154644  133476501321044  19285  71826170399573  28550371533286229  20053  7234316415479344725  4281173  479033080716116002689877  34172387495750340973031615562330792874837  1797144953447118693718  7956378975824997986907049911639  7453001538729830744
+#
+# Process finished with exit code 0
