@@ -1,4 +1,6 @@
-# Mainpage
+# Second attempt at main page.
+
+# reference: https://stackoverflow.com/questions/40526496/vertical-scrollbar-for-frame-in-tkinter-python
 
 #---------Imports----------------------------------------------------------------------------------------------------
 # Libraries
@@ -17,8 +19,6 @@ import pandas as pd
 import numpy as np
 import xlrd
 
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
@@ -35,19 +35,39 @@ pd.set_option('display.max_colwidth', 40)
 # creating dataframe for tkinter
 df = pd.DataFrame(cyberSheetData)
 
-#-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
+#-----Tkinter functions----------------------------------------------------------------------------
+
+def on_configure(event):
+    # update scrollregion after starting 'mainloop'
+    # when all widgets are in canvas
+    canvas.configure(scrollregion=canvas.bbox('all'))
+
+#----- Creating Tkinter Setup (root) for GUI #-----
+
+
 root = tk.Tk()
-root.title('SVM Cyber Attack Prediction Program')
-root.geometry("375x200")
-style = ttk.Style(root)
+root.title('SVM CAPP Main Menu')
 
+# --- create canvas with scrollbar ---
 
-# Tabs and Frames
-page1 = ttk.Notebook(root)
+canvas = tk.Canvas(root)
+canvas.pack(side=tk.LEFT)
 
+scrollbar = tk.Scrollbar(root, command=canvas.yview)
+scrollbar.pack(side=tk.LEFT, fill='y')
 
-#---Creating Tkinter functions----------------------------------------------------------------------------------------
+canvas.configure(yscrollcommand = scrollbar.set)
 
+# update scrollregion after starting 'mainloop'
+# when all widgets are in canvas
+canvas.bind('<Configure>', on_configure)
+
+# --- put frame in canvas ---
+
+frame = tk.Frame(canvas)
+canvas.create_window((0,0), window=frame, anchor='nw')
+
+# --- program functions ---
 def focus_next_widget(event):
     event.widget.tk_focusNext().focus()
     return("break")
@@ -80,36 +100,28 @@ def onButtonClick(buttonClicks):
 def flush(self):
     pass
 
-#------------Tkinter Labels for Tabs-----------------------------------------------------------------------------------
 
-l1 = Label(page1, text='Please click on one of the following choices.', padx=5, pady=5)
-l1.grid(row=1, column=0)
+# --- add widgets in frame ---
 
+labelOne = tk.Label(frame, text='Please click on one of the following program choices:', padx=5, pady=5, font="-size 10")
+labelOne.pack()
 
-#-------Tkinter Buttons------------------------------------------------------------------------------------------------
-
-
-TargetPageButton = tk.Button(root, text='Click for prediction of Attack Target', command=lambda: onButtonClick(1),
+TargetPageButton = tk.Button(frame, text='Prediction of Attack Target', command=lambda: onButtonClick(1),
                              height=2, width=30, bg='purple', fg='#fff')
-
 TargetPageButton.pack()
 
-OriginPageButton = tk.Button(root, text='Click for prediction of Attack Origin', command= lambda: onButtonClick(2),
+OriginPageButton = tk.Button(frame, text='Prediction of Attack Origin', command= lambda: onButtonClick(2),
                              height=2, width=30, bg='purple', fg='#fff')
 OriginPageButton.pack()
 
-DataSetPageButton = tk.Button(root, text='Click to see original dataset', command= lambda: onButtonClick(3),
+DataSetPageButton = tk.Button(frame, text='Original dataset', command= lambda: onButtonClick(3),
                              height=2, width=30, bg='blue', fg='#fff')
 DataSetPageButton.pack()
 
-ExitButton = tk.Button(root, text='Click here to exit the program',
+ExitButton = tk.Button(frame, text='Exit program',
                           command=lambda: onButtonClick(4), height=2, width=30, bg='green', fg='#fff')
 ExitButton.pack()
 
+# --- start program ---
+
 root.mainloop()
-
-
-
-
-
-
