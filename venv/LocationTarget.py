@@ -183,7 +183,7 @@ tab_control = ttk.Notebook(root)
 
 tab1 = ttk.Frame(tab_control)
 
-tab_control.add(tab1, text='Dummy Values and Target Prediction')
+tab_control.add(tab1, text='Attack Target Prediction')
 
 tab_control.pack(expand=1, fill='both')
 
