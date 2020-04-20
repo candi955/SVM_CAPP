@@ -263,6 +263,7 @@ for sheet in sheets:
 root = tk.Tk()
 root.title('SVM Prediction: Attack Origin')
 #root.geometry("1000x1000")
+
 style = ttk.Style(root)
 style.configure('lefttab.TNotebook', tabposition='wn')
 
@@ -409,6 +410,7 @@ def get_selDummyTwoMonth():
             for k, v in Unlistedlist.items():
                 UnlistedCode = "{}".format(v)
                 dummyNumberTwo.insert(1.0, (UnlistedCode))
+
 
 # the accuracy score method
 def writeAccuracy():
