@@ -555,14 +555,14 @@ ClearTabThreeButton = Button(tab3, text='Clear results and start over', command=
 ClearTabThreeButton.grid(row=1, column=1, padx=5, pady=5)
 
 # Menu button on tab 1, to start program over
-MenuTabOneButton = Button(tab1, text='Return to Program Main Menu', command=mainMenu, width=25,
+MenuTabOneButton = Button(tab3, text='Return to Program Main Menu', command=mainMenu, width=25,
                           bg='purple', fg='#fff')
-MenuTabOneButton.grid(row=3, column=3, padx=5, pady=5)
+MenuTabOneButton.grid(row=0, column=0, padx=5, pady=5)
 
 # Button on tab 1, to exit the program
-ExitTabOneButton = Button(tab1, text='Exit Program', command=exitProgram, width=14,
+ExitTabOneButton = Button(tab3, text='Exit Program', command=exitProgram, width=14,
                           bg='purple', fg='#fff')
-ExitTabOneButton.grid(row=4, column=3, padx=5, pady=5)
+ExitTabOneButton.grid(row=8, column=0, padx=5, pady=5)
 
 #------Result Display tabs---------------------------------------------------------------------------------------------
 
@@ -574,8 +574,10 @@ tab2_display = ScrolledText(tab2, height=1, width=20)
 tab2_display.grid(row=3, column=0, columnspan=3, padx=5, pady=5)
 
 # Prediction results window in tab 3
-tab3_display = ScrolledText(tab3, height=1)
+tab3_display = Text(tab3, height=1)
 tab3_display.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
 # Keep window alive
 mainloop()
+
+# reference for making scroll tab
