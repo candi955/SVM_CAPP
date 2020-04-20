@@ -264,6 +264,10 @@ root = tk.Tk()
 root.title('SVM Prediction: Attack Origin')
 #root.geometry("1000x1000")
 
+scrollBar = Scrollbar(root)
+scrollBar.pack(side=RIGHT, fill=Y)
+
+
 style = ttk.Style(root)
 style.configure('lefttab.TNotebook', tabposition='wn')
 
