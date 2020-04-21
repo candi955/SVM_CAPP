@@ -916,29 +916,109 @@ def get_selDummyOneTarget():
             for k, v in South_Korealist.items():
                 South_KoreaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (South_KoreaCode))
+        if i == 124:
+            South_Korea_USAlist = listTargetDictionary.get("South_Korea_USA")
+            for k, v in South_Korea_USAlist.items():
+                South_Korea_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (South_Korea_USACode))
+        if i == 125:
+            Southeast_Asialist = listTargetDictionary.get("Southeast_Asia")
+            for k, v in Southeast_Asialist.items():
+                Southeast_AsiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Southeast_AsiaCode))
+        if i == 126:
+            Swedenlist = listTargetDictionary.get("Sweden")
+            for k, v in Swedenlist.items():
+                SwedenCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (SwedenCode))
+        if i == 127:
+            Switzerlandlist = listTargetDictionary.get("Switzerland")
+            for k, v in Switzerlandlist.items():
+                SwitzerlandCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (SwitzerlandCode))
+        if i == 128:
+            Syrialist = listTargetDictionary.get("Syria")
+            for k, v in Syrialist.items():
+                SyriaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (SyriaCode))
+        if i == 129:
+            Taiwanlist = listTargetDictionary.get("Taiwan")
+            for k, v in Taiwanlist.items():
+                TaiwanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (TaiwanCode))
+        if i == 130:
+            Tehranlist = listTargetDictionary.get("Tehran")
+            for k, v in Tehranlist.items():
+                TehranCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (TehranCode))
+        if i == 131:
+            Tibetlist = listTargetDictionary.get("Tibet")
+            for k, v in Tibetlist.items():
+                TibetCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (TibetCode))
+        if i == 132:
+            Turkeylist = listTargetDictionary.get("Turkey")
+            for k, v in Turkeylist.items():
+                TurkeyCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (TurkeyCode))
+        if i == 133:
+            UKlist = listTargetDictionary.get("UK")
+            for k, v in UKlist.items():
+                UKCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UKCode))
+        if i == 134:
+            UK_USAlist = listTargetDictionary.get("UK_USA")
+            for k, v in UK_USAlist.items():
+                UK_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UK_USACode))
+        if i == 135:
+            Ukrainelist = listTargetDictionary.get("Ukraine")
+            for k, v in Ukrainelist.items():
+                UkraineCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UkraineCode))
+        if i == 136:
+            UNlist = listTargetDictionary.get("UN")
+            for k, v in UNlist.items():
+                UNCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UNCode))
+        if i == 137:
+            Unlistedlist = listTargetDictionary.get("Unlisted")
+            for k, v in Unlistedlist.items():
+                UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UnlistedCode))
+        if i == 138:
+            USAlist = listTargetDictionary.get("USA")
+            for k, v in USAlist.items():
+                USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (USACode))
+        if i == 139:
+            USA_Europelist = listTargetDictionary.get("USA_Europe")
+            for k, v in USA_Europelist.items():
+                USA_EuropeCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (USA_EuropeCode))
+        if i == 140:
+            USA_Western_Worldlist = listTargetDictionary.get("USA_Western_World")
+            for k, v in USA_Western_Worldlist.items():
+                USA_Western_WorldCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (USA_Western_WorldCode))
+        if i == 141:
+            Venezuelalist = listTargetDictionary.get("Venezuela")
+            for k, v in Venezuelalist.items():
+                VenezuelaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (VenezuelaCode))
+        if i == 142:
+            Western_Worldlist = listTargetDictionary.get("Western_World")
+            for k, v in Western_Worldlist.items():
+                Western_WorldCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Western_WorldCode))
+        if i == 143:
+            Xinjianglist = listTargetDictionary.get("Xinjiang")
+            for k, v in Xinjianglist.items():
+                XinjiangCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (XinjiangCode))
 
 
 
-
-#                 "Southeast_Asia": {"Code": 147},
-#                 "Sweden": {"Code": 149},
-#                 "Switzerland": {"Code": 150},
-#                 "Syria": {"Code": 151},
-#                 "Taiwan": {"Code": 152},
-#                 "Tehran": {"Code": 154},
-#                 "Tibet": {"Code": 155},
-#                 "Turkey": {"Code": 156},
-#                 "UK": {"Code": 158},
-#                 "UK_USA": {"Code": 159},
-#                 "Ukraine": {"Code": 160},
-#                 "UN": {"Code": 161},
-#                 "Unlisted": {"Code": 1},
-#                 "USA": {"Code": 162},
-#                 "USA_Europe": {"Code": 163},
-#                 "USA_Western_World": {"Code": 164},
-#                 "Venezuela": {"Code": 165},
-#                 "Western_World": {"Code": 167},
-#                 "Xinjiang": {"Code": 168}}
 
 
 
