@@ -16,12 +16,15 @@ project include:
 # 'supervised' indicates a referenced set of data for set training is involved within the algorithmic process. 
 # 
 # The referenced datasets are in the project files, and include:
+# CSIS:
+# Significant Cyber Incidents Since 2006
+# https://csis-prod.s3.amazonaws.com/s3fs-public/200306_Significant_Cyber_Events_List.pdf?qRZXF65CUUOKTOl9rLVBMJhXfXtmJZMj
 # 
+# The World Bank:
 # Gross PSD (Quarterly Public Sector Debt), Central Gov., All maturities, Debt securities, Nominal Value, % of GDP
-# https://databank.worldbank.org/source/quarterly-public-sector-debt
-#
-# World Development Indicator: Global access to clean fuels and technologies for cooking (% of population)# 
-# World Development Indicator: Global access to electricity (% of population)
+# https://databank.worldbank.org/source/quarterly-public-sector-debt#
+# World Development Indicator, Global access to clean fuels and technologies for cooking (% of population)# 
+# World Development Indicator, Global access to electricity (% of population)
 # https://databank.worldbank.org/source/world-development-indicators
 #
 #
