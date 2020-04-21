@@ -251,6 +251,66 @@ def get_selDummyOne():
             for k, v in Decentralized_International_Hacktivist_Grouplist.items():
                 Decentralized_International_Hacktivist_GroupCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Decentralized_International_Hacktivist_GroupCode))
+        if i == 10:
+            Eastern_Europelist = listOriginDictionary.get("Eastern_Europe")
+            for k, v in Eastern_Europelist.items():
+                Eastern_EuropeCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Eastern_EuropeCode))
+        if i == 11:
+            Egyptlist = listOriginDictionary.get("Egypt")
+            for k, v in Egyptlist.items():
+                EgyptCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (EgyptCode))
+        if i == 12:
+            Gazalist = listOriginDictionary.get("Gaza")
+            for k, v in Gazalist.items():
+                GazaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (GazaCode))
+        if i == 13:
+            Gaza_Former_Soviet_Union_Lebanonlist = listOriginDictionary.get("Gaza_Former_Soviet_Union_Lebanon")
+            for k, v in Gaza_Former_Soviet_Union_Lebanonlist.items():
+                Gaza_Former_Soviet_Union_LebanonCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Gaza_Former_Soviet_Union_LebanonCode))
+        if i == 14:
+            Germanylist = listOriginDictionary.get("Germany")
+            for k, v in Germanylist.items():
+                GermanyCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (GermanyCode))
+        if i == 15:
+            Indialist = listOriginDictionary.get("India")
+            for k, v in Indialist.items():
+                IndiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IndiaCode))
+        if i == 16:
+            Individualslist = listOriginDictionary.get("Individuals")
+            for k, v in Individualslist.items():
+                IndividualsCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IndividualsCode))
+        if i == 17:
+            Individuals_Ukrainelist = listOriginDictionary.get("Individuals_Ukraine")
+            for k, v in Individuals_Ukrainelist.items():
+                Individuals_UkraineCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_UkraineCode))
+        if i == 18:
+            Individuals_Unlistedlist = listOriginDictionary.get("Individuals_Unlisted")
+            for k, v in Individuals_Unlistedlist.items():
+                Individuals_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_UnlistedCode))
+        if i == 19:
+            Internationallist = listOriginDictionary.get("International")
+            for k, v in Internationallist.items():
+                InternationalCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (InternationalCode))
+        if i == 20:
+            Iranlist = listOriginDictionary.get("Iran")
+            for k, v in Iranlist.items():
+                IranCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IranCode))
+        if i == 21:
+            Iran_North_Korea_Russialist = listOriginDictionary.get("Iran_North_Korea_Russia")
+            for k, v in Iran_North_Korea_Russialist.items():
+                Iran_North_Korea_RussiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Iran_North_Korea_RussiaCode))
 
 
 # List 2 function to place list and then transfer answer to textbox, for Month choice
