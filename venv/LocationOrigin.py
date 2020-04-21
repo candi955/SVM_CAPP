@@ -565,34 +565,134 @@ def get_selDummyOneTarget():
             for k, v in Europe_Russialist.items():
                 Europe_RussiaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Europe_RussiaCode))
+        if i == 54:
+            Finlandlist = listTargetDictionary.get("Finland")
+            for k, v in Finlandlist.items():
+                FinlandCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (FinlandCode))
+        if i == 55:
+            Francelist = listTargetDictionary.get("France")
+            for k, v in Francelist.items():
+                FranceCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (FranceCode))
+        if i == 56:
+            France_Germany_Japanlist = listTargetDictionary.get("France_Germany_Japan")
+            for k, v in France_Germany_Japanlist.items():
+                France_Germany_JapanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (France_Germany_JapanCode))
+        if i == 57:
+            France_Germany_UKlist = listTargetDictionary.get("France_Germany_UK")
+            for k, v in France_Germany_UKlist.items():
+                France_Germany_UKCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (France_Germany_UKCode))
+        if i == 58:
+            France_South_Korealist = listTargetDictionary.get("France_South_Korea")
+            for k, v in France_South_Korealist.items():
+                France_South_KoreaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (France_South_KoreaCode))
+        if i == 59:
+            Georgialist = listTargetDictionary.get("Georgia")
+            for k, v in Georgialist.items():
+                GeorgiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (GeorgiaCode))
+        if i == 60:
+            Germanylist = listTargetDictionary.get("Germany")
+            for k, v in Germanylist.items():
+                GermanyCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (GermanyCode))
+        if i == 61:
+            Germany_Israel_Jordan_Saudi_Arabia_Turkey_USAlist = listTargetDictionary.get("Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA")
+            for k, v in Germany_Israel_Jordan_Saudi_Arabia_Turkey_USAlist.items():
+                Germany_Israel_Jordan_Saudi_Arabia_Turkey_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Germany_Israel_Jordan_Saudi_Arabia_Turkey_USACode))
+        if i == 62:
+            Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individualslist = listTargetDictionary.get("Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals")
+            for k, v in Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individualslist.items():
+                Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_IndividualsCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_IndividualsCode))
+        if i == 63:
+            Global_Unlistedlist = listTargetDictionary.get("Global_Unlisted")
+            for k, v in Global_Unlistedlist.items():
+                Global_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Global_UnlistedCode))
+        if i == 64:
+            Germany_Turkeylist = listTargetDictionary.get("Germany_Turkey")
+            for k, v in Germany_Turkeylist.items():
+                Germany_TurkeyCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Germany_TurkeyCode))
+        if i == 65:
+            Indialist = listTargetDictionary.get("India")
+            for k, v in Indialist.items():
+                IndiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IndiaCode))
+        if i == 66:
+            India_Italy_Saudi_Arabia_Scotland_UAElist = listTargetDictionary.get("India_Italy_Saudi_Arabia_Scotland_UAE")
+            for k, v in India_Italy_Saudi_Arabia_Scotland_UAElist.items():
+                India_Italy_Saudi_Arabia_Scotland_UAECode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (India_Italy_Saudi_Arabia_Scotland_UAECode))
+        if i == 67:
+            India_Pakistanlist = listTargetDictionary.get("India_Pakistan")
+            for k, v in India_Pakistanlist.items():
+                India_PakistanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (India_PakistanCode))
+        if i == 68:
+            Individualslist = listTargetDictionary.get("Individuals")
+            for k, v in Individualslist.items():
+                IndividualsCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IndividualsCode))
+        if i == 69:
+            Individuals_Iranlist = listTargetDictionary.get("Individuals_Iran")
+            for k, v in Individuals_Iranlist.items():
+                Individuals_IranCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_IranCode))
+        if i == 70:
+            Individuals_Latvialist = listTargetDictionary.get("Individuals_Latvia")
+            for k, v in Individuals_Latvialist.items():
+                Individuals_LatviaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_LatviaCode))
+        if i == 71:
+            Individuals_Multiplelist = listTargetDictionary.get("Individuals_Multiple")
+            for k, v in Individuals_Multiplelist.items():
+                Individuals_MultipleCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_MultipleCode))
+        if i == 72:
+            Individuals_NATO_Ukrainelist = listTargetDictionary.get("Individuals_NATO_Ukraine")
+            for k, v in Individuals_NATO_Ukrainelist.items():
+                Individuals_NATO_UkraineCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_NATO_UkraineCode))
+        if i == 73:
+            Individuals_Sri_Lankalist = listTargetDictionary.get("Individuals_Sri_Lanka")
+            for k, v in Individuals_Sri_Lankalist.items():
+                Individuals_Sri_LankaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_Sri_LankaCode))
+        if i == 74:
+            Individuals_USAlist = listTargetDictionary.get("Individuals_USA")
+            for k, v in Individuals_USAlist.items():
+                Individuals_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_USACode))
+        if i == 75:
+            Individuals_Vietnamlist = listTargetDictionary.get("Individuals_Vietnam")
+            for k, v in Individuals_Vietnamlist.items():
+                Individuals_VietnamCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Individuals_VietnamCode))
+        if i == 76:
+            Indonesialist = listTargetDictionary.get("Indonesia")
+            for k, v in Indonesialist.items():
+                IndonesiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IndonesiaCode))
+        if i == 77:
+            Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjianglist = listTargetDictionary.get("Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang")
+            for k, v in Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjianglist.items():
+                Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_XinjiangCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_XinjiangCode))
+        if i == 78:
+            Internationallist = listTargetDictionary.get("International")
+            for k, v in Internationallist.items():
+                InternationalCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (InternationalCode))
 
 
-#                 "Europe_Russia":{"Code": 60},
-#                 "Finland":{"Code": 61},
-#                 "France":{"Code": 62},
-#                 "France_Germany_Japan":{"Code": 63},
-#                 "France_Germany_UK": {"Code": 64},
-#                 "France_South_Korea": {"Code": 65},
-#                 "Georgia": {"Code": 68},
-#                 "Germany": {"Code": 69},
-#                 "Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA": {"Code": 70},
-#                 "Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals": {"Code": 71},
-#                 "Global_Unlisted": {"Code": 72},
-#                 "Germany_Turkey": {"Code": 73},
-#                 "India": {"Code": 74},
-#                 "India_Italy_Saudi_Arabia_Scotland_UAE": {"Code": 75},
-#                 "India_Pakistan": {"Code": 76},
-#                 "Individuals": {"Code": 77},
-#                 "Individuals_Iran": {"Code": 78},
-#                 "Individuals_Latvia": {"Code": 79},
-#                 "Individuals_Multiple": {"Code": 80},
-#                 "Individuals_NATO_Ukraine": {"Code": 81},
-#                 "Individuals_Sri_Lanka": {"Code": 82},
-#                 "Individuals_USA": {"Code": 85},
-#                 "Individuals_Vietnam": {"Code": 86},
-#                 "Indonesia": {"Code": 87},
-#                 "Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang": {"Code": 88},
-#                 "International": {"Code": 89},
+
 #                 "Iran": {"Code": 90},
 #                 "Iran_Israel_Middle_East": {"Code": 91},
 #                 "Iran_Syria": {"Code": 94},
