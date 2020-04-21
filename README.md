@@ -69,6 +69,9 @@ project include:
 # - The scrollbar within the dataset would also need to be corrected.  At this time it works, but is very small.  It is located on the
 # bottom-left corner of each prediction page. 
 # 
+# - Legal issues of dataset utilization would need taken into account.  Permissions may be required for application publication
+# and sharing. 
+# 
 # The author's wish for this program is that it might assist the cyber community with correlating data of cyber event prediction,
 # with data that has not been involved or utilized to do so prior.  Although only the future would present if such correlations
 # could be proven as accurate, the SVM CAPP might make that possible. 
