@@ -1,36 +1,7 @@
-# Prediction of Attack Origin page
-# Support Vector Machine Cyber-Attack Prediction Program (SVM CAPP)__
+# Practice scroll page
+# reference: https://stackoverflow.com/questions/40526496/vertical-scrollbar-for-frame-in-tkinter-python
 
-# A GUI program (through Tkinter) utilizing SKLearn, SVM algorithm, to predict cybersecurity data via a Supervised
-# dataset made of source and target data.  At this time the data is not made of completely real data, and the
-# project is in the build/test phases.
-
-# About Support Vector Machine (SVM)
-# A support vector machine (SVM) is a type of Supervised machine learning classification algorithm.
-# SVM differs from the other classification algorithms in the way that it chooses the decision boundary that maximizes
-# the distance from the nearest data points of all the classes. An SVM doesn't merely find a decision boundary; it
-# finds the most optimal decision boundary.
-# (https://stackabuse.com/implementing-svm-and-kernel-svm-with-pythons-scikit-learn/)
-
-# Utilizing SKlearn, pandas, numpy, xlrd APIs and also using a subclass of exception: import warnings (to prevent a
-# Future Error warning from popping up; appears is due to possible future updates).
-
-# Resources for original template build:
-# https://www.youtube.com/watch?reload=9&v=bwZ3Qiuj3i8
-# https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
-# https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
-# https://stackabuse.com/implementing-svm-and-kernel-svm-with-pythons-scikit-learn/
-# https://github.com/candi955/LottoProject   (my initial SVM project build and template for this project)
-
-# Resources utilized for dataset creation:
-# https://datacatalog.worldbank.org/dataset/world-development-indicators
-# https://datacatalog.worldbank.org/dataset/global-economic-monitor
-# https://csis-prod.s3.amazonaws.com/s3fs-public/190904_Significant_Cyber_Events_List.pdf
-# https://www.csis.org/programs/technology-policy-program/significant-cyber-incidents
-
-
-
-#---------Imports----------------------------------------------------------------------------------------------------
+# ---------Imports----------------------------------------------------------------------------------------------------
 # Libraries
 import tkinter as tk
 from tkinter import *
@@ -47,184 +18,181 @@ import pandas as pd
 import numpy as np
 import xlrd
 
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
-
-#------------ListBox Country/Region/Code Dictionaries--------------------------------------------------------------------------
+# ------------ListBox Country/Region/Code Dictionaries--------------------------------------------------------------------------
 # creating a dictionary to associate locations with associated Code
 # reference: https://www.w3schools.com/python/python_dictionaries.asp
 
 # List 1 (Target country/region)
-listTargetDictionary = {"Afghanistan":{"Code": 2},
-                "Afghanistan_Application_Users_India_Individuals_Middle_East":{"Code": 3},
-                "Africa":{"Code": 4},
-                "Africa_Asia":{"Code": 5},
-                "Al_Quaida":{"Code": 7},
-                "Application_Users":{"Code": 8},
-                "Application_Users_Individuals":{"Code": 9},
-                "Application_Users_Japan":{"Code": 10},
-                "Armenia":{"Code": 11},
-                "Asia":{"Code": 12},
-                "Asia_Canada_Europe_Middle_East_USA":{"Code": 13},
-                "Asia_Europe_Middle_East_USA":{"Code": 14},
-                "Asia_Europe_North_America":{"Code": 15},
-                "Asia_South_America":{"Code": 16},
-                "Asia_USA":{"Code": 17},
-                "Australia":{"Code": 18},
-                "Australia_Canada_Japan_Switzerland_UK_USA":{"Code": 19},
-                "Australia_Canada_New_Zealand_UK_USA":{"Code": 20},
-                "Austria":{"Code": 21},
-                "Austria_Germany_Switzerland":{"Code": 22},
-                "Bahrain":{"Code": 24},
-                "Belarus_Mongolia_Russia":{"Code": 25},
-                "Belgium":{"Code": 26},
-                "Brazil":{"Code": 27},
-                "Cambodia":{"Code": 28},
-                "Canada":{"Code": 29},
-                "Canada_France_Multiple_UK_USA":{"Code": 30},
-                "Central_America":{"Code": 31},
-                "Central_Asia_Eastern_Europe":{"Code": 32},
-                "Central_Asia_Eastern_Europe_Russia":{"Code": 33},
-                "Central_Asia_Europe_USA":{"Code": 34},
-                "Chile":{"Code": 35},
-                "China":{"Code": 36},
-                "China_Germany":{"Code": 37},
-                "China_Individuals":{"Code": 38},
-                "China_Pakistan":{"Code": 40},
-                "CSIS_USA":{"Code": 42},
-                "Czech_Republic":{"Code": 43},
-                "Czech_Republic_Individuals":{"Code": 44},
-                "Denmark":{"Code": 46},
-                "East_Asia":{"Code": 47},
-                "Eastern_Europe":{"Code": 48},
-                "Egypt":{"Code": 49},
-                "Estonia":{"Code": 50},
-                "Europe":{"Code": 51},
-                "Europe_Individuals":{"Code": 52},
-                "Europe_Individuals_Middle_East":{"Code": 53},
-                "Europe_Japan_USA":{"Code": 54},
-                "Europe_Middle_East":{"Code": 55},
-                "Europe_Middle_East_North_America":{"Code": 56},
-                "Europe_NATO":{"Code": 57},
-                "Europe_NATO_Ukraine":{"Code": 58},
-                "Europe_North_America":{"Code": 59},
-                "Europe_Russia":{"Code": 60},
-                "Finland":{"Code": 61},
-                "France":{"Code": 62},
-                "France_Germany_Japan":{"Code": 63},
-                "France_Germany_UK": {"Code": 64},
-                "France_South_Korea": {"Code": 65},
-                "Georgia": {"Code": 68},
-                "Germany": {"Code": 69},
-                "Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA": {"Code": 70},
-                "Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals": {"Code": 71},
-                "Global_Unlisted": {"Code": 72},
-                "Germany_Turkey": {"Code": 73},
-                "India": {"Code": 74},
-                "India_Italy_Saudi_Arabia_Scotland_UAE": {"Code": 75},
-                "India_Pakistan": {"Code": 76},
-                "Individuals": {"Code": 77},
-                "Individuals_Iran": {"Code": 78},
-                "Individuals_Latvia": {"Code": 79},
-                "Individuals_Multiple": {"Code": 80},
-                "Individuals_NATO_Ukraine": {"Code": 81},
-                "Individuals_Sri_Lanka": {"Code": 82},
-                "Individuals_USA": {"Code": 85},
-                "Individuals_Vietnam": {"Code": 86},
-                "Indonesia": {"Code": 87},
-                "Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang": {"Code": 88},
-                "International": {"Code": 89},
-                "Iran": {"Code": 90},
-                "Iran_Israel_Middle_East": {"Code": 91},
-                "Iran_Syria": {"Code": 94},
-                "Iraq_Pakistan_Tajikistan": {"Code": 97},
-                "Ireland": {"Code": 98},
-                "ISIS": {"Code": 99},
-                "Israel": {"Code": 100},
-                "Israel_Saudi_Arabia_USA": {"Code": 101},
-                "Israel_Sudan_Syria_Middle_East": {"Code": 102},
-                "Italy": {"Code": 104},
-                "Italy_France_Germany_Poland_Spain_Turkey_USA": {"Code": 105},
-                "Japan": {"Code": 106},
-                "Japan_Multiple_Unlisted": {"Code": 107},
-                "Japan_Unlisted": {"Code": 108},
-                "Kazakhstan": {"Code": 109},
-                "Lebanon": {"Code": 110},
-                "Lebanon_UAE": {"Code": 111},
-                "Libya": {"Code": 112},
-                "Lithuania": {"Code": 113},
-                "Malaysia": {"Code": 114},
-                "Mexico": {"Code": 115},
-                "Middle_East": {"Code": 116},
-                "Middle_East_South_America_UK_USA": {"Code": 117},
-                "Montenegro": {"Code": 118},
-                "Multiple": {"Code": 120},
-                "Multiple_Unlisted": {"Code": 121},
-                "Netherlands": {"Code": 124},
-                "Netherlands_territory": {"Code": 125},
-                "NGOs_UN": {"Code": 126},
-                "North_America_Pakistan_Russia_Saudi_Arabia_Turkey": {"Code": 128},
-                "North_Korea": {"Code": 129},
-                "Norway": {"Code": 130},
-                "Oman_UAE": {"Code": 131},
-                "Pakistan": {"Code": 132},
-                "Philippines": {"Code": 133},
-                "Qatar": {"Code": 134},
-                "Qatar_Saudi_Arabia": {"Code": 135},
-                "Russia": {"Code": 136},
-                "Saudi_Arabia": {"Code": 139},
-                "Saudi_Arabia_South_Korea_USA": {"Code": 140},
-                "Saudi_Arabia_USA": {"Code": 141},
-                "Scotland": {"Code": 142},
-                "Singapore": {"Code": 143},
-                "South_Africa": {"Code": 144},
-                "South_Korea": {"Code": 145},
-                "South_Korea_USA": {"Code": 146},
-                "Southeast_Asia": {"Code": 147},
-                "Sweden": {"Code": 149},
-                "Switzerland": {"Code": 150},
-                "Syria": {"Code": 151},
-                "Taiwan": {"Code": 152},
-                "Tehran": {"Code": 154},
-                "Tibet": {"Code": 155},
-                "Turkey": {"Code": 156},
-                "UK": {"Code": 158},
-                "UK_USA": {"Code": 159},
-                "Ukraine": {"Code": 160},
-                "UN": {"Code": 161},
-                "Unlisted": {"Code": 1},
-                "USA": {"Code": 162},
-                "USA_Europe": {"Code": 163},
-                "USA_Western_World": {"Code": 164},
-                "Venezuela": {"Code": 165},
-                "Western_World": {"Code": 167},
-                "Xinjiang": {"Code": 168}}
+listTargetDictionary = {"Afghanistan": {"Code": 2},
+                        "Afghanistan_Application_Users_India_Individuals_Middle_East": {"Code": 3},
+                        "Africa": {"Code": 4},
+                        "Africa_Asia": {"Code": 5},
+                        "Al_Quaida": {"Code": 7},
+                        "Application_Users": {"Code": 8},
+                        "Application_Users_Individuals": {"Code": 9},
+                        "Application_Users_Japan": {"Code": 10},
+                        "Armenia": {"Code": 11},
+                        "Asia": {"Code": 12},
+                        "Asia_Canada_Europe_Middle_East_USA": {"Code": 13},
+                        "Asia_Europe_Middle_East_USA": {"Code": 14},
+                        "Asia_Europe_North_America": {"Code": 15},
+                        "Asia_South_America": {"Code": 16},
+                        "Asia_USA": {"Code": 17},
+                        "Australia": {"Code": 18},
+                        "Australia_Canada_Japan_Switzerland_UK_USA": {"Code": 19},
+                        "Australia_Canada_New_Zealand_UK_USA": {"Code": 20},
+                        "Austria": {"Code": 21},
+                        "Austria_Germany_Switzerland": {"Code": 22},
+                        "Bahrain": {"Code": 24},
+                        "Belarus_Mongolia_Russia": {"Code": 25},
+                        "Belgium": {"Code": 26},
+                        "Brazil": {"Code": 27},
+                        "Cambodia": {"Code": 28},
+                        "Canada": {"Code": 29},
+                        "Canada_France_Multiple_UK_USA": {"Code": 30},
+                        "Central_America": {"Code": 31},
+                        "Central_Asia_Eastern_Europe": {"Code": 32},
+                        "Central_Asia_Eastern_Europe_Russia": {"Code": 33},
+                        "Central_Asia_Europe_USA": {"Code": 34},
+                        "Chile": {"Code": 35},
+                        "China": {"Code": 36},
+                        "China_Germany": {"Code": 37},
+                        "China_Individuals": {"Code": 38},
+                        "China_Pakistan": {"Code": 40},
+                        "CSIS_USA": {"Code": 42},
+                        "Czech_Republic": {"Code": 43},
+                        "Czech_Republic_Individuals": {"Code": 44},
+                        "Denmark": {"Code": 46},
+                        "East_Asia": {"Code": 47},
+                        "Eastern_Europe": {"Code": 48},
+                        "Egypt": {"Code": 49},
+                        "Estonia": {"Code": 50},
+                        "Europe": {"Code": 51},
+                        "Europe_Individuals": {"Code": 52},
+                        "Europe_Individuals_Middle_East": {"Code": 53},
+                        "Europe_Japan_USA": {"Code": 54},
+                        "Europe_Middle_East": {"Code": 55},
+                        "Europe_Middle_East_North_America": {"Code": 56},
+                        "Europe_NATO": {"Code": 57},
+                        "Europe_NATO_Ukraine": {"Code": 58},
+                        "Europe_North_America": {"Code": 59},
+                        "Europe_Russia": {"Code": 60},
+                        "Finland": {"Code": 61},
+                        "France": {"Code": 62},
+                        "France_Germany_Japan": {"Code": 63},
+                        "France_Germany_UK": {"Code": 64},
+                        "France_South_Korea": {"Code": 65},
+                        "Georgia": {"Code": 68},
+                        "Germany": {"Code": 69},
+                        "Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA": {"Code": 70},
+                        "Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals": {"Code": 71},
+                        "Global_Unlisted": {"Code": 72},
+                        "Germany_Turkey": {"Code": 73},
+                        "India": {"Code": 74},
+                        "India_Italy_Saudi_Arabia_Scotland_UAE": {"Code": 75},
+                        "India_Pakistan": {"Code": 76},
+                        "Individuals": {"Code": 77},
+                        "Individuals_Iran": {"Code": 78},
+                        "Individuals_Latvia": {"Code": 79},
+                        "Individuals_Multiple": {"Code": 80},
+                        "Individuals_NATO_Ukraine": {"Code": 81},
+                        "Individuals_Sri_Lanka": {"Code": 82},
+                        "Individuals_USA": {"Code": 85},
+                        "Individuals_Vietnam": {"Code": 86},
+                        "Indonesia": {"Code": 87},
+                        "Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang": {"Code": 88},
+                        "International": {"Code": 89},
+                        "Iran": {"Code": 90},
+                        "Iran_Israel_Middle_East": {"Code": 91},
+                        "Iran_Syria": {"Code": 94},
+                        "Iraq_Pakistan_Tajikistan": {"Code": 97},
+                        "Ireland": {"Code": 98},
+                        "ISIS": {"Code": 99},
+                        "Israel": {"Code": 100},
+                        "Israel_Saudi_Arabia_USA": {"Code": 101},
+                        "Israel_Sudan_Syria_Middle_East": {"Code": 102},
+                        "Italy": {"Code": 104},
+                        "Italy_France_Germany_Poland_Spain_Turkey_USA": {"Code": 105},
+                        "Japan": {"Code": 106},
+                        "Japan_Multiple_Unlisted": {"Code": 107},
+                        "Japan_Unlisted": {"Code": 108},
+                        "Kazakhstan": {"Code": 109},
+                        "Lebanon": {"Code": 110},
+                        "Lebanon_UAE": {"Code": 111},
+                        "Libya": {"Code": 112},
+                        "Lithuania": {"Code": 113},
+                        "Malaysia": {"Code": 114},
+                        "Mexico": {"Code": 115},
+                        "Middle_East": {"Code": 116},
+                        "Middle_East_South_America_UK_USA": {"Code": 117},
+                        "Montenegro": {"Code": 118},
+                        "Multiple": {"Code": 120},
+                        "Multiple_Unlisted": {"Code": 121},
+                        "Netherlands": {"Code": 124},
+                        "Netherlands_territory": {"Code": 125},
+                        "NGOs_UN": {"Code": 126},
+                        "North_America_Pakistan_Russia_Saudi_Arabia_Turkey": {"Code": 128},
+                        "North_Korea": {"Code": 129},
+                        "Norway": {"Code": 130},
+                        "Oman_UAE": {"Code": 131},
+                        "Pakistan": {"Code": 132},
+                        "Philippines": {"Code": 133},
+                        "Qatar": {"Code": 134},
+                        "Qatar_Saudi_Arabia": {"Code": 135},
+                        "Russia": {"Code": 136},
+                        "Saudi_Arabia": {"Code": 139},
+                        "Saudi_Arabia_South_Korea_USA": {"Code": 140},
+                        "Saudi_Arabia_USA": {"Code": 141},
+                        "Scotland": {"Code": 142},
+                        "Singapore": {"Code": 143},
+                        "South_Africa": {"Code": 144},
+                        "South_Korea": {"Code": 145},
+                        "South_Korea_USA": {"Code": 146},
+                        "Southeast_Asia": {"Code": 147},
+                        "Sweden": {"Code": 149},
+                        "Switzerland": {"Code": 150},
+                        "Syria": {"Code": 151},
+                        "Taiwan": {"Code": 152},
+                        "Tehran": {"Code": 154},
+                        "Tibet": {"Code": 155},
+                        "Turkey": {"Code": 156},
+                        "UK": {"Code": 158},
+                        "UK_USA": {"Code": 159},
+                        "Ukraine": {"Code": 160},
+                        "UN": {"Code": 161},
+                        "Unlisted": {"Code": 1},
+                        "USA": {"Code": 162},
+                        "USA_Europe": {"Code": 163},
+                        "USA_Western_World": {"Code": 164},
+                        "Venezuela": {"Code": 165},
+                        "Western_World": {"Code": 167},
+                        "Xinjiang": {"Code": 168}}
 
 # Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
 # pdDictOne = pd.DataFrame(locationDict)
-pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
+pd.set_option('display.max_rows', 1000)  # Attempting to display all rows and columns
 pd.set_option('display.max_columns', 1000)
 pd.set_option('display.width', 1000)
 
 # List 2 (Month of attack in Code numbers)
 
-listMonthDictionary = {"January":{"code": 1}, # list option 0
-                "February":{"Code": 2}, # list option 1
-                "March":{"Code": 3}, # list option 2
-                "April":{"Code": 4}, # list option 3
-                "May":{"Code": 5}, # list option 4
-                "June":{"Code": 6}, # list option 5
-                "July":{"Code": 7}, # list option 6
-                "August":{"Code": 8}, # list option 7
-                "September":{"Code": 9}, # list option 8
-                "October":{"Code": 10}, # list option 9
-                "November":{"Code": 11}, # list option 10
-                "December":{"Code": 12}, # list option 11
-                "Unlisted":{"Code": 13}} # list option 12
+listMonthDictionary = {"January": {"code": 1},  # list option 0
+                       "February": {"Code": 2},  # list option 1
+                       "March": {"Code": 3},  # list option 2
+                       "April": {"Code": 4},  # list option 3
+                       "May": {"Code": 5},  # list option 4
+                       "June": {"Code": 6},  # list option 5
+                       "July": {"Code": 7},  # list option 6
+                       "August": {"Code": 8},  # list option 7
+                       "September": {"Code": 9},  # list option 8
+                       "October": {"Code": 10},  # list option 9
+                       "November": {"Code": 11},  # list option 10
+                       "December": {"Code": 12},  # list option 11
+                       "Unlisted": {"Code": 13}}  # list option 12
 
 # Creating pandas variable for List 1 dictionary, in case I want to print the dictionary at some point in the program
-#pdDictTwo = pd.DataFrame(locationDict)
-pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
+# pdDictTwo = pd.DataFrame(locationDict)
+pd.set_option('display.max_rows', 1000)  # Attempting to display all rows and columns
 pd.set_option('display.max_columns', 1000)
 pd.set_option('display.width', 1000)
 
@@ -235,7 +203,6 @@ cyberExcel = xlrd.open_workbook('OriginAttackPredictionDataWithCodes_CleanedUp_2
 sheets = cyberExcel.sheets()
 for sheet in sheets:
     cyberSheetData = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
-
 
     # Removing target row from source dataset, with the -1, and removing source data from target data column, so that the -1
     # will only show the last column in the target data
@@ -259,33 +226,7 @@ for sheet in sheets:
     knn.fit(X, y)
 
 
-#-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
-root = tk.Tk()
-root.title('SVM Prediction: Attack Origin')
-#root.geometry("1000x1000")
-
-#scrollBar = Scrollbar(root)
-#scrollBar.pack(side=RIGHT, fill=Y)
-
-
-style = ttk.Style(root)
-style.configure('lefttab.TNotebook', tabposition='wn')
-
-# Tabs and Frames
-tab_control = ttk.Notebook(root)
-
-tab1 = ttk.Frame(tab_control)
-
-tab_control.add(tab1, text='Attack Origin Prediction')
-
-tab_control.pack(expand=1, fill='both')
-
-# Tkinter listbox with root functions
-# reference: http://effbot.org/tkinterbook/listbox.htm
-listbox = Listbox(root, selectmode=SINGLE)
-
-
-#---Creating Tkinter functions----------------------------------------------------------------------------------------
+# ---Creating Tkinter functions----------------------------------------------------------------------------------------
 
 # Creating listbox functions
 # https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
@@ -376,7 +317,8 @@ def get_selDummyOneTarget():
                 AustraliaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (AustraliaCode))
         if i == 16:
-            Australia_Canada_Japan_Switzerland_UK_USAlist = listTargetDictionary.get("Australia_Canada_Japan_Switzerland_UK_USA")
+            Australia_Canada_Japan_Switzerland_UK_USAlist = listTargetDictionary.get(
+                "Australia_Canada_Japan_Switzerland_UK_USA")
             for k, v in Australia_Canada_Japan_Switzerland_UK_USAlist.items():
                 Australia_Canada_Japan_Switzerland_UK_USACode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Australia_Canada_Japan_Switzerland_UK_USACode))
@@ -601,12 +543,14 @@ def get_selDummyOneTarget():
                 GermanyCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (GermanyCode))
         if i == 61:
-            Germany_Israel_Jordan_Saudi_Arabia_Turkey_USAlist = listTargetDictionary.get("Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA")
+            Germany_Israel_Jordan_Saudi_Arabia_Turkey_USAlist = listTargetDictionary.get(
+                "Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA")
             for k, v in Germany_Israel_Jordan_Saudi_Arabia_Turkey_USAlist.items():
                 Germany_Israel_Jordan_Saudi_Arabia_Turkey_USACode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Germany_Israel_Jordan_Saudi_Arabia_Turkey_USACode))
         if i == 62:
-            Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individualslist = listTargetDictionary.get("Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals")
+            Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individualslist = listTargetDictionary.get(
+                "Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals")
             for k, v in Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individualslist.items():
                 Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_IndividualsCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_IndividualsCode))
@@ -626,7 +570,8 @@ def get_selDummyOneTarget():
                 IndiaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (IndiaCode))
         if i == 66:
-            India_Italy_Saudi_Arabia_Scotland_UAElist = listTargetDictionary.get("India_Italy_Saudi_Arabia_Scotland_UAE")
+            India_Italy_Saudi_Arabia_Scotland_UAElist = listTargetDictionary.get(
+                "India_Italy_Saudi_Arabia_Scotland_UAE")
             for k, v in India_Italy_Saudi_Arabia_Scotland_UAElist.items():
                 India_Italy_Saudi_Arabia_Scotland_UAECode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (India_Italy_Saudi_Arabia_Scotland_UAECode))
@@ -681,7 +626,8 @@ def get_selDummyOneTarget():
                 IndonesiaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (IndonesiaCode))
         if i == 77:
-            Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjianglist = listTargetDictionary.get("Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang")
+            Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjianglist = listTargetDictionary.get(
+                "Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang")
             for k, v in Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjianglist.items():
                 Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_XinjiangCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_XinjiangCode))
@@ -741,7 +687,8 @@ def get_selDummyOneTarget():
                 ItalyCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (ItalyCode))
         if i == 89:
-            Italy_France_Germany_Poland_Spain_Turkey_USAlist = listTargetDictionary.get("Italy_France_Germany_Poland_Spain_Turkey_USA")
+            Italy_France_Germany_Poland_Spain_Turkey_USAlist = listTargetDictionary.get(
+                "Italy_France_Germany_Poland_Spain_Turkey_USA")
             for k, v in Italy_France_Germany_Poland_Spain_Turkey_USAlist.items():
                 Italy_France_Germany_Poland_Spain_Turkey_USACode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Italy_France_Germany_Poland_Spain_Turkey_USACode))
@@ -837,7 +784,8 @@ def get_selDummyOneTarget():
                 NGOs_UNCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (NGOs_UNCode))
         if i == 108:
-            North_America_Pakistan_Russia_Saudi_Arabia_Turkeylist = listTargetDictionary.get("North_America_Pakistan_Russia_Saudi_Arabia_Turkey")
+            North_America_Pakistan_Russia_Saudi_Arabia_Turkeylist = listTargetDictionary.get(
+                "North_America_Pakistan_Russia_Saudi_Arabia_Turkey")
             for k, v in North_America_Pakistan_Russia_Saudi_Arabia_Turkeylist.items():
                 North_America_Pakistan_Russia_Saudi_Arabia_TurkeyCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (North_America_Pakistan_Russia_Saudi_Arabia_TurkeyCode))
@@ -1018,17 +966,6 @@ def get_selDummyOneTarget():
                 dummyNumberOne.insert(1.0, (XinjiangCode))
 
 
-
-
-
-
-
-
-
-
-
-
-
 # List 2 function to place list and then transfer answer to textbox, for Month choice
 def get_selDummyTwoMonth():
     for i in List2.curselection():
@@ -1124,12 +1061,14 @@ def writeAccuracy(buttonClicks):
         mbox.showerror("Error", "Returning to the main menu.")
         import mainPage
 
+
 # creating a method so that the user can tab from one dummy number textbox to the next, instead of clicking
 def focus_next_widget(event):
     event.widget.tk_focusNext().focus()
-    return("break")
+    return ("break")
 
-#---- Creating functions to run the main prediction program ----------------------------------------------------------
+
+# ---- Creating functions to run the main prediction program ----------------------------------------------------------
 
 # the dummy number value method, for tab 3 input entries from the user
 def dummyValues():
@@ -1171,13 +1110,13 @@ def dummyValues():
             # breaking the loop to avoid infinite loop
             break
 
+
 # the prediction method, for tab 3; utilizes dummy value input from dummy value method, which is why that method
 # is called at the beginning of the finalPrediction method (for the user-input variables)
 def finalPrediction():
-
     while True:
         try:
-            #calling dummy values function to call variables from that function
+            # calling dummy values function to call variables from that function
             dummyValues()
             # turning the dummy values, which were string then integer, back into an array for the prediction
             a = np.array([dummyValues.dummyTextOne, dummyValues.dummyTextTwo, dummyValues.dummyTextThree,
@@ -1186,7 +1125,7 @@ def finalPrediction():
             # inserting dummy array variable as argument to K-nearest neighbor algorithm to create prediction, which is
             # placed within the prediction variable
             prediction = knn.predict([a])
-            tab1_display.insert(4.0, prediction)
+            frame_display.insert(4.0, prediction)
         except ValueError:
             mbox.showerror("Error", "Please ensure that your entry is accurate.")
             clear_display_result()
@@ -1194,9 +1133,10 @@ def finalPrediction():
         else:
             break
 
+
 # Below is the creation of textbox entries; however am planning to make dummy number option a label option
 def clear_display_result():
-    tab1_display.delete(1.0, END)
+    frame_display.delete(1.0, END)
     dummyNumberOne.delete(1.0, END)
     dummyNumberTwo.delete(1.0, END)
     dummyNumberThree.delete(1.0, END)
@@ -1206,14 +1146,14 @@ def clear_display_result():
     # when boxes are cleared, bringing the option focus for the user back to the initial textbox
     dummyNumberOne.focus()
 
-def mainMenu():
 
+def mainMenu():
     while True:
         try:
 
             # Creating a messagebox for when the user clicks to exit the program, with exception prevention
             if mbox.askokcancel("Quit", "Do you want to quit?"):
-                #root.destroy()
+                # root.destroy()
                 root.protocol("WM_DELETE_WINDOW", mainMenu)
                 root.destroy()
                 import mainPage
@@ -1224,24 +1164,101 @@ def mainMenu():
         else:
             break
 
+
 def exitProgram():
     exit()
+
 
 def flush(self):
     pass
 
-#------------Tkinter Labels for Tabs-----------------------------------------------------------------------------------
+
+# ----- Creating Tkinter Setup (root) for GUI #-----
+
+
+def on_configure(event):
+    # update scrollregion after starting 'mainloop'
+    # when all widgets are in canvas
+    canvas.configure(yscrollcommand=yscrollbar.set, scrollregion=canvas.bbox(ALL))
+
+
+# a subclass of Canvas for dealing with resizing of windows
+class ResizingCanvas(Canvas):
+    def __init__(self, parent, **kwargs):
+        Canvas.__init__(self, parent, **kwargs)
+        self.bind("<Configure>", self.on_resize)
+        self.height = self.winfo_reqheight()
+        self.width = self.winfo_reqwidth()
+
+    def on_resize(self, event):
+        # determine the ratio of old width/height to new width/height
+        wscale = float(event.width) / self.width
+        hscale = float(event.height) / self.height
+        self.width = event.width
+        self.height = event.height
+        # resize the canvas
+        self.config(width=self.width, height=self.height)
+        # rescale all the objects tagged with the "all" tag
+        self.scale("all", 0, 0, wscale, hscale)
+
+
+root = tk.Tk()
+root.title('Attack Origin Prediction Page')
+
+# --- create canvas with scrollbar ---
+
+canvas = ResizingCanvas(root, width=650, height=590, bg="black", highlightthickness=0)
+canvas.pack(fill=BOTH, expand=YES)
+
+yscrollbar = tk.Scrollbar(root, command=canvas.yview, orient="vertical")
+yscrollbar.pack(side=tk.LEFT, fill=tk.Y)
+
+# update scrollregion after starting 'mainloop'
+# when all widgets are in canvas
+canvas.bind('<Configure>', on_configure)
+
+# --- put frame in canvas ---
+
+frame = tk.Frame(canvas)
+canvas.create_window((0, 0), window=frame, anchor='nw')
+
+# --- add widgets in frame ---
+# ------------Tkinter Labels for Tabs-----------------------------------------------------------------------------------
 
 # This option will eventually be a dropbox option, rather than fill in the blanks
-l3 = Label(tab1, text='Please enter six situational choices in the cells below, and then click the Prediction button'+
-                      'to see your prediction results:', padx=5, pady=5)
-l3.grid(row=1, column=0)
+l3 = Label(frame, text='Please enter six situational choices in the cells below, and then click the Prediction button ' +
+                       'to see your prediction results:', padx=5, pady=5)
+l3.grid(row=0, column=0)
 
-#--------------------- Dummy 1 Listbox and Textbox Attack Origin-------------------------------------------------------
-#Listbox of Dummy Numbers
-dummyOneListBox = Listbox(tab1) # height=1, width=50, yscrollcommand=TRUE)
-dummyOneListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
-dummyOneListBox.grid(row=2, column=0, padx=5, pady=5, ipadx=250, ipady=0)
+# Label year
+labelTarget = Label(frame, text="Choose and submit the projected target of attack:")
+labelTarget.grid(row=2, column=0)
+
+labelMonth = Label(frame, text="Choose and submit the projected event month:")
+labelMonth.grid(row=6, column=0)
+
+labelYear = Label(frame, text="Enter the year projected event in format 'YYYY':")
+labelYear.grid(row=10, column=0)
+
+labelGrossPSD = Label(frame, text="Enter projected number: Gross PSD, Central Gov., All maturities,\n" +
+                                  "Debt securities, Nominal Value, of US GDP percentage in decimal format (i.e. 32.51)")
+labelGrossPSD.grid(row=12, column=0)
+
+labelAccessCleanFuels = Label(frame, text="Enter projected number: Global percentage of access to clean fuels and\n" +
+                                  "technologies for cooking in decimal format (i.e. 6.52)")
+labelAccessCleanFuels.grid(row=14, column=0)
+
+labelAccessElectricity = Label(frame, text="Enter projected number: Global percentage of access to electricity\n" +
+                                  "in decimal format (i.e. 10.62)")
+labelAccessElectricity.grid(row=16, column=0)
+
+predictionLabel = Label(frame, text="Prediction results of the likely origin of attack under those chosen circumtances:")
+predictionLabel.grid(row=20, column=0)
+# --------------------- Dummy 1 Listbox and Textbox Attack Origin-------------------------------------------------------
+# Listbox of Dummy Numbers
+dummyOneListBox = Listbox(frame)  # height=1, width=50, yscrollcommand=TRUE)
+dummyOneListBox.bind("<Tab>", focus_next_widget)  # for user to tab between listboxes/textboxes
+dummyOneListBox.grid(row=3, column=0, padx=5, pady=5, ipadx=250, ipady=0)
 
 List1 = Listbox(dummyOneListBox)
 # Pulling locationDict dictionary data and placing into listbox
@@ -1252,15 +1269,15 @@ for key in listTargetDictionary:
     List1.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
-dummyNumberOne = Text(tab1, height=2, width=50)
+dummyNumberOne = Text(frame, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
-dummyNumberOne.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberOne.grid(row=5, column=0, columnspan=1, padx=5, pady=5)
 
-#--------------------- Dummy 2 Listbox and Textbox  (Attack Target) ----------------------------------------------------
-#Listbox of Dummy Numbers
-dummyTwoListBox = Listbox(tab1, height=2, width=50, yscrollcommand=SCROLL)
-dummyTwoListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
-dummyTwoListBox.grid(row=4, column=0, columnspan=1, padx=5, pady=5, ipadx=250, ipady=0)
+# --------------------- Dummy 2 Listbox and Textbox  (Attack Target) ----------------------------------------------------
+# Listbox of Dummy Numbers
+dummyTwoListBox = Listbox(frame, height=2, width=50, yscrollcommand=SCROLL)
+dummyTwoListBox.bind("<Tab>", focus_next_widget)  # for user to tab between listboxes/textboxes
+dummyTwoListBox.grid(row=7, column=0, columnspan=1, padx=5, pady=5, ipadx=250, ipady=0)
 
 List2 = Listbox(dummyTwoListBox)
 # Pulling locationDict dictionary data and placing into listbox
@@ -1271,40 +1288,41 @@ for key in listMonthDictionary:
     List2.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
-dummyNumberTwo = Text(tab1, height=2, width=50)
+dummyNumberTwo = Text(frame, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
-dummyNumberTwo.grid(row=3, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberTwo.grid(row=9, column=0, columnspan=1, padx=5, pady=5)
 
-#--------------------- Dummy 3 Listbox and Textbox Attack Month--------------------------------------------------------
+# --------------------- Dummy 3 Listbox and Textbox Attack Month--------------------------------------------------------
 
-dummyNumberThree = Text(tab1, height=2, width=50)
+dummyNumberThree = Text(frame, height=2, width=50)
 dummyNumberThree.bind("<Tab>", focus_next_widget)
-dummyNumberThree.grid(row=4, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberThree.grid(row=11, column=0, columnspan=1, padx=5, pady=5)
 
-#--------------------- Dummy 4 Listbox and Textbox Attack Year----------------------------------------------------------
+# --------------------- Dummy 4 Listbox and Textbox Attack Year----------------------------------------------------------
 
-dummyNumberFour = Text(tab1, height=2, width=50)
+dummyNumberFour = Text(frame, height=2, width=50)
 dummyNumberFour.bind("<Tab>", focus_next_widget)
-dummyNumberFour.grid(row=5, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberFour.grid(row=13, column=0, columnspan=1, padx=5, pady=5)
 
-#--------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
+# --------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberFive = Text(tab1, height=2, width=50)
+dummyNumberFive = Text(frame, height=2, width=50)
 dummyNumberFive.bind("<Tab>", focus_next_widget)
-dummyNumberFive.grid(row=6, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberFive.grid(row=15, column=0, columnspan=1, padx=5, pady=5)
 
-#--------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
+# --------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberSix = Text(tab1, height=2, width=50)
+dummyNumberSix = Text(frame, height=2, width=50)
 dummyNumberSix.bind("<Tab>", focus_next_widget)
-dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberSix.grid(row=17, column=0, columnspan=1, padx=5, pady=5)
 
-#-------Tkinter Buttons------------------------------------------------------------------------------------------------
+# -------Tkinter Buttons------------------------------------------------------------------------------------------------
 
 # Tab 2
 # Accuracy Button
-AccuracyButton = Button(tab1, text='Prediction Accuracy', command=lambda:writeAccuracy(1), width=20, bg='purple', fg='#fff')
-AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
+AccuracyButton = Button(frame, text='Prediction Accuracy', command=lambda: writeAccuracy(1), width=20, bg='purple',
+                        fg='#fff')
+AccuracyButton.grid(row=19, column=0, padx=15, pady=15)
 
 # Tab 3
 # DummyOneButton
@@ -1312,40 +1330,43 @@ AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
 # reference: https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
 
 # List 1 Origin country/region choice buttons
-DummyOneButtonSubmit = Button(tab1, text="Submit Attack Origin", command=lambda: get_selDummyOneTarget(), width=20, bg='purple', fg='#fff')
-DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
+DummyOneButtonSubmit = Button(frame, text="Submit Attack Target", command=lambda: get_selDummyOneTarget(), width=20,
+                              bg='purple', fg='#fff')
+DummyOneButtonSubmit.grid(row=4, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
-DummyTwoButtonSubmit = Button(tab1, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
-DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
+DummyTwoButtonSubmit = Button(frame, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple',
+                              fg='#fff')
+DummyTwoButtonSubmit.grid(row=8, column=0, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
-PredictionButton = Button(tab1, text='Click to see Prediction Results', command=finalPrediction, width=25,
+PredictionButton = Button(frame, text='Click to see Prediction Results', command=finalPrediction, width=25,
                           bg='blue', fg='#fff')
-PredictionButton.grid(row=6, column=0, padx=5, pady=5)
+PredictionButton.grid(row=18, column=0, padx=5, pady=5)
 
 # Button to clear Tab 3 and start over
-ClearTabThreeButton = Button(tab1, text='Clear results and start over', command=clear_display_result, width=25,
-                          bg='purple', fg='#fff')
-ClearTabThreeButton.grid(row=1, column=1, padx=5, pady=5)
+ClearTabThreeButton = Button(frame, text='Clear results and start over', command=clear_display_result, width=25,
+                             bg='purple', fg='#fff')
+ClearTabThreeButton.grid(row=22, column=0, padx=5, pady=5)
 
 # Menu button on tab 1, to start program over
-MenuTabOneButton = Button(tab1, text='Return to Program Main Menu', command=mainMenu, width=25,
+MenuTabOneButton = Button(frame, text='Return to Program Main Menu', command=mainMenu, width=25,
                           bg='purple', fg='#fff')
-MenuTabOneButton.grid(row=0, column=0, padx=5, pady=5)
+MenuTabOneButton.grid(row=23, column=0, padx=5, pady=5)
 
 # Button on tab 1, to exit the program
-ExitTabOneButton = Button(tab1, text='Exit Program', command=exitProgram, width=14,
+ExitTabOneButton = Button(frame, text='Exit Program', command=exitProgram, width=14,
                           bg='purple', fg='#fff')
-ExitTabOneButton.grid(row=8, column=0, padx=5, pady=5)
+ExitTabOneButton.grid(row=24, column=0, padx=5, pady=5)
 
-#------Result Display tabs---------------------------------------------------------------------------------------------
+# ------Result Display tabs---------------------------------------------------------------------------------------------
 
 # Display Boxes for Results
 
 # Prediction results window in tab 3
-tab1_display = Text(tab1, height=1)
-tab1_display.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
+frame_display = Text(frame, height=1)
+frame_display.grid(row=21, column=0, columnspan=1, padx=5, pady=5)
 
-# Keep window alive
-mainloop()
+# --- start program ---
+
+root.mainloop()
