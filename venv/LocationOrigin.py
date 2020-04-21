@@ -851,16 +851,39 @@ def get_selDummyOneTarget():
             for k, v in Norwaylist.items():
                 NorwayCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (NorwayCode))
+        if i == 111:
+            Oman_UAElist = listTargetDictionary.get("Oman_UAE")
+            for k, v in Oman_UAElist.items():
+                Oman_UAECode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Oman_UAECode))
+        if i == 112:
+            Pakistanlist = listTargetDictionary.get("Pakistan")
+            for k, v in Pakistanlist.items():
+                PakistanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (PakistanCode))
+        if i == 113:
+            Philippineslist = listTargetDictionary.get("Philippines")
+            for k, v in Philippineslist.items():
+                PhilippinesCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (PhilippinesCode))
+        if i == 114:
+            Qatarlist = listTargetDictionary.get("Qatar")
+            for k, v in Qatarlist.items():
+                QatarCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (QatarCode))
+        if i == 115:
+            Qatar_Saudi_Arabialist = listTargetDictionary.get("Qatar_Saudi_Arabia")
+            for k, v in Qatar_Saudi_Arabialist.items():
+                Qatar_Saudi_ArabiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Qatar_Saudi_ArabiaCode))
+        if i == 116:
+            Russialist = listTargetDictionary.get("Russia")
+            for k, v in Russialist.items():
+                RussiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (RussiaCode))
 
 
-#
-#                 "Norway": {"Code": 130},
-#                 "Oman_UAE": {"Code": 131},
-#                 "Pakistan": {"Code": 132},
-#                 "Philippines": {"Code": 133},
-#                 "Qatar": {"Code": 134},
-#                 "Qatar_Saudi_Arabia": {"Code": 135},
-#                 "Russia": {"Code": 136},
+
 #                 "Saudi_Arabia": {"Code": 139},
 #                 "Saudi_Arabia_South_Korea_USA": {"Code": 140},
 #                 "Saudi_Arabia_USA": {"Code": 141},
