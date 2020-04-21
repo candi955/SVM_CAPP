@@ -690,17 +690,48 @@ def get_selDummyOneTarget():
             for k, v in Internationallist.items():
                 InternationalCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (InternationalCode))
+        if i == 79:
+            Iranlist = listTargetDictionary.get("Iran")
+            for k, v in Iranlist.items():
+                IranCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IranCode))
+        if i == 80:
+            Iran_Israel_Middle_Eastlist = listTargetDictionary.get("Iran_Israel_Middle_East")
+            for k, v in Iran_Israel_Middle_Eastlist.items():
+                Iran_Israel_Middle_EastCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Iran_Israel_Middle_EastCode))
+        if i == 81:
+            Iran_Syrialist = listTargetDictionary.get("Iran_Syria")
+            for k, v in Iran_Syrialist.items():
+                Iran_SyriaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Iran_SyriaCode))
+        if i == 82:
+            Iraq_Pakistan_Tajikistanlist = listTargetDictionary.get("Iraq_Pakistan_Tajikistan")
+            for k, v in Iraq_Pakistan_Tajikistanlist.items():
+                Iraq_Pakistan_TajikistanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Iraq_Pakistan_TajikistanCode))
+        if i == 83:
+            Irelandlist = listTargetDictionary.get("Ireland")
+            for k, v in Irelandlist.items():
+                IrelandCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IrelandCode))
+        if i == 84:
+            ISISlist = listTargetDictionary.get("ISIS")
+            for k, v in ISISlist.items():
+                ISISCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (ISISCode))
+        if i == 85:
+            Israellist = listTargetDictionary.get("Israel")
+            for k, v in Israellist.items():
+                IsraelCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IsraelCode))
+        if i == 86:
+            Israel_Saudi_Arabia_USAlist = listTargetDictionary.get("Israel_Saudi_Arabia_USA")
+            for k, v in Israel_Saudi_Arabia_USAlist.items():
+                Israel_Saudi_Arabia_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Israel_Saudi_Arabia_USACode))
 
 
-
-#                 "Iran": {"Code": 90},
-#                 "Iran_Israel_Middle_East": {"Code": 91},
-#                 "Iran_Syria": {"Code": 94},
-#                 "Iraq_Pakistan_Tajikistan": {"Code": 97},
-#                 "Ireland": {"Code": 98},
-#                 "ISIS": {"Code": 99},
-#                 "Israel": {"Code": 100},
-#                 "Israel_Saudi_Arabia_USA": {"Code": 101},
 #                 "Israel_Sudan_Syria_Middle_East": {"Code": 102},
 #                 "Italy": {"Code": 104},
 #                 "Italy_France_Germany_Poland_Spain_Turkey_USA": {"Code": 105},
