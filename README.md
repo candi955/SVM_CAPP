@@ -40,7 +40,31 @@ project include:
 # 
 # Consideration to take into account concerning the project:
 # 
-# - If an organization was listed within an event dataset as being the victim of a cyber attack, the author attempted to maintain 
-# dataset consistence by listing the country or region of the company's headquarters, unless an specific location was mentioned as that # company's particular attack location.
+# - Some of the data within the dataset could be considered subjective, as some of the referenced data was periodically vague.
+# If an organization was listed within an event dataset as being the victim of a cyber attack, the author attempted to maintain 
+# dataset consistence by listing the country or region of the company's headquarters, unless an specific location was mentioned as that # company's particular attack location. However, if an organization is known widely to the global public, the author would
+# sometimes list that company, group, or organization (i.e. Al Quaida, CSIS, and the Decentralized_International_Hacktivist_Group).
 #
+# When multiple regions were involved, they were listed in alphabetical order within the same data entry. The author was
+# hoping to be able to associate multiple regions being involved together within events, during attempts at correlation or prediction. 
 # 
+# Limits within the dataset:
+# 
+# - The dataset only allows for limited choice of targets that have already acted as origins or targets, so only those targets can be # # # # included in the prediction at this time 
+# - The strings Unlisted and Multiple used for unknown holes in the data could cause limits in accurate prediction abilty  
+# - Some of the dates the author referenced were extended, lasting sometime for years. This was not always shown across the
+# newly created dataset due to time constraints of the author
+# 
+# Recommendations for project continuence in the future:
+# 
+# The project currently shows an algorithmic accuracy of 31% for the Attack Target Prediction page (to predict a target attack location)
+# The author concludes that this might be due to the less variable event origin data utilized within the source data for that 
+# algorithm.  The Attack Origin prediction page does have a slightly higher prediction accuracy of 37%.  This is shown when 
+# clicking on the Prediction Accuracy buttons within the program, at the bottom of the prediction pages.  
+# 
+# With more time or manpower, an improved dataset could be created and cross-checked professionally for accuracy.  Corporate or 
+# locational proprietary boundaries might also be challenge faced upon improving the dataset (not all locations would want to 
+# publicize that they were involved in a cyber attack, so an attack or its details might not become publicely available).
+# 
+# The scrollbar within the dataset would also need to be corrected.  At this time it works, but is very small.  It is located on the
+# bottom-left corner of each prediction page. 
