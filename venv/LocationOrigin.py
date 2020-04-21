@@ -501,24 +501,72 @@ def get_selDummyOneTarget():
                 East_AsiaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (East_AsiaCode))
         if i == 41:
-            East_Asialist = listTargetDictionary.get("East_Asia")
-            for k, v in East_Asialist.items():
-                East_AsiaCode = "{}".format(v)
-                dummyNumberOne.insert(1.0, (East_AsiaCode))
+            Eastern_Europelist = listTargetDictionary.get("Eastern_Europe")
+            for k, v in Eastern_Europelist.items():
+                Eastern_EuropeCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Eastern_EuropeCode))
+        if i == 42:
+            Egyptlist = listTargetDictionary.get("Egypt")
+            for k, v in Egyptlist.items():
+                EgyptCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (EgyptCode))
+        if i == 43:
+            Estonialist = listTargetDictionary.get("Estonia")
+            for k, v in Estonialist.items():
+                EstoniaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (EstoniaCode))
+        if i == 44:
+            Europelist = listTargetDictionary.get("Europe")
+            for k, v in Europelist.items():
+                EuropeCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (EuropeCode))
+        if i == 45:
+            Europe_Individualslist = listTargetDictionary.get("Europe_Individuals")
+            for k, v in Europe_Individualslist.items():
+                Europe_IndividualsCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_IndividualsCode))
+        if i == 46:
+            Europe_Individuals_Middle_Eastlist = listTargetDictionary.get("Europe_Individuals_Middle_East")
+            for k, v in Europe_Individuals_Middle_Eastlist.items():
+                Europe_Individuals_Middle_EastCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_Individuals_Middle_EastCode))
+        if i == 47:
+            Europe_Japan_USAlist = listTargetDictionary.get("Europe_Japan_USA")
+            for k, v in Europe_Japan_USAlist.items():
+                Europe_Japan_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_Japan_USACode))
+        if i == 48:
+            Europe_Middle_Eastlist = listTargetDictionary.get("Europe_Middle_East")
+            for k, v in Europe_Middle_Eastlist.items():
+                Europe_Middle_EastCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_Middle_EastCode))
+        if i == 49:
+            Europe_Middle_East_North_Americalist = listTargetDictionary.get("Europe_Middle_East_North_America")
+            for k, v in Europe_Middle_East_North_Americalist.items():
+                Europe_Middle_East_North_AmericaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_Middle_East_North_AmericaCode))
+        if i == 50:
+            Europe_NATOlist = listTargetDictionary.get("Europe_NATO")
+            for k, v in Europe_NATOlist.items():
+                Europe_NATOCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_NATOCode))
+        if i == 51:
+            Europe_NATO_Ukrainelist = listTargetDictionary.get("Europe_NATO_Ukraine")
+            for k, v in Europe_NATO_Ukrainelist.items():
+                Europe_NATO_UkraineCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_NATO_UkraineCode))
+        if i == 52:
+            Europe_North_Americalist = listTargetDictionary.get("Europe_North_America")
+            for k, v in Europe_North_Americalist.items():
+                Europe_North_AmericaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_North_AmericaCode))
+        if i == 53:
+            Europe_Russialist = listTargetDictionary.get("Europe_Russia")
+            for k, v in Europe_Russialist.items():
+                Europe_RussiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Europe_RussiaCode))
 
 
-#                 "Eastern_Europe":{"Code": 48},
-#                 "Egypt":{"Code": 49},
-#                 "Estonia":{"Code": 50},
-#                 "Europe":{"Code": 51},
-#                 "Europe_Individuals":{"Code": 52},
-#                 "Europe_Individuals_Middle_East":{"Code": 53},
-#                 "Europe_Japan_USA":{"Code": 54},
-#                 "Europe_Middle_East":{"Code": 55},
-#                 "Europe_Middle_East_North_America":{"Code": 56},
-#                 "Europe_NATO":{"Code": 57},
-#                 "Europe_NATO_Ukraine":{"Code": 58},
-#                 "Europe_North_America":{"Code": 59},
 #                 "Europe_Russia":{"Code": 60},
 #                 "Finland":{"Code": 61},
 #                 "France":{"Code": 62},
