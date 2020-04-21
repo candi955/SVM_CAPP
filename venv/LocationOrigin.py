@@ -345,6 +345,220 @@ def get_selDummyOneTarget():
             for k, v in Asialist.items():
                 AsiaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (AsiaCode))
+        if i == 10:
+            Asia_Canada_Europe_Middle_East_USAlist = listTargetDictionary.get("Asia_Canada_Europe_Middle_East_USA")
+            for k, v in Asia_Canada_Europe_Middle_East_USAlist.items():
+                Asia_Canada_Europe_Middle_East_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Asia_Canada_Europe_Middle_East_USACode))
+        if i == 11:
+            Asia_Europe_Middle_East_USAlist = listTargetDictionary.get("Asia_Europe_Middle_East_USA")
+            for k, v in Asia_Europe_Middle_East_USAlist.items():
+                Asia_Europe_Middle_East_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Asia_Europe_Middle_East_USACode))
+        if i == 12:
+            Asia_Europe_North_Americalist = listTargetDictionary.get("Asia_Europe_North_America")
+            for k, v in Asia_Europe_North_Americalist.items():
+                Asia_Europe_North_AmericaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Asia_Europe_North_AmericaCode))
+        if i == 13:
+            Asia_South_Americalist = listTargetDictionary.get("Asia_South_America")
+            for k, v in Asia_South_Americalist.items():
+                Asia_South_AmericaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Asia_South_AmericaCode))
+        if i == 14:
+            Asia_USAlist = listTargetDictionary.get("Asia_USA")
+            for k, v in Asia_USAlist.items():
+                Asia_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Asia_USACode))
+        if i == 15:
+            Australialist = listTargetDictionary.get("Australia")
+            for k, v in Australialist.items():
+                AustraliaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (AustraliaCode))
+        if i == 16:
+            Australia_Canada_Japan_Switzerland_UK_USAlist = listTargetDictionary.get("Australia_Canada_Japan_Switzerland_UK_USA")
+            for k, v in Australia_Canada_Japan_Switzerland_UK_USAlist.items():
+                Australia_Canada_Japan_Switzerland_UK_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Australia_Canada_Japan_Switzerland_UK_USACode))
+        if i == 17:
+            Australia_Canada_New_Zealand_UK_USAlist = listTargetDictionary.get("Australia_Canada_New_Zealand_UK_USA")
+            for k, v in Australia_Canada_New_Zealand_UK_USAlist.items():
+                Australia_Canada_New_Zealand_UK_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Australia_Canada_New_Zealand_UK_USACode))
+        if i == 18:
+            Austrialist = listTargetDictionary.get("Austria")
+            for k, v in Austrialist.items():
+                AustriaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (AustriaCode))
+        if i == 19:
+            Austria_Germany_Switzerlandlist = listTargetDictionary.get("Austria_Germany_Switzerland")
+            for k, v in Austria_Germany_Switzerlandlist.items():
+                Austria_Germany_SwitzerlandCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Austria_Germany_SwitzerlandCode))
+        if i == 20:
+            Bahrainlist = listTargetDictionary.get("Bahrain")
+            for k, v in Bahrainlist.items():
+                BahrainCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (BahrainCode))
+        if i == 21:
+            Belarus_Mongolia_Russialist = listTargetDictionary.get("Belarus_Mongolia_Russia")
+            for k, v in Belarus_Mongolia_Russialist.items():
+                Belarus_Mongolia_RussiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Belarus_Mongolia_RussiaCode))
+        if i == 22:
+            Belgiumlist = listTargetDictionary.get("Belgium")
+            for k, v in Belgiumlist.items():
+                BelgiumCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (BelgiumCode))
+        if i == 23:
+            Brazillist = listTargetDictionary.get("Brazil")
+            for k, v in Brazillist.items():
+                BrazilCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (BrazilCode))
+        if i == 24:
+            Cambodialist = listTargetDictionary.get("Cambodia")
+            for k, v in Cambodialist.items():
+                CambodiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (CambodiaCode))
+        if i == 25:
+            Canadalist = listTargetDictionary.get("Canada")
+            for k, v in Canadalist.items():
+                CanadaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (CanadaCode))
+        if i == 26:
+            Canada_France_Multiple_UK_USAlist = listTargetDictionary.get("Canada_France_Multiple_UK_USA")
+            for k, v in Canada_France_Multiple_UK_USAlist.items():
+                Canada_France_Multiple_UK_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Canada_France_Multiple_UK_USACode))
+
+
+
+#                 "Central_America":{"Code": 31},
+#                 "Central_Asia_Eastern_Europe":{"Code": 32},
+#                 "Central_Asia_Eastern_Europe_Russia":{"Code": 33},
+#                 "Central_Asia_Europe_USA":{"Code": 34},
+#                 "Chile":{"Code": 35},
+#                 "China":{"Code": 36},
+#                 "China_Germany":{"Code": 37},
+#                 "China_Individuals":{"Code": 38},
+#                 "China_Pakistan":{"Code": 40},
+#                 "CSIS_USA":{"Code": 42},
+#                 "Czech_Republic":{"Code": 43},
+#                 "Czech_Republic_Individuals":{"Code": 44},
+#                 "Denmark":{"Code": 46},
+#                 "East_Asia":{"Code": 47},
+#                 "Eastern_Europe":{"Code": 48},
+#                 "Egypt":{"Code": 49},
+#                 "Estonia":{"Code": 50},
+#                 "Europe":{"Code": 51},
+#                 "Europe_Individuals":{"Code": 52},
+#                 "Europe_Individuals_Middle_East":{"Code": 53},
+#                 "Europe_Japan_USA":{"Code": 54},
+#                 "Europe_Middle_East":{"Code": 55},
+#                 "Europe_Middle_East_North_America":{"Code": 56},
+#                 "Europe_NATO":{"Code": 57},
+#                 "Europe_NATO_Ukraine":{"Code": 58},
+#                 "Europe_North_America":{"Code": 59},
+#                 "Europe_Russia":{"Code": 60},
+#                 "Finland":{"Code": 61},
+#                 "France":{"Code": 62},
+#                 "France_Germany_Japan":{"Code": 63},
+#                 "France_Germany_UK": {"Code": 64},
+#                 "France_South_Korea": {"Code": 65},
+#                 "Georgia": {"Code": 68},
+#                 "Germany": {"Code": 69},
+#                 "Germany_Israel_Jordan_Saudi_Arabia_Turkey_USA": {"Code": 70},
+#                 "Germany_Mongolia_Myanmar_Pakistan_UN_Vietnam_Individuals": {"Code": 71},
+#                 "Global_Unlisted": {"Code": 72},
+#                 "Germany_Turkey": {"Code": 73},
+#                 "India": {"Code": 74},
+#                 "India_Italy_Saudi_Arabia_Scotland_UAE": {"Code": 75},
+#                 "India_Pakistan": {"Code": 76},
+#                 "Individuals": {"Code": 77},
+#                 "Individuals_Iran": {"Code": 78},
+#                 "Individuals_Latvia": {"Code": 79},
+#                 "Individuals_Multiple": {"Code": 80},
+#                 "Individuals_NATO_Ukraine": {"Code": 81},
+#                 "Individuals_Sri_Lanka": {"Code": 82},
+#                 "Individuals_USA": {"Code": 85},
+#                 "Individuals_Vietnam": {"Code": 86},
+#                 "Indonesia": {"Code": 87},
+#                 "Indonesia_Mongolia_Myanmar_Taiwan_Tibet_Vietnam_Xinjiang": {"Code": 88},
+#                 "International": {"Code": 89},
+#                 "Iran": {"Code": 90},
+#                 "Iran_Israel_Middle_East": {"Code": 91},
+#                 "Iran_Syria": {"Code": 94},
+#                 "Iraq_Pakistan_Tajikistan": {"Code": 97},
+#                 "Ireland": {"Code": 98},
+#                 "ISIS": {"Code": 99},
+#                 "Israel": {"Code": 100},
+#                 "Israel_Saudi_Arabia_USA": {"Code": 101},
+#                 "Israel_Sudan_Syria_Middle_East": {"Code": 102},
+#                 "Italy": {"Code": 104},
+#                 "Italy_France_Germany_Poland_Spain_Turkey_USA": {"Code": 105},
+#                 "Japan": {"Code": 106},
+#                 "Japan_Multiple_Unlisted": {"Code": 107},
+#                 "Japan_Unlisted": {"Code": 108},
+#                 "Kazakhstan": {"Code": 109},
+#                 "Lebanon": {"Code": 110},
+#                 "Lebanon_UAE": {"Code": 111},
+#                 "Libya": {"Code": 112},
+#                 "Lithuania": {"Code": 113},
+#                 "Malaysia": {"Code": 114},
+#                 "Mexico": {"Code": 115},
+#                 "Middle_East": {"Code": 116},
+#                 "Middle_East_South_America_UK_USA": {"Code": 117},
+#                 "Montenegro": {"Code": 118},
+#                 "Multiple": {"Code": 120},
+#                 "Multiple_Unlisted": {"Code": 121},
+#                 "Netherlands": {"Code": 124},
+#                 "Netherlands_territory": {"Code": 125},
+#                 "NGOs_UN": {"Code": 126},
+#                 "North_America_Pakistan_Russia_Saudi_Arabia_Turkey": {"Code": 128},
+#                 "North_Korea": {"Code": 129},
+#                 "Norway": {"Code": 130},
+#                 "Oman_UAE": {"Code": 131},
+#                 "Pakistan": {"Code": 132},
+#                 "Philippines": {"Code": 133},
+#                 "Qatar": {"Code": 134},
+#                 "Qatar_Saudi_Arabia": {"Code": 135},
+#                 "Russia": {"Code": 136},
+#                 "Saudi_Arabia": {"Code": 139},
+#                 "Saudi_Arabia_South_Korea_USA": {"Code": 140},
+#                 "Saudi_Arabia_USA": {"Code": 141},
+#                 "Scotland": {"Code": 142},
+#                 "Singapore": {"Code": 143},
+#                 "South_Africa": {"Code": 144},
+#                 "South_Korea": {"Code": 145},
+#                 "South_Korea_USA": {"Code": 146},
+#                 "Southeast_Asia": {"Code": 147},
+#                 "Sweden": {"Code": 149},
+#                 "Switzerland": {"Code": 150},
+#                 "Syria": {"Code": 151},
+#                 "Taiwan": {"Code": 152},
+#                 "Tehran": {"Code": 154},
+#                 "Tibet": {"Code": 155},
+#                 "Turkey": {"Code": 156},
+#                 "UK": {"Code": 158},
+#                 "UK_USA": {"Code": 159},
+#                 "Ukraine": {"Code": 160},
+#                 "UN": {"Code": 161},
+#                 "Unlisted": {"Code": 1},
+#                 "USA": {"Code": 162},
+#                 "USA_Europe": {"Code": 163},
+#                 "USA_Western_World": {"Code": 164},
+#                 "Venezuela": {"Code": 165},
+#                 "Western_World": {"Code": 167},
+#                 "Xinjiang": {"Code": 168}}
+
+
+
+
+
+
+
+
+
 
 # List 2 function to place list and then transfer answer to textbox, for Month choice
 def get_selDummyTwoMonth():
