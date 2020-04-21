@@ -730,31 +730,130 @@ def get_selDummyOneTarget():
             for k, v in Israel_Saudi_Arabia_USAlist.items():
                 Israel_Saudi_Arabia_USACode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Israel_Saudi_Arabia_USACode))
+        if i == 87:
+            Israel_Sudan_Syria_Middle_Eastlist = listTargetDictionary.get("Israel_Sudan_Syria_Middle_East")
+            for k, v in Israel_Sudan_Syria_Middle_Eastlist.items():
+                Israel_Sudan_Syria_Middle_EastCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Israel_Sudan_Syria_Middle_EastCode))
+        if i == 88:
+            Italylist = listTargetDictionary.get("Italy")
+            for k, v in Italylist.items():
+                ItalyCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (ItalyCode))
+        if i == 89:
+            Italy_France_Germany_Poland_Spain_Turkey_USAlist = listTargetDictionary.get("Italy_France_Germany_Poland_Spain_Turkey_USA")
+            for k, v in Italy_France_Germany_Poland_Spain_Turkey_USAlist.items():
+                Italy_France_Germany_Poland_Spain_Turkey_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Italy_France_Germany_Poland_Spain_Turkey_USACode))
+        if i == 90:
+            Japanlist = listTargetDictionary.get("Japan")
+            for k, v in Japanlist.items():
+                JapanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (JapanCode))
+        if i == 91:
+            Japan_Multiple_Unlistedlist = listTargetDictionary.get("Japan_Multiple_Unlisted")
+            for k, v in Japan_Multiple_Unlistedlist.items():
+                Japan_Multiple_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Japan_Multiple_UnlistedCode))
+        if i == 92:
+            Japan_Unlistedlist = listTargetDictionary.get("Japan_Unlisted")
+            for k, v in Japan_Unlistedlist.items():
+                Japan_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Japan_UnlistedCode))
+        if i == 93:
+            Kazakhstanlist = listTargetDictionary.get("Kazakhstan")
+            for k, v in Kazakhstanlist.items():
+                KazakhstanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (KazakhstanCode))
+        if i == 94:
+            Lebanonlist = listTargetDictionary.get("Lebanon")
+            for k, v in Lebanonlist.items():
+                LebanonCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (LebanonCode))
+        if i == 95:
+            Lebanon_UAElist = listTargetDictionary.get("Lebanon_UAE")
+            for k, v in Lebanon_UAElist.items():
+                Lebanon_UAECode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Lebanon_UAECode))
+
+        if i == 96:
+            Libyalist = listTargetDictionary.get("Libya")
+            for k, v in Libyalist.items():
+                LibyaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (LibyaCode))
+        if i == 97:
+            Lithuanialist = listTargetDictionary.get("Lithuania")
+            for k, v in Lithuanialist.items():
+                LithuaniaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (LithuaniaCode))
+        if i == 98:
+            Malaysialist = listTargetDictionary.get("Malaysia")
+            for k, v in Malaysialist.items():
+                MalaysiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (MalaysiaCode))
+        if i == 99:
+            Mexicolist = listTargetDictionary.get("Mexico")
+            for k, v in Mexicolist.items():
+                MexicoCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (MexicoCode))
+        if i == 100:
+            Middle_Eastlist = listTargetDictionary.get("Middle_East")
+            for k, v in Middle_Eastlist.items():
+                Middle_EastCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Middle_EastCode))
+        if i == 101:
+            Middle_East_South_America_UK_USAlist = listTargetDictionary.get("Middle_East_South_America_UK_USA")
+            for k, v in Middle_East_South_America_UK_USAlist.items():
+                Middle_East_South_America_UK_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Middle_East_South_America_UK_USACode))
+        if i == 102:
+            Montenegrolist = listTargetDictionary.get("Montenegro")
+            for k, v in Montenegrolist.items():
+                MontenegroCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (MontenegroCode))
+        if i == 103:
+            Multiplelist = listTargetDictionary.get("Multiple")
+            for k, v in Multiplelist.items():
+                MultipleCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (MultipleCode))
+        if i == 104:
+            Multiple_Unlistedlist = listTargetDictionary.get("Multiple_Unlisted")
+            for k, v in Multiple_Unlistedlist.items():
+                Multiple_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Multiple_UnlistedCode))
+        if i == 105:
+            Netherlandslist = listTargetDictionary.get("Netherlands")
+            for k, v in Netherlandslist.items():
+                NetherlandsCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (NetherlandsCode))
+        if i == 106:
+            Netherlands_territorylist = listTargetDictionary.get("Netherlands_territory")
+            for k, v in Netherlands_territorylist.items():
+                Netherlands_territoryCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Netherlands_territoryCode))
+        if i == 107:
+            NGOs_UNlist = listTargetDictionary.get("NGOs_UN")
+            for k, v in NGOs_UNlist.items():
+                NGOs_UNCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (NGOs_UNCode))
+        if i == 108:
+            North_America_Pakistan_Russia_Saudi_Arabia_Turkeylist = listTargetDictionary.get("North_America_Pakistan_Russia_Saudi_Arabia_Turkey")
+            for k, v in North_America_Pakistan_Russia_Saudi_Arabia_Turkeylist.items():
+                North_America_Pakistan_Russia_Saudi_Arabia_TurkeyCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (North_America_Pakistan_Russia_Saudi_Arabia_TurkeyCode))
+        if i == 109:
+            North_America_Pakistan_Russia_Saudi_Arabia_Turkeylist = listTargetDictionary.get("North_Korea")
+            for k, v in North_Korealist.items():
+                North_KoreaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (North_KoreaCode))
+        if i == 110:
+            Norwaylist = listTargetDictionary.get("Norway")
+            for k, v in Norwaylist.items():
+                NorwayCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (NorwayCode))
 
 
-#                 "Israel_Sudan_Syria_Middle_East": {"Code": 102},
-#                 "Italy": {"Code": 104},
-#                 "Italy_France_Germany_Poland_Spain_Turkey_USA": {"Code": 105},
-#                 "Japan": {"Code": 106},
-#                 "Japan_Multiple_Unlisted": {"Code": 107},
-#                 "Japan_Unlisted": {"Code": 108},
-#                 "Kazakhstan": {"Code": 109},
-#                 "Lebanon": {"Code": 110},
-#                 "Lebanon_UAE": {"Code": 111},
-#                 "Libya": {"Code": 112},
-#                 "Lithuania": {"Code": 113},
-#                 "Malaysia": {"Code": 114},
-#                 "Mexico": {"Code": 115},
-#                 "Middle_East": {"Code": 116},
-#                 "Middle_East_South_America_UK_USA": {"Code": 117},
-#                 "Montenegro": {"Code": 118},
-#                 "Multiple": {"Code": 120},
-#                 "Multiple_Unlisted": {"Code": 121},
-#                 "Netherlands": {"Code": 124},
-#                 "Netherlands_territory": {"Code": 125},
-#                 "NGOs_UN": {"Code": 126},
-#                 "North_America_Pakistan_Russia_Saudi_Arabia_Turkey": {"Code": 128},
-#                 "North_Korea": {"Code": 129},
+#
 #                 "Norway": {"Code": 130},
 #                 "Oman_UAE": {"Code": 131},
 #                 "Pakistan": {"Code": 132},
