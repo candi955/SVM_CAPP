@@ -22,7 +22,7 @@ import xlrd
 
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
-cyberExcel = xlrd.open_workbook('OriginAttackPredictionDataWithCodes_CleanedUp_20Apr2020_2400pm.xlsx')
+cyberExcel = xlrd.open_workbook('FullDataSetForMainMenu_CleanedUp_20Apr2020_2439pm.xlsx')
 # Creating variable to convert excel file to a dataframe (using pandas)
 sheets = cyberExcel.sheets()
 for sheet in sheets:
@@ -30,7 +30,7 @@ for sheet in sheets:
 pd.set_option('display.max_rows', 1000) # Attempting to display all rows and columns
 pd.set_option('display.max_columns', 7)
 pd.set_option('display.width', 200)
-pd.set_option('display.max_colwidth', 40)
+pd.set_option('display.max_colwidth',23)
 
 # creating dataframe for tkinter
 df = pd.DataFrame(cyberSheetData)
