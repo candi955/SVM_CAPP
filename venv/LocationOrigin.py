@@ -430,23 +430,83 @@ def get_selDummyOneTarget():
             for k, v in Canada_France_Multiple_UK_USAlist.items():
                 Canada_France_Multiple_UK_USACode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Canada_France_Multiple_UK_USACode))
+        if i == 27:
+            Central_Americalist = listTargetDictionary.get("Central_America")
+            for k, v in Central_Americalist.items():
+                Central_AmericaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Central_AmericaCode))
+        if i == 28:
+            Central_Asia_Eastern_Europelist = listTargetDictionary.get("Central_Asia_Eastern_Europe")
+            for k, v in Central_Asia_Eastern_Europelist.items():
+                Central_Asia_Eastern_EuropeCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Central_Asia_Eastern_EuropeCode))
+        if i == 29:
+            Central_Asia_Eastern_Europe_Russialist = listTargetDictionary.get("Central_Asia_Eastern_Europe_Russia")
+            for k, v in Central_Asia_Eastern_Europe_Russialist.items():
+                Central_Asia_Eastern_Europe_RussiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Central_Asia_Eastern_Europe_RussiaCode))
+        if i == 30:
+            Central_Asia_Europe_USAlist = listTargetDictionary.get("Central_Asia_Europe_USA")
+            for k, v in Central_Asia_Europe_USAlist.items():
+                Central_Asia_Europe_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Central_Asia_Europe_USACode))
+        if i == 31:
+            Chilelist = listTargetDictionary.get("Chile")
+            for k, v in Chilelist.items():
+                ChileCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (ChileCode))
+        if i == 32:
+            Chinalist = listTargetDictionary.get("China")
+            for k, v in Chinalist.items():
+                ChinaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (ChinaCode))
+        if i == 33:
+            China_Germanylist = listTargetDictionary.get("China_Germany")
+            for k, v in China_Germanylist.items():
+                China_GermanyCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (China_GermanyCode))
+        if i == 34:
+            China_Individualslist = listTargetDictionary.get("China_Individuals")
+            for k, v in China_Individualslist.items():
+                China_IndividualsCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (China_IndividualsCode))
+        if i == 35:
+            China_Pakistanlist = listTargetDictionary.get("China_Pakistan")
+            for k, v in China_Pakistanlist.items():
+                China_PakistanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (China_PakistanCode))
+        if i == 36:
+            CSIS_USAlist = listTargetDictionary.get("CSIS_USA")
+            for k, v in CSIS_USAlist.items():
+                CSIS_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (CSIS_USACode))
+        if i == 37:
+            Czech_Republiclist = listTargetDictionary.get("Czech_Republic")
+            for k, v in Czech_Republiclist.items():
+                Czech_RepublicCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Czech_RepublicCode))
+        if i == 38:
+            Czech_Republic_Individualslist = listTargetDictionary.get("Czech_Republic_Individuals")
+            for k, v in Czech_Republic_Individualslist.items():
+                Czech_Republic_IndividualsCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Czech_Republic_IndividualsCode))
+        if i == 39:
+            Denmarklist = listTargetDictionary.get("Denmark")
+            for k, v in Denmarklist.items():
+                DenmarkCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (DenmarkCode))
+        if i == 40:
+            East_Asialist = listTargetDictionary.get("East_Asia")
+            for k, v in East_Asialist.items():
+                East_AsiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (East_AsiaCode))
+        if i == 41:
+            East_Asialist = listTargetDictionary.get("East_Asia")
+            for k, v in East_Asialist.items():
+                East_AsiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (East_AsiaCode))
 
 
-
-#                 "Central_America":{"Code": 31},
-#                 "Central_Asia_Eastern_Europe":{"Code": 32},
-#                 "Central_Asia_Eastern_Europe_Russia":{"Code": 33},
-#                 "Central_Asia_Europe_USA":{"Code": 34},
-#                 "Chile":{"Code": 35},
-#                 "China":{"Code": 36},
-#                 "China_Germany":{"Code": 37},
-#                 "China_Individuals":{"Code": 38},
-#                 "China_Pakistan":{"Code": 40},
-#                 "CSIS_USA":{"Code": 42},
-#                 "Czech_Republic":{"Code": 43},
-#                 "Czech_Republic_Individuals":{"Code": 44},
-#                 "Denmark":{"Code": 46},
-#                 "East_Asia":{"Code": 47},
 #                 "Eastern_Europe":{"Code": 48},
 #                 "Egypt":{"Code": 49},
 #                 "Estonia":{"Code": 50},
