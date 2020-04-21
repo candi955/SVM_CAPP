@@ -437,9 +437,10 @@ def mainMenu():
         try:
 
             # Creating a messagebox for when the user clicks to exit the program, with exception prevention
-            if messagebox.askokcancel("Quit", "Do you want to quit?"):
-                root.destroy()
+            if mbox.askokcancel("Quit", "Do you want to quit?"):
+                #root.destroy()
                 root.protocol("WM_DELETE_WINDOW", mainMenu)
+                root.destroy()
                 import mainPage
 
         except ValueError:
