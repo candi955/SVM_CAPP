@@ -881,17 +881,45 @@ def get_selDummyOneTarget():
             for k, v in Russialist.items():
                 RussiaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (RussiaCode))
+        if i == 117:
+            Saudi_Arabialist = listTargetDictionary.get("Saudi_Arabia")
+            for k, v in Saudi_Arabialist.items():
+                Saudi_ArabiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Saudi_ArabiaCode))
+        if i == 118:
+            Saudi_Arabia_South_Korea_USAlist = listTargetDictionary.get("Saudi_Arabia_South_Korea_USA")
+            for k, v in Saudi_Arabia_South_Korea_USAlist.items():
+                Saudi_Arabia_South_Korea_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Saudi_Arabia_South_Korea_USACode))
+        if i == 119:
+            Saudi_Arabia_USAlist = listTargetDictionary.get("Saudi_Arabia_USA")
+            for k, v in Saudi_Arabia_USAlist.items():
+                Saudi_Arabia_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Saudi_Arabia_USACode))
+        if i == 120:
+            Scotlandlist = listTargetDictionary.get("Scotland")
+            for k, v in Scotlandlist.items():
+                ScotlandCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (ScotlandCode))
+        if i == 121:
+            Singaporelist = listTargetDictionary.get("Singapore")
+            for k, v in Singaporelist.items():
+                SingaporeCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (SingaporeCode))
+        if i == 122:
+            South_Africalist = listTargetDictionary.get("South_Africa")
+            for k, v in South_Africalist.items():
+                South_AfricaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (South_AfricaCode))
+        if i == 123:
+            South_Korealist = listTargetDictionary.get("South_Korea")
+            for k, v in South_Korealist.items():
+                South_KoreaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (South_KoreaCode))
 
 
 
-#                 "Saudi_Arabia": {"Code": 139},
-#                 "Saudi_Arabia_South_Korea_USA": {"Code": 140},
-#                 "Saudi_Arabia_USA": {"Code": 141},
-#                 "Scotland": {"Code": 142},
-#                 "Singapore": {"Code": 143},
-#                 "South_Africa": {"Code": 144},
-#                 "South_Korea": {"Code": 145},
-#                 "South_Korea_USA": {"Code": 146},
+
 #                 "Southeast_Asia": {"Code": 147},
 #                 "Sweden": {"Code": 149},
 #                 "Switzerland": {"Code": 150},
