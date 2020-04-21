@@ -226,14 +226,6 @@ for sheet in sheets:
     knn.fit(X, y)
 
 
-# -----Tkinter functions----------------------------------------------------------------------------
-
-def on_configure(event):
-    # update scrollregion after starting 'mainloop'
-    # when all widgets are in canvas
-    canvas.configure(scrollregion=canvas.bbox('all'))
-
-
 # ---Creating Tkinter functions----------------------------------------------------------------------------------------
 
 # Creating listbox functions
@@ -1182,6 +1174,14 @@ def flush(self):
 
 
 # ----- Creating Tkinter Setup (root) for GUI #-----
+
+
+def on_configure(event):
+    # update scrollregion after starting 'mainloop'
+    # when all widgets are in canvas
+    canvas.configure(yscrollcommand=yscrollbar.set, scrollregion=canvas.bbox(ALL))
+
+
 # a subclass of Canvas for dealing with resizing of windows
 class ResizingCanvas(Canvas):
     def __init__(self, parent, **kwargs):
@@ -1203,17 +1203,15 @@ class ResizingCanvas(Canvas):
 
 
 root = tk.Tk()
-root.title('SVM CAPP Main Menu')
+root.title('Attack Origin Prediction Page')
 
 # --- create canvas with scrollbar ---
 
-canvas = ResizingCanvas(root, width=1000, height=1000, bg="black", highlightthickness=0)
+canvas = ResizingCanvas(root, width=650, height=590, bg="black", highlightthickness=0)
 canvas.pack(fill=BOTH, expand=YES)
 
-scrollbar = tk.Scrollbar(root, command=canvas.yview)
-scrollbar.pack(side=tk.LEFT, fill='y')
-
-canvas.configure(yscrollcommand=scrollbar.set)
+yscrollbar = tk.Scrollbar(root, command=canvas.yview, orient="vertical")
+yscrollbar.pack(side=tk.LEFT, fill=tk.Y)
 
 # update scrollregion after starting 'mainloop'
 # when all widgets are in canvas
@@ -1230,13 +1228,13 @@ canvas.create_window((0, 0), window=frame, anchor='nw')
 # This option will eventually be a dropbox option, rather than fill in the blanks
 l3 = Label(frame, text='Please enter six situational choices in the cells below, and then click the Prediction button' +
                        'to see your prediction results:', padx=5, pady=5)
-l3.grid(row=1, column=0)
+l3.grid(row=0, column=0)
 
 # --------------------- Dummy 1 Listbox and Textbox Attack Origin-------------------------------------------------------
 # Listbox of Dummy Numbers
 dummyOneListBox = Listbox(frame)  # height=1, width=50, yscrollcommand=TRUE)
 dummyOneListBox.bind("<Tab>", focus_next_widget)  # for user to tab between listboxes/textboxes
-dummyOneListBox.grid(row=2, column=0, padx=5, pady=5, ipadx=250, ipady=0)
+dummyOneListBox.grid(row=1, column=0, padx=5, pady=5, ipadx=250, ipady=0)
 
 List1 = Listbox(dummyOneListBox)
 # Pulling locationDict dictionary data and placing into listbox
@@ -1249,7 +1247,7 @@ for key in listTargetDictionary:
 # Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberOne = Text(frame, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
-dummyNumberOne.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberOne.grid(row=3, column=0, columnspan=1, padx=5, pady=5)
 
 # --------------------- Dummy 2 Listbox and Textbox  (Attack Target) ----------------------------------------------------
 # Listbox of Dummy Numbers
@@ -1268,31 +1266,31 @@ for key in listMonthDictionary:
 # Textbox of Dummy Numbers, input from Listbox choices
 dummyNumberTwo = Text(frame, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
-dummyNumberTwo.grid(row=3, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberTwo.grid(row=6, column=0, columnspan=1, padx=5, pady=5)
 
 # --------------------- Dummy 3 Listbox and Textbox Attack Month--------------------------------------------------------
 
 dummyNumberThree = Text(frame, height=2, width=50)
 dummyNumberThree.bind("<Tab>", focus_next_widget)
-dummyNumberThree.grid(row=4, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberThree.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
 # --------------------- Dummy 4 Listbox and Textbox Attack Year----------------------------------------------------------
 
 dummyNumberFour = Text(frame, height=2, width=50)
 dummyNumberFour.bind("<Tab>", focus_next_widget)
-dummyNumberFour.grid(row=5, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberFour.grid(row=8, column=0, columnspan=1, padx=5, pady=5)
 
 # --------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
 
 dummyNumberFive = Text(frame, height=2, width=50)
 dummyNumberFive.bind("<Tab>", focus_next_widget)
-dummyNumberFive.grid(row=6, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberFive.grid(row=9, column=0, columnspan=1, padx=5, pady=5)
 
 # --------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
 
 dummyNumberSix = Text(frame, height=2, width=50)
 dummyNumberSix.bind("<Tab>", focus_next_widget)
-dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
+dummyNumberSix.grid(row=10, column=0, columnspan=1, padx=5, pady=5)
 
 # -------Tkinter Buttons------------------------------------------------------------------------------------------------
 
@@ -1300,7 +1298,7 @@ dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
 # Accuracy Button
 AccuracyButton = Button(frame, text='Prediction Accuracy', command=lambda: writeAccuracy(1), width=20, bg='purple',
                         fg='#fff')
-AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
+AccuracyButton.grid(row=12, column=0, padx=15, pady=15)
 
 # Tab 3
 # DummyOneButton
@@ -1310,7 +1308,7 @@ AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
 # List 1 Origin country/region choice buttons
 DummyOneButtonSubmit = Button(frame, text="Submit Attack Origin", command=lambda: get_selDummyOneTarget(), width=20,
                               bg='purple', fg='#fff')
-DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
+DummyOneButtonSubmit.grid(row=2, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
 DummyTwoButtonSubmit = Button(frame, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple',
@@ -1320,22 +1318,22 @@ DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 # Dummy number Button to start algorithm calculation and display prediction results
 PredictionButton = Button(frame, text='Click to see Prediction Results', command=finalPrediction, width=25,
                           bg='blue', fg='#fff')
-PredictionButton.grid(row=6, column=0, padx=5, pady=5)
+PredictionButton.grid(row=11, column=0, padx=5, pady=5)
 
 # Button to clear Tab 3 and start over
 ClearTabThreeButton = Button(frame, text='Clear results and start over', command=clear_display_result, width=25,
                              bg='purple', fg='#fff')
-ClearTabThreeButton.grid(row=1, column=1, padx=5, pady=5)
+ClearTabThreeButton.grid(row=14, column=0, padx=5, pady=5)
 
 # Menu button on tab 1, to start program over
 MenuTabOneButton = Button(frame, text='Return to Program Main Menu', command=mainMenu, width=25,
                           bg='purple', fg='#fff')
-MenuTabOneButton.grid(row=0, column=0, padx=5, pady=5)
+MenuTabOneButton.grid(row=15, column=0, padx=5, pady=5)
 
 # Button on tab 1, to exit the program
 ExitTabOneButton = Button(frame, text='Exit Program', command=exitProgram, width=14,
                           bg='purple', fg='#fff')
-ExitTabOneButton.grid(row=8, column=0, padx=5, pady=5)
+ExitTabOneButton.grid(row=16, column=0, padx=5, pady=5)
 
 # ------Result Display tabs---------------------------------------------------------------------------------------------
 
@@ -1343,7 +1341,7 @@ ExitTabOneButton.grid(row=8, column=0, padx=5, pady=5)
 
 # Prediction results window in tab 3
 frame_display = Text(frame, height=1)
-frame_display.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
+frame_display.grid(row=13, column=0, columnspan=1, padx=5, pady=5)
 
 # --- start program ---
 
