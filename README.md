@@ -15,3 +15,14 @@ project include:
 # The SVM algorithm is a supervised machine learning (ML) algorithm often used for classification and regression purposes.  The term 
 # 'supervised' indicates a referenced set of data for set training is involved within the algorithmic process. 
 # 
+# The referenced datasets are in the project files, and include:
+# 
+# Gross PSD (Quarterly Public Sector Debt), Central Gov., All maturities, Debt securities, Nominal Value, % of GDP
+# https://databank.worldbank.org/source/quarterly-public-sector-debt
+#
+# World Development Indicator: Global access to clean fuels and technologies for cooking (% of population)# 
+# World Development Indicator: Global access to electricity (% of population)
+# https://databank.worldbank.org/source/world-development-indicators
+#
+#
+#
