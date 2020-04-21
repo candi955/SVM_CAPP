@@ -1,4 +1,4 @@
-# Practice scroll page
+# Location of attack origin prediction page
 # reference: https://stackoverflow.com/questions/40526496/vertical-scrollbar-for-frame-in-tkinter-python
 
 # ---------Imports----------------------------------------------------------------------------------------------------
