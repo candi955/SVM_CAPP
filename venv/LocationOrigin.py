@@ -417,20 +417,26 @@ def get_selDummyTwoMonth():
 
 
 # the accuracy score method
-def writeAccuracy():
-
+def writeAccuracy(buttonClicks):
     if buttonClicks == 1:
         # Creating pop up window for dataset
         # reference: https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-tkinter
         win = tk.Toplevel()
         win.wm_title("Prediction accuracy of target prediction page")
 
+        popUpLabel = tk.Label(win,
+                              text="Please see the accuracy percentage of the Target Prediction algorithm below:\n")
         popUpLabel.grid(row=0, column=0)
 
         # Display Boxes for Results
-        dataSetDisplay = ScrolledText(win, height=20, width=20)
+        dataSetDisplay = ScrolledText(win, height=2, width=30)
         dataSetDisplay.grid(row=3, column=0, columnspan=5, padx=5, pady=5)
-        dataSetDisplay.insert(4.0, str(accuracy_score(y_test, y_pred)))
+        # decimal form of predication accuracy percentage
+        # dataSetDisplay.insert(4.0, str(accuracy_score(y_test, y_pred)))
+        # percentage form of predication accuracy percentage
+        acc = accuracy_score(y_test, y_pred)
+        dataSetDisplay.insert(4.0, str("%.0f%%" % (acc * 100)))
+
     else:
         mbox.showerror("Error", "Returning to the main menu.")
         import mainPage
@@ -612,7 +618,7 @@ dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
 
 # Tab 2
 # Accuracy Button
-AccuracyButton = Button(tab1, text='Prediction Accuracy', command=writeAccuracy, width=20, bg='purple', fg='#fff')
+AccuracyButton = Button(tab1, text='Prediction Accuracy', command=lambda:writeAccuracy(1), width=20, bg='purple', fg='#fff')
 AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
 
 # Tab 3
