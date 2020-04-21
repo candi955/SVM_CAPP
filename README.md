@@ -57,14 +57,18 @@ project include:
 # 
 # Recommendations for project continuence in the future:
 # 
-# The project currently shows an algorithmic accuracy of 31% for the Attack Target Prediction page (to predict a target attack location)
+# - The project currently shows an algorithmic accuracy of 31% for the Attack Target Prediction page (to predict a target attack location)
 # The author concludes that this might be due to the less variable event origin data utilized within the source data for that 
 # algorithm.  The Attack Origin prediction page does have a slightly higher prediction accuracy of 37%.  This is shown when 
 # clicking on the Prediction Accuracy buttons within the program, at the bottom of the prediction pages.  
 # 
-# With more time or manpower, an improved dataset could be created and cross-checked professionally for accuracy.  Corporate or 
+# - With more time or manpower, an improved dataset could be created and cross-checked professionally for accuracy.  Corporate or 
 # locational proprietary boundaries might also be challenge faced upon improving the dataset (not all locations would want to 
 # publicize that they were involved in a cyber attack, so an attack or its details might not become publicely available).
 # 
-# The scrollbar within the dataset would also need to be corrected.  At this time it works, but is very small.  It is located on the
+# - The scrollbar within the dataset would also need to be corrected.  At this time it works, but is very small.  It is located on the
 # bottom-left corner of each prediction page. 
+# 
+# The author's wish for this program is that it might assist the cyber community with correlating data of cyber event prediction,
+# with data that has not been involved or utilized to do so prior.  Although only the future would present if such correlations
+# could be proven as accurate, the SVM CAPP might make that possible. 
