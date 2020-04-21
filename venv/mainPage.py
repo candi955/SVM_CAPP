@@ -1,4 +1,4 @@
-# Second attempt at main page.
+# Main program page
 
 # reference: https://stackoverflow.com/questions/40526496/vertical-scrollbar-for-frame-in-tkinter-python
 

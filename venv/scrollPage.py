@@ -1,34 +1,5 @@
-# Prediction of Attack Origin page
-# Support Vector Machine Cyber-Attack Prediction Program (SVM CAPP)__
-
-# A GUI program (through Tkinter) utilizing SKLearn, SVM algorithm, to predict cybersecurity data via a Supervised
-# dataset made of source and target data.  At this time the data is not made of completely real data, and the
-# project is in the build/test phases.
-
-# About Support Vector Machine (SVM)
-# A support vector machine (SVM) is a type of Supervised machine learning classification algorithm.
-# SVM differs from the other classification algorithms in the way that it chooses the decision boundary that maximizes
-# the distance from the nearest data points of all the classes. An SVM doesn't merely find a decision boundary; it
-# finds the most optimal decision boundary.
-# (https://stackabuse.com/implementing-svm-and-kernel-svm-with-pythons-scikit-learn/)
-
-# Utilizing SKlearn, pandas, numpy, xlrd APIs and also using a subclass of exception: import warnings (to prevent a
-# Future Error warning from popping up; appears is due to possible future updates).
-
-# Resources for original template build:
-# https://www.youtube.com/watch?reload=9&v=bwZ3Qiuj3i8
-# https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
-# https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
-# https://stackabuse.com/implementing-svm-and-kernel-svm-with-pythons-scikit-learn/
-# https://github.com/candi955/LottoProject   (my initial SVM project build and template for this project)
-
-# Resources utilized for dataset creation:
-# https://datacatalog.worldbank.org/dataset/world-development-indicators
-# https://datacatalog.worldbank.org/dataset/global-economic-monitor
-# https://csis-prod.s3.amazonaws.com/s3fs-public/190904_Significant_Cyber_Events_List.pdf
-# https://www.csis.org/programs/technology-policy-program/significant-cyber-incidents
-
-
+# Practice scroll page
+# reference: https://stackoverflow.com/questions/40526496/vertical-scrollbar-for-frame-in-tkinter-python
 
 #---------Imports----------------------------------------------------------------------------------------------------
 # Libraries
@@ -47,8 +18,6 @@ import pandas as pd
 import numpy as np
 import xlrd
 
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
 
 #------------ListBox Country/Region/Code Dictionaries--------------------------------------------------------------------------
 # creating a dictionary to associate locations with associated Code
@@ -259,32 +228,13 @@ for sheet in sheets:
     knn.fit(X, y)
 
 
-#-----Creating Tkinter Setup (root) for GUI----------------------------------------------------------------------------
-root = tk.Tk()
-root.title('SVM Prediction: Attack Origin')
-#root.geometry("1000x1000")
+#-----Tkinter functions----------------------------------------------------------------------------
 
-#scrollBar = Scrollbar(root)
-#scrollBar.pack(side=RIGHT, fill=Y)
-
-
-style = ttk.Style(root)
-style.configure('lefttab.TNotebook', tabposition='wn')
-
-# Tabs and Frames
-tab_control = ttk.Notebook(root)
-
-tab1 = ttk.Frame(tab_control)
-
-tab_control.add(tab1, text='Attack Origin Prediction')
-
-tab_control.pack(expand=1, fill='both')
-
-# Tkinter listbox with root functions
-# reference: http://effbot.org/tkinterbook/listbox.htm
-listbox = Listbox(root, selectmode=SINGLE)
-
-
+def on_configure(event):
+    # update scrollregion after starting 'mainloop'
+    # when all widgets are in canvas
+    canvas.configure(scrollregion=canvas.bbox('all'))
+    
 #---Creating Tkinter functions----------------------------------------------------------------------------------------
 
 # Creating listbox functions
@@ -1186,7 +1136,7 @@ def finalPrediction():
             # inserting dummy array variable as argument to K-nearest neighbor algorithm to create prediction, which is
             # placed within the prediction variable
             prediction = knn.predict([a])
-            tab1_display.insert(4.0, prediction)
+            frame_display.insert(4.0, prediction)
         except ValueError:
             mbox.showerror("Error", "Please ensure that your entry is accurate.")
             clear_display_result()
@@ -1196,7 +1146,7 @@ def finalPrediction():
 
 # Below is the creation of textbox entries; however am planning to make dummy number option a label option
 def clear_display_result():
-    tab1_display.delete(1.0, END)
+    frame_display.delete(1.0, END)
     dummyNumberOne.delete(1.0, END)
     dummyNumberTwo.delete(1.0, END)
     dummyNumberThree.delete(1.0, END)
@@ -1230,16 +1180,63 @@ def exitProgram():
 def flush(self):
     pass
 
+
+#----- Creating Tkinter Setup (root) for GUI #-----
+# a subclass of Canvas for dealing with resizing of windows
+class ResizingCanvas(Canvas):
+    def __init__(self,parent,**kwargs):
+        Canvas.__init__(self,parent,**kwargs)
+        self.bind("<Configure>", self.on_resize)
+        self.height = self.winfo_reqheight()
+        self.width = self.winfo_reqwidth()
+
+    def on_resize(self,event):
+        # determine the ratio of old width/height to new width/height
+        wscale = float(event.width)/self.width
+        hscale = float(event.height)/self.height
+        self.width = event.width
+        self.height = event.height
+        # resize the canvas
+        self.config(width=self.width, height=self.height)
+        # rescale all the objects tagged with the "all" tag
+        self.scale("all",0,0,wscale,hscale)
+
+root = tk.Tk()
+root.title('SVM CAPP Main Menu')
+
+
+# --- create canvas with scrollbar ---
+
+canvas = ResizingCanvas(root,width=1000, height=1000, bg="black", highlightthickness=0)
+canvas.pack(fill=BOTH, expand=YES)
+
+
+scrollbar = tk.Scrollbar(root, command=canvas.yview)
+scrollbar.pack(side=tk.LEFT, fill='y')
+
+canvas.configure(yscrollcommand = scrollbar.set)
+
+# update scrollregion after starting 'mainloop'
+# when all widgets are in canvas
+canvas.bind('<Configure>', on_configure)
+
+# --- put frame in canvas ---
+
+frame = tk.Frame(canvas)
+canvas.create_window((0,0), window=frame, anchor='nw')
+
+
+# --- add widgets in frame ---
 #------------Tkinter Labels for Tabs-----------------------------------------------------------------------------------
 
 # This option will eventually be a dropbox option, rather than fill in the blanks
-l3 = Label(tab1, text='Please enter six situational choices in the cells below, and then click the Prediction button'+
+l3 = Label(frame, text='Please enter six situational choices in the cells below, and then click the Prediction button'+
                       'to see your prediction results:', padx=5, pady=5)
 l3.grid(row=1, column=0)
 
 #--------------------- Dummy 1 Listbox and Textbox Attack Origin-------------------------------------------------------
 #Listbox of Dummy Numbers
-dummyOneListBox = Listbox(tab1) # height=1, width=50, yscrollcommand=TRUE)
+dummyOneListBox = Listbox(frame) # height=1, width=50, yscrollcommand=TRUE)
 dummyOneListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
 dummyOneListBox.grid(row=2, column=0, padx=5, pady=5, ipadx=250, ipady=0)
 
@@ -1252,13 +1249,13 @@ for key in listTargetDictionary:
     List1.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
-dummyNumberOne = Text(tab1, height=2, width=50)
+dummyNumberOne = Text(frame, height=2, width=50)
 dummyNumberOne.bind("<Tab>", focus_next_widget)
 dummyNumberOne.grid(row=2, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 2 Listbox and Textbox  (Attack Target) ----------------------------------------------------
 #Listbox of Dummy Numbers
-dummyTwoListBox = Listbox(tab1, height=2, width=50, yscrollcommand=SCROLL)
+dummyTwoListBox = Listbox(frame, height=2, width=50, yscrollcommand=SCROLL)
 dummyTwoListBox.bind("<Tab>", focus_next_widget) # for user to tab between listboxes/textboxes
 dummyTwoListBox.grid(row=4, column=0, columnspan=1, padx=5, pady=5, ipadx=250, ipady=0)
 
@@ -1271,31 +1268,31 @@ for key in listMonthDictionary:
     List2.pack(fill=BOTH, expand=TRUE)
 
 # Textbox of Dummy Numbers, input from Listbox choices
-dummyNumberTwo = Text(tab1, height=2, width=50)
+dummyNumberTwo = Text(frame, height=2, width=50)
 dummyNumberTwo.bind("<Tab>", focus_next_widget)
 dummyNumberTwo.grid(row=3, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 3 Listbox and Textbox Attack Month--------------------------------------------------------
 
-dummyNumberThree = Text(tab1, height=2, width=50)
+dummyNumberThree = Text(frame, height=2, width=50)
 dummyNumberThree.bind("<Tab>", focus_next_widget)
 dummyNumberThree.grid(row=4, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 4 Listbox and Textbox Attack Year----------------------------------------------------------
 
-dummyNumberFour = Text(tab1, height=2, width=50)
+dummyNumberFour = Text(frame, height=2, width=50)
 dummyNumberFour.bind("<Tab>", focus_next_widget)
 dummyNumberFour.grid(row=5, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 5 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberFive = Text(tab1, height=2, width=50)
+dummyNumberFive = Text(frame, height=2, width=50)
 dummyNumberFive.bind("<Tab>", focus_next_widget)
 dummyNumberFive.grid(row=6, column=1, columnspan=1, padx=5, pady=5)
 
 #--------------------- Dummy 6 Listbox and Textbox ---------------------------------------------------------------------
 
-dummyNumberSix = Text(tab1, height=2, width=50)
+dummyNumberSix = Text(frame, height=2, width=50)
 dummyNumberSix.bind("<Tab>", focus_next_widget)
 dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
 
@@ -1303,7 +1300,7 @@ dummyNumberSix.grid(row=7, column=1, columnspan=1, padx=5, pady=5)
 
 # Tab 2
 # Accuracy Button
-AccuracyButton = Button(tab1, text='Prediction Accuracy', command=lambda:writeAccuracy(1), width=20, bg='purple', fg='#fff')
+AccuracyButton = Button(frame, text='Prediction Accuracy', command=lambda:writeAccuracy(1), width=20, bg='purple', fg='#fff')
 AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
 
 # Tab 3
@@ -1312,30 +1309,30 @@ AccuracyButton.grid(row=0, column=1, padx=15, pady=15)
 # reference: https://stackoverflow.com/questions/17937039/tkinter-listbox-with-entry
 
 # List 1 Origin country/region choice buttons
-DummyOneButtonSubmit = Button(tab1, text="Submit Attack Origin", command=lambda: get_selDummyOneTarget(), width=20, bg='purple', fg='#fff')
+DummyOneButtonSubmit = Button(frame, text="Submit Attack Origin", command=lambda: get_selDummyOneTarget(), width=20, bg='purple', fg='#fff')
 DummyOneButtonSubmit.grid(row=3, column=0, padx=15, pady=15)
 
 # List 2 Origin country/region choice button
-DummyTwoButtonSubmit = Button(tab1, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
+DummyTwoButtonSubmit = Button(frame, text="Submit Month", command=lambda: get_selDummyTwoMonth(), width=20, bg='purple', fg='#fff')
 DummyTwoButtonSubmit.grid(row=5, column=0, padx=15, pady=15)
 
 # Dummy number Button to start algorithm calculation and display prediction results
-PredictionButton = Button(tab1, text='Click to see Prediction Results', command=finalPrediction, width=25,
+PredictionButton = Button(frame, text='Click to see Prediction Results', command=finalPrediction, width=25,
                           bg='blue', fg='#fff')
 PredictionButton.grid(row=6, column=0, padx=5, pady=5)
 
 # Button to clear Tab 3 and start over
-ClearTabThreeButton = Button(tab1, text='Clear results and start over', command=clear_display_result, width=25,
+ClearTabThreeButton = Button(frame, text='Clear results and start over', command=clear_display_result, width=25,
                           bg='purple', fg='#fff')
 ClearTabThreeButton.grid(row=1, column=1, padx=5, pady=5)
 
 # Menu button on tab 1, to start program over
-MenuTabOneButton = Button(tab1, text='Return to Program Main Menu', command=mainMenu, width=25,
+MenuTabOneButton = Button(frame, text='Return to Program Main Menu', command=mainMenu, width=25,
                           bg='purple', fg='#fff')
 MenuTabOneButton.grid(row=0, column=0, padx=5, pady=5)
 
 # Button on tab 1, to exit the program
-ExitTabOneButton = Button(tab1, text='Exit Program', command=exitProgram, width=14,
+ExitTabOneButton = Button(frame, text='Exit Program', command=exitProgram, width=14,
                           bg='purple', fg='#fff')
 ExitTabOneButton.grid(row=8, column=0, padx=5, pady=5)
 
@@ -1344,8 +1341,10 @@ ExitTabOneButton.grid(row=8, column=0, padx=5, pady=5)
 # Display Boxes for Results
 
 # Prediction results window in tab 3
-tab1_display = Text(tab1, height=1)
-tab1_display.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
+frame_display = Text(frame, height=1)
+frame_display.grid(row=7, column=0, columnspan=1, padx=5, pady=5)
 
-# Keep window alive
-mainloop()
+
+# --- start program ---
+
+root.mainloop()
