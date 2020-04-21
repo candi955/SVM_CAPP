@@ -230,7 +230,7 @@ pd.set_option('display.width', 1000)
 
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
-cyberExcel = xlrd.open_workbook('FakeTargetNumsDataset SVMCAPPdataset.xlsx')
+cyberExcel = xlrd.open_workbook('OriginAttackPredictionDataWithCodes_CleanedUp_20Apr2020_2400pm.xlsx')
 # Creating variable to convert excel file to a dataframe (using pandas)
 sheets = cyberExcel.sheets()
 for sheet in sheets:
@@ -529,9 +529,10 @@ def mainMenu():
         try:
 
             # Creating a messagebox for when the user clicks to exit the program, with exception prevention
-            if messagebox.askokcancel("Quit", "Do you want to quit?"):
-                root.destroy()
-                root.protocol("WM_DELETE_WINDOW", mainMenu)
+            if mbox.askokcancel("Quit", "Do you want to quit?"):
+                #root.destroy()
+                import mainPage
+                root.protocol("WM_DELETE_WINDOW", LocationOrigin)
                 import mainPage
 
         except ValueError:

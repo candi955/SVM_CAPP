@@ -143,7 +143,7 @@ pd.set_option('display.width', 1000)
 
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
-cyberExcel = xlrd.open_workbook('TargetSetWithCodesAdded_20Apr2020_2218pm_OneDummyAdded.xlsx')
+cyberExcel = xlrd.open_workbook('TargetAttackPredictionDataWithCodes_CleanedUp_20Apr2020_2400pm.xlsx')
 # Creating variable to convert excel file to a dataframe (using pandas)
 sheets = cyberExcel.sheets()
 for sheet in sheets:

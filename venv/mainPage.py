@@ -22,7 +22,7 @@ import xlrd
 
 # ----------Opening and creating DataFrame-----------------------------------------------------------------------
 # pulling excel file and creating variable
-cyberExcel = xlrd.open_workbook('SVMCAPPdataset8Apr2020_DataSetWindow_19Apr2020_1013pm_fakeDummyNums.xlsx')
+cyberExcel = xlrd.open_workbook('OriginAttackPredictionDataWithCodes_CleanedUp_20Apr2020_2400pm.xlsx')
 # Creating variable to convert excel file to a dataframe (using pandas)
 sheets = cyberExcel.sheets()
 for sheet in sheets:
