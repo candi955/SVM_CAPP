@@ -312,6 +312,183 @@ def get_selDummyOne():
                 Iran_North_Korea_RussiaCode = "{}".format(v)
                 dummyNumberOne.insert(1.0, (Iran_North_Korea_RussiaCode))
 
+        if i == 22:
+            Iran_Russialist = listOriginDictionary.get("Iran_Russia")
+            for k, v in Iran_Russialist.items():
+                Iran_RussiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Iran_RussiaCode))
+        if i == 23:
+            Iran_Unlistedlist = listOriginDictionary.get("Iran_Unlisted")
+            for k, v in Iran_Unlistedlist.items():
+                Iran_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Iran_UnlistedCode))
+        if i == 24:
+            Iraqlist = listOriginDictionary.get("Iraq")
+            for k, v in Iraqlist.items():
+                IraqCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IraqCode))
+        if i == 25:
+            ISISlist = listOriginDictionary.get("ISIS")
+            for k, v in ISISlist.items():
+                ISISCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (ISISCode))
+        if i == 26:
+            Israellist = listOriginDictionary.get("Israel")
+            for k, v in Israellist.items():
+                IsraelCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (IsraelCode))
+        if i == 27:
+            Israel_USAlist = listOriginDictionary.get("Israel_USA")
+            for k, v in Israel_USAlist.items():
+                Israel_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Israel_USACode))
+        if i == 28:
+            Lebanonlist = listOriginDictionary.get("Lebanon")
+            for k, v in Lebanonlist.items():
+                LebanonCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (LebanonCode))
+        if i == 29:
+            Mexicolist = listOriginDictionary.get("Mexico")
+            for k, v in Mexicolist.items():
+                MexicoCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (MexicoCode))
+        if i == 30:
+            Middle_Eastlist = listOriginDictionary.get("Middle_East")
+            for k, v in Middle_Eastlist.items():
+                Middle_EastCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Middle_EastCode))
+        if i == 31:
+            Moroccolist = listOriginDictionary.get("Morocco")
+            for k, v in Moroccolist.items():
+                MoroccoCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (MoroccoCode))
+        if i == 32:
+            Multiplelist = listOriginDictionary.get("Multiple")
+            for k, v in Multiplelist.items():
+                MultipleCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (MultipleCode))
+        if i == 33:
+            Nation_State_Actor_Eastern_Europelist = listOriginDictionary.get("Nation_State_Actor_Eastern_Europe")
+            for k, v in Nation_State_Actor_Eastern_Europelist.items():
+                Nation_State_Actor_Eastern_EuropeCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Nation_State_Actor_Eastern_EuropeCode))
+        if i == 34:
+            Nation_State_Actor_Unlistedlist = listOriginDictionary.get("Nation_State_Actor_Unlisted")
+            for k, v in Nation_State_Actor_Unlistedlist.items():
+                Nation_State_Actor_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Nation_State_Actor_UnlistedCode))
+        if i == 35:
+            Non_State_Actor_Unlistedlist = listOriginDictionary.get("Non_State_Actor_Unlisted")
+            for k, v in Non_State_Actor_Unlistedlist.items():
+                Non_State_Actor_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Non_State_Actor_UnlistedCode))
+        if i == 36:
+            North_Korealist = listOriginDictionary.get("North_Korea")
+            for k, v in North_Korealist.items():
+                North_KoreaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (North_KoreaCode))
+        if i == 37:
+            Pakistanlist = listOriginDictionary.get("Pakistan")
+            for k, v in Pakistanlist.items():
+                PakistanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (PakistanCode))
+        if i == 38:
+            Russialist = listOriginDictionary.get("Russia")
+            for k, v in Russialist.items():
+                RussiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (RussiaCode))
+        if i == 39:
+            Russia_Ukrainelist = listOriginDictionary.get("Russia_Ukraine")
+            for k, v in Russia_Ukrainelist.items():
+                Russia_UkraineCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Russia_UkraineCode))
+        if i == 40:
+            Russia_Ukraine_USAlist = listOriginDictionary.get("Russia_Ukraine_USA")
+            for k, v in Russia_Ukraine_USAlist.items():
+                Russia_Ukraine_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Russia_Ukraine_USACode))
+        if i == 41:
+            Saudi_Arabialist = listOriginDictionary.get("Saudi_Arabia")
+            for k, v in Saudi_Arabialist.items():
+                Saudi_ArabiaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Saudi_ArabiaCode))
+        if i == 42:
+            South_Korealist = listOriginDictionary.get("South_Korea")
+            for k, v in South_Korealist.items():
+                South_KoreaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (South_KoreaCode))
+        if i == 43:
+            South_Korea_USAlist = listOriginDictionary.get("South_Korea_USA")
+            for k, v in South_Korea_USAlist.items():
+                South_Korea_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (South_Korea_USACode))
+        if i == 44:
+            State_Sponsored_Actor_Unlistedlist = listOriginDictionary.get("State_Sponsored_Actor_Unlisted")
+            for k, v in State_Sponsored_Actor_Unlistedlist.items():
+                State_Sponsored_Actor_UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (State_Sponsored_Actor_UnlistedCode))
+        if i == 45:
+            Syrialist = listOriginDictionary.get("Syria")
+            for k, v in Syrialist.items():
+                SyriaCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (SyriaCode))
+        if i == 46:
+            Taiwanlist = listOriginDictionary.get("Taiwan")
+            for k, v in Taiwanlist.items():
+                TaiwanCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (TaiwanCode))
+        if i == 47:
+            Taiwan_USAlist = listOriginDictionary.get("Taiwan_USA")
+            for k, v in Taiwan_USAlist.items():
+                Taiwan_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Taiwan_USACode))
+        if i == 48:
+            Turkeylist = listOriginDictionary.get("Turkey")
+            for k, v in Turkeylist.items():
+                TurkeyCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (TurkeyCode))
+        if i == 49:
+            UAElist = listOriginDictionary.get("UAE")
+            for k, v in UAElist.items():
+                UAECode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UAECode))
+        if i == 50:
+            UKlist = listOriginDictionary.get("UK")
+            for k, v in UKlist.items():
+                UKCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UKCode))
+        if i == 51:
+            UK_USAlist = listOriginDictionary.get("UK_USA")
+            for k, v in UK_USAlist.items():
+                UK_USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UK_USACode))
+        if i == 52:
+            Unlistedlist = listOriginDictionary.get("Unlisted")
+            for k, v in Unlistedlist.items():
+                UnlistedCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (UnlistedCode))
+        if i == 53:
+            USAlist = listOriginDictionary.get("USA")
+            for k, v in USAlist.items():
+                USACode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (USACode))
+        if i == 54:
+            Vietnamlist = listOriginDictionary.get("Vietnam")
+            for k, v in Vietnamlist.items():
+                VietnamCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (VietnamCode))
+        if i == 55:
+            Western_Worldlist = listOriginDictionary.get("Western_World")
+            for k, v in Western_Worldlist.items():
+                Western_WorldCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (Western_WorldCode))
+        if i == 56:
+            Yemenlist = listOriginDictionary.get("Yemen")
+            for k, v in Yemenlist.items():
+                YemenCode = "{}".format(v)
+                dummyNumberOne.insert(1.0, (YemenCode))
+
+
 
 # List 2 function to place list and then transfer answer to textbox, for Month choice
 def get_selDummyTwoMonth():
