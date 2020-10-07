@@ -76,3 +76,4 @@ project include:
 # with data that has not been involved or utilized to do so prior.  Although only the future would present if such correlations
 # could be proven as accurate, the SVM CAPP might make that possible. 
 "# PowerPredictionAZ" 
+"# PowerBallAZ" 
